@@ -26,7 +26,7 @@
 			<label class="fas fa-bars" for="menu-bar"></label>
 			<nav class="menu2">
 				<a href="adm_clt.php">CLIENTES</a>
-				<a href="">ENTRENADORES</a>
+				<a href="adm_ent.php">ENTRENADORES</a>
 				<a href="">FACTURACION</a>
 				<a href="">INGRESO</a>
 			</nav>
