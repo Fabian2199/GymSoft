@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Entrenadores</title>
-	<link rel="stylesheet" type="text/css" href="css_adm_ejer/menu.css">
+	<link rel="stylesheet" type="text/css" href="css_adm_ejeR/menu.css">
 	<link rel="stylesheet" type="text/css" href="iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="CSS_ADM_ent/banner.css">
 	<link rel="stylesheet" type="text/css" href="css_adm_ent/principal_adm_ent.css">
