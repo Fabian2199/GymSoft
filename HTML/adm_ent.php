@@ -54,7 +54,7 @@
 								<select name="listaDeDispositivos" id="listaDeDispositivos"></select>
 								<input class="btn_foto" type="button" id="boton" value="Tomar foto">
 								<p id="estado"></p>
-								<input type="text" name="foto" value="" style="display: none;" required>
+								<input type="text" name="foto" value="" style="display: none;">
 								<video muted="muted" id="video"></video>
 								<canvas id="canvas" style="display: none;"></canvas>
 							</div>

@@ -8,6 +8,9 @@
     $email = $_POST['email'];
     $foto = $_POST['foto'];
     $user = $_POST['usuario'];
+    if($foto==null){
+        $foto="foto_00.jpg";
+    }
     $sql ="SELECT COUNT(`id_persona`) FROM personas WHERE `id_persona` =$documento";
     $valor_id = mysqli_query($conexion,$sql);
     $validarPK= mysqli_fetch_array($valor_id);
