@@ -53,7 +53,7 @@
 							data:cadena,
 							success:function(r){
 								if(r==1){
-									window.location="adm_clt.php";
+									window.location="adm_ent.php";
 								}else if (r==2) {
 									window.location="prueba.php";
 								}else{
