@@ -1,0 +1,53 @@
+.hijo-1 {
+    width: 30%;
+    height: 200px;
+    margin: 0 auto;
+    border: 3px solid #000;
+
+    display: grid;
+    place-content: center;
+}
+
+.div-btns {
+    margin-top: 5px;
+}
+
+.inp-doc {
+    height: 25px;
+}
+
+.btn {
+    width: 48.83%;
+    height: 30px;
+}
+
+.torniquete {
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    place-content: center;
+}
+
+.hijo-2 {
+    width: 50%;
+    margin: 0 auto;
+
+    display: grid;
+    place-content: center;
+}
+
+table {
+    width: 200%;
+    margin: auto -50%;
+    border-spacing: 0;
+}
+
+th, td {
+    vertical-align: top;
+    border: 1px solid #000;
+}
+
+td {
+    text-align: center;
+}
