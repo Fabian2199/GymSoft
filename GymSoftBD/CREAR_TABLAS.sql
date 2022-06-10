@@ -42,7 +42,7 @@ create table USUARIOS(
 
 create table FACTURAS(
    id_factura		 INT	     not null,
-   fecha_nac		DATE     not null,
+   fecha_fac		DATE     not null,
    id_admin		VARCHAR(50)     not null,
    id_cliente		 VARCHAR(50)	     not null		     
 );
