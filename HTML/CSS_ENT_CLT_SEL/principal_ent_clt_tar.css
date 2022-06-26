@@ -1,0 +1,149 @@
+
+.principal{
+	width: 100%;
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	
+}
+.datos_gen{
+	width: 100%;
+	max-width: 300px;
+	margin-top: 1%;
+	margin: 10px;
+	-webkit-perspective: 1500;
+	perspective:1500;
+	
+}
+.ficha_gen{
+	width: 100%;
+	max-width: 800px;
+	margin-top: 1%;
+	margin: 10px;
+	-webkit-perspective: 1500;
+	perspective:1500;
+	
+}
+.rutina_gen{
+	width: 100%;
+	max-width: 900px;
+	margin-top: 1%;
+	margin: 10px;
+	-webkit-perspective: 1500;
+	perspective:1500;
+	
+}
+.datos{
+	width: 100%;
+	height: 800px;
+	background-color: aquamarine;
+	background-size: cover;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: 2s ease;
+	border-radius: 20px;
+	border-color: white;
+	border-width: 5px;
+	border-style: solid;
+
+	
+}
+
+.ficha{
+	width: 100%;
+	height: 800px;
+	background-color: aquamarine;
+	background-size: cover;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: 2s ease;
+	border-radius: 20px;
+	border-color: white;
+	border-width: 5px;
+	border-style: solid;
+
+	
+}
+
+.rutina{
+	width: 100%;
+	height: 800px;
+	background-color: aquamarine;
+	background-size: cover;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: 2s ease;
+	border-radius: 20px;
+	border-color: white;
+	border-width: 5px;
+	border-style: solid;
+
+	
+}
+.adelante img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	border-radius: 20px;
+	width: 285px;
+	height: 200px;
+}
+
+.adelante , .atras{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	backface-visibility: hidden;
+}
+.adelante h1{
+	padding: 10px;
+	background: rgba(51,51,51,0.7);
+	color: rgba(243,238,218,1);
+	opacity: 0.9;
+	border: 3px solid rgb(0, 0, 0);
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	text-align: center;
+}
+
+.atras h1{
+	padding: 10px;
+	background: rgba(51,51,51,0.7);
+	color: rgba(243,238,218,1);
+	opacity: 0.9;
+	border: 3px solid rgb(0, 0, 0);
+	margin-top: 20px;
+	margin-right: 10px;
+	margin-left: 10px;
+	text-align: center;
+	font-size: 25px;
+}
+.atras a{
+	text-decoration: none;
+}
+.atras p{
+	font-family: "Bahnschrift Condensed";
+	font-size: 22px;
+}
+footer{
+	width: 100%;
+	background: rgba(51,51,51,0.9);
+}
+.contenedor p{
+	text-align: center;
+	color: white;
+	font-style: 28px;
+}
+.sociales{
+	width: 100%;
+	text-align: center;
+	font-size: 28px;
+}
+.sociales a{
+	color: white;
+}
