@@ -43,7 +43,7 @@
 				<div for="tar" class="gen">
 					<div class="targeta " id="tar">
 						<div class="adelante">
-							<a onclick="cliente_seleccionado($row['id_persona'])" href="ent_clt_sel.php">
+							<a  href="ent_clt_sel.php?id_persona=<?php echo $row['id_persona']; ?>">
 								<h1><?php echo $row['nombres'] . " " . $row['apellidos']; ?></h1>
 							</a>
 							<img src=<?php echo "img_per\\" . $row['foto']; ?> alt="">
@@ -71,18 +71,6 @@
 				success: function(data) {
 					document.getElementById("principal").innerHTML = data;
 				}
-			});
-		}
-	</script>
-	<script type="text/javascript">
-		function cliente_seleccionado(id_cliente) {
-			var parametros = {
-				"id_cliente": buscar
-			};
-			$.ajax({
-				data: parametros,
-				type: 'POST',
-				url: 'db_connection/ent_clt_dato.php'
 			});
 		}
 	</script>

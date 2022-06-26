@@ -1,4 +1,9 @@
-<?php include("db_connection\mtr_clt.php") ?>
+<?php include("db_connection\dato_ent_clt.php") ?>
+<?php  
+$id = $_GET['id_persona'];
+$rutina = get_rutina($id);
+$datos = get_datos($id);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -36,9 +41,14 @@
 				<div class="datos " id="tar">
 					<div class="adelante">
 						<h1>Datos</h1>
-						<img src=""alt="">
-						<img src=""alt="">
-						<img src=""alt="">
+						<?php while ($row = $datos->fetch_assoc()) { ?>
+							<img src="<?php echo "img_per\\" . $row['foto']; ?>" alt="">
+							<h1 class="h1_datos"><?php echo $row['nombres']; ?></h1>
+							<h1 class="h1_datos"><?php echo $row['apellidos']; ?></h1>
+							<h1 class="h1_datos"><?php echo $row['celular']; ?></h1>
+							<h1 class="h1_datos">Inicio Plan: <?php echo $row['fecha_ini']; ?></h1>
+							<h1 class="h1_datos">Fin Plan: <?php echo $row['fecha_fin']; ?></h1>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
@@ -54,7 +64,26 @@
 				<div class="rutina " id="tar">
 					<div class="adelante">
 						<h1>Rutina</h1>
-						<img src=""alt="">
+						<table>
+							<thead>
+								<th>Dia</th>
+								<th>Ejercicio</th>
+								<th>Imagen</th>
+								<th>Número de series</th>
+								<th>Número de repeticiones</th>
+							</thead>
+							<tbody>
+							<?php while ($row = $rutina->fetch_assoc()) { ?>
+								<tr>
+									<th><?php echo $row['dia']; ?></th>
+									<th><?php echo $row['nombre_ejercicio']; ?></th>
+									<th><img src="<?php echo "img_ejer\\" . $row['imagen']; ?>" alt="" class="imagen_ejr"></th>
+									<th><?php echo $row['n_series']; ?></th>
+									<th><?php echo $row['n_rep']; ?></th>
+								</tr>
+							<?php } ?>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>

@@ -1,43 +1,52 @@
-
-.principal{
+.principal {
 	width: 100%;
 	margin-top: 50px;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	
+	background-color: #ffffff;
+	opacity: 1;
+	background-image:  radial-gradient(#888888 0.7000000000000001px, transparent 0.7000000000000001px), radial-gradient(#888888 0.7000000000000001px, #ffffff 0.7000000000000001px);
+	background-size: 28px 28px;
+	background-position: 0 0,14px 14px;
 }
-.datos_gen{
+
+
+.datos_gen {
 	width: 100%;
-	max-width: 300px;
+	max-width: 400px;
 	margin-top: 1%;
 	margin: 10px;
 	-webkit-perspective: 1500;
-	perspective:1500;
-	
+	perspective: 1500;
+
 }
-.ficha_gen{
+
+.ficha_gen {
 	width: 100%;
 	max-width: 800px;
 	margin-top: 1%;
 	margin: 10px;
 	-webkit-perspective: 1500;
-	perspective:1500;
-	
+	perspective: 1500;
+
 }
-.rutina_gen{
+
+.rutina_gen {
 	width: 100%;
 	max-width: 900px;
 	margin-top: 1%;
 	margin: 10px;
 	-webkit-perspective: 1500;
-	perspective:1500;
-	
+	perspective: 1500;
+
 }
-.datos{
+
+.datos {
 	width: 100%;
 	height: 800px;
-	background-color: aquamarine;
+	background-color: #ff9b11;
+	;
 	background-size: cover;
 	position: relative;
 	transform-style: preserve-3d;
@@ -47,13 +56,14 @@
 	border-width: 5px;
 	border-style: solid;
 
-	
+
 }
 
-.ficha{
+.ficha {
 	width: 100%;
 	height: 800px;
-	background-color: aquamarine;
+	background-color: #ff9b11;
+	;
 	background-size: cover;
 	position: relative;
 	transform-style: preserve-3d;
@@ -63,13 +73,13 @@
 	border-width: 5px;
 	border-style: solid;
 
-	
+
 }
 
-.rutina{
+.rutina {
 	width: 100%;
 	height: 800px;
-	background-color: aquamarine;
+	background-color: #ff9b11;
 	background-size: cover;
 	position: relative;
 	transform-style: preserve-3d;
@@ -78,10 +88,12 @@
 	border-color: white;
 	border-width: 5px;
 	border-style: solid;
+	overflow: scroll;
 
-	
+
 }
-.adelante img{
+
+.adelante img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -91,7 +103,39 @@
 	height: 200px;
 }
 
-.adelante , .atras{
+table {
+	width: 90%;
+	margin-left: 5%;
+	border-collapse: collapse;
+	margin-top: 50px;
+}
+
+
+tr:nth-of-type(odd) {
+	background: #eee;
+}
+
+th {
+	background: #333;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+}
+
+td,
+th {
+	padding: 6px;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+
+table .imagen_ejr {
+	width: 90px;
+	height: 90px;
+}
+
+.adelante,
+.atras {
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -99,51 +143,67 @@
 	left: 0;
 	backface-visibility: hidden;
 }
-.adelante h1{
+
+.adelante h1 {
 	padding: 10px;
-	background: rgba(51,51,51,0.7);
-	color: rgba(243,238,218,1);
+	background: rgba(51, 51, 51, 0.7);
+	color: rgba(243, 238, 218, 1);
 	opacity: 0.9;
 	border: 3px solid rgb(0, 0, 0);
+	border-radius: 15px;
 	margin-top: 10px;
 	margin-right: 10px;
 	margin-left: 10px;
 	text-align: center;
 }
-
-.atras h1{
+.adelante .h1_datos{
 	padding: 10px;
-	background: rgba(51,51,51,0.7);
-	color: rgba(243,238,218,1);
+	background: rgba(51, 51, 51, 0.7);
+	color: rgba(243, 238, 218, 1);
 	opacity: 0.9;
 	border: 3px solid rgb(0, 0, 0);
-	margin-top: 20px;
+	border-radius: 15px;
+	margin-top: 10px;
 	margin-right: 10px;
 	margin-left: 10px;
 	text-align: center;
-	font-size: 25px;
+	font-size: 5px;
 }
-.atras a{
+
+.adelante a{
+	padding: 10px;
+	background: rgba(51, 51, 51, 0.7);
+	color: rgba(243, 238, 218, 1);
+	opacity: 0.9;
+	border: 3px solid rgb(0, 0, 0);
+	border-radius: 15px;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	text-align: center;
 	text-decoration: none;
 }
-.atras p{
-	font-family: "Bahnschrift Condensed";
-	font-size: 22px;
+.adelante a:hover{
+	background: rgba(221, 215, 215, 0.7);
 }
-footer{
+
+footer {
 	width: 100%;
-	background: rgba(51,51,51,0.9);
+	background: rgba(51, 51, 51, 0.9);
 }
-.contenedor p{
+
+.contenedor p {
 	text-align: center;
 	color: white;
 	font-style: 28px;
 }
-.sociales{
+
+.sociales {
 	width: 100%;
 	text-align: center;
 	font-size: 28px;
 }
-.sociales a{
+
+.sociales a {
 	color: white;
 }
