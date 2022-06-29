@@ -37,3 +37,10 @@ SELECT r.dia,e.nombre_ejercicio,r.n_series,r.n_rep FROM rutinas r JOIN usuarios 
 SELECT * FROM personas p JOIN usuarios u ON p.id_persona = u.id_persona JOIN facturas f ON f.id_cliente = u.id_user JOIN detalles_fac d ON d.id_factura = f.id_factura WHERE f.fecha_nac = 
 
 SELECT MAX(f.fecha_nac) FROM facturas f JOIN usuarios u ON f.id_cliente = u.id_user JOIN personas p ON u.id_persona = p.id_persona WHERE p.id_persona = 1010136222
+
+SELECT * FROM ficha_antropometrica f JOIN usuarios u ON f.id_entrenador = u.id_user JOIN personas p ON p.id_persona = u.id_user 
+WHERE f.id_cliente = (SELECT us.id_user FROM usuarios us JOIN personas pe ON us.id_persona = pe.id_persona WHERE pe.id_persona = 1010136222 AND us.tipo_user = 'cliente')
+
+SELECT f.id_ficha, f.fecha FROM ficha_antropometrica f WHERE f.id_cliente = (SELECT us.id_user FROM usuarios us JOIN personas pe ON us.id_persona = pe.id_persona WHERE pe.id_persona = 1010136222 AND us.tipo_user = 'cliente')  
+
+SELECT * FROM ficha_antropometrica f JOIN usuarios u ON f.id_entrenador = u.id_user JOIN personas p ON p.id_persona = u.id_persona WHERE f.id_ficha = 10001
