@@ -1,8 +1,9 @@
 <?php include("db_connection\dato_ent_clt.php") ?>
-<?php  
+<?php
 $id = $_GET['id_persona'];
 $rutina = get_rutina($id);
 $datos = get_datos($id);
+$ficha = get_ficha($id);
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,10 +15,8 @@ $datos = get_datos($id);
 	<link rel="stylesheet" type="text/css" href="CSS_ENT_CLT_SEl/menu.css">
 	<link rel="stylesheet" type="text/css" href="iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="CSS_ENt_CLT_SEl/principal_ent_clt.css">
-	<link rel="stylesheet" type="text/css" href="CSS_ENT_CLT_SEl/principal_ent_clt_taR.css">
+	<link rel="stylesheet" type="text/css" href="CSS_ENT_CLT_SEL/principal_ent_clt_taR.css">
 	<script language="javascript" src="js\jquery-3.6.0.min.js"></script>
-	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 
@@ -56,7 +55,18 @@ $datos = get_datos($id);
 				<div class="ficha " id="tar">
 					<div class="adelante">
 						<h1>Valoraciones</h1>
-						<img src=""alt="">
+						<select name="ficha" id="ficha">
+							<option value="100">Seleccionar fecha </option>
+							<?php foreach ($ficha as $opciones) : ?>
+								<option value="<?php echo $opciones['id_ficha']; ?>"><?php echo $opciones['fecha']; ?></option>
+							<?php endforeach ?>
+						</select>
+						<div class="contenedor-inputs" id="contenedor-inputs">
+							<h1 class='h1_datos'>Entrenador: </h1>
+							<h1 class='h1_datos'>Datos y medidas:</h1>
+							<h1 class='h1_datos'>Adipometria:</h1>
+							<h1 class='h1_datos'>Antecedentes medicos:</h1>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -73,22 +83,22 @@ $datos = get_datos($id);
 								<th>Número de repeticiones</th>
 							</thead>
 							<tbody>
-							<?php while ($row = $rutina->fetch_assoc()) { ?>
-								<tr>
-									<th><?php echo $row['dia']; ?></th>
-									<th><?php echo $row['nombre_ejercicio']; ?></th>
-									<th><img src="<?php echo "img_ejer\\" . $row['imagen']; ?>" alt="" class="imagen_ejr"></th>
-									<th><?php echo $row['n_series']; ?></th>
-									<th><?php echo $row['n_rep']; ?></th>
-								</tr>
-							<?php } ?>
+								<?php while ($row = $rutina->fetch_assoc()) { ?>
+									<tr>
+										<th><?php echo $row['dia']; ?></th>
+										<th><?php echo $row['nombre_ejercicio']; ?></th>
+										<th><img src="<?php echo "img_ejer\\" . $row['imagen']; ?>" alt="" class="imagen_ejr"></th>
+										<th><?php echo $row['n_series']; ?></th>
+										<th><?php echo $row['n_rep']; ?></th>
+									</tr>
+								<?php } ?>
 							</tbody>
 						</table>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+
 	</main>
 	<footer>
 		<div class="sociales">
@@ -97,6 +107,6 @@ $datos = get_datos($id);
 		</div>
 	</footer>
 </body>
-
+<script src="CSS_ENT_CLT_SEL\combobox.js"></script>
 
 </html>

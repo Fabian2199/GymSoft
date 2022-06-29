@@ -23,6 +23,13 @@ INSERT INTO `rutinas` (`id_entrenador`, `id_cliente`, `id_ejercicio`, `dia`, `n_
 
 ---prueba factura
 INSERT INTO `facturas` (`id_factura`, `fecha_nac`, `id_admin`, `id_cliente`) VALUES ('701', '2022-06-27', 'adm1010136222', 'clt1010136222');
+INSERT INTO `detalles_fac` (`id_plan`, `id_factura`, `id_servicio`, `estado_plan`, `fecha_ini`, `fecha_fin`) VALUES ('301', '701', '402', '0', '2022-06-27 13:36:36', '2022-06-27 13:36:36');
+
+--prueba ficha
+INSERT INTO `ficha_antropometrica` (`id_ficha`, `id_entrenador`, `id_cliente`, `fecha`, `edad`, `peso`, `estatura`, `cuello`, `hombro`, `pecho`, `espalda`, `br_izq`, `br_der`, `ant_izq`, `ant_der`, `cintura`, `abdomen`, `cadera`, `pr_izq`, `pr_der`, `pnt_izq`, `pnt_der`, `por_grasa`, `valor_tension`, `pulso`, `adipo_tri`, `adipo_abdo`, `adipo_supra`, `adipo_sube`, `t_cuerpo`, `imc`, `embarazo`, `cardiaco`, `hipoglisemia`, `alergias`, `migrana`, `asma`, `les_osea`, `les_musc`, `tens_arterial`, `colesterol`, `trigliceridos`, `observaciones`) 
+VALUES ('10001', 'ent40037079', 'clt1010136222', '2022-06-28', '22', '80', '1.80', '20', '10', '45', '50', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '45', '15', '11', '10', '10', '10', 'hombre', '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'sano'),
+ ('10002', 'ent40037079', 'clt1010136222', '2022-06-29', '22', '80', '1.80', '20', '10', '45', '50', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '45', '15', '11', '10', '10', '10', 'hombre', '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'sano'),
+  ('10003', 'ent40037079', 'clt1010136222', '2022-06-30', '22', '80', '1.80', '20', '10', '45', '50', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '10', '45', '15', '11', '10', '10', '10', 'hombre', '11', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 'sano');
 
 --- consultas
 SELECT * FROM detalles_fac d JOIN facturas f on f.id_factura = d.id_factura JOIN usuarios u ON u.id_user = f.id_cliente JOIN personas p ON u.id_persona = p.id_persona;

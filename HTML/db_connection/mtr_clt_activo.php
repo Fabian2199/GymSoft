@@ -19,7 +19,7 @@ if (!empty($_POST)) {
         echo '<div for="tar" class="gen">';
         echo '<div class="targeta " id="tar">';
         echo '<div class="adelante">';
-        echo '<a onclick="cliente_seleccionado('.$row['id_persona'].')" href="ent_clt_sel.php">';
+        echo '<a  href="ent_clt_sel.php?id_persona='.$row['id_persona'].'">';
         echo '<h1>' . $row['nombres'] . ' ' . $row['apellidos'] . '</h1>';
 		echo '</a>';
         echo '<img src= "'.$imagen.'" alt="">';

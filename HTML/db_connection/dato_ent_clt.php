@@ -12,6 +12,12 @@
     $consulta_datos = $conexion->query($slq_datos);
     return $consulta_datos;
   };
-  
+  function get_ficha($id_persona){
+    include ('connection.php');
+    $sql_ficha = "SELECT f.id_ficha, f.fecha FROM ficha_antropometrica f WHERE f.id_cliente = (SELECT us.id_user FROM usuarios us JOIN personas pe ON us.id_persona = pe.id_persona 
+    WHERE pe.id_persona = ".$id_persona." AND us.tipo_user = 'cliente')";
+    $consulta_ficha = $conexion -> query($sql_ficha);
+    return $consulta_ficha; 
+  }
   
 ?>
