@@ -26,7 +26,7 @@
 			<label class="fas fa-bars" for="menu-bar"></label>
 			<nav class="menu2">
 				<a href="adm_ejer.php">Agregar rutina</a>
-				<a href="adm_ent.php">Agregar ficha antropometrica</a>
+				<a href="ficha.php.php">Agregar ficha antropometrica</a>
 				<a href="adm_ent.php">Configuracion</a>
 			</nav>
 			<div class="busqueda">
