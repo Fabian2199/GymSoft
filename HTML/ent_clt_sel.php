@@ -1,3 +1,5 @@
+<?php include ("db_connection\mtr_ejr.php")?>
+<?php include ("db_connection\connection.php")?>
 <?php include("db_connection\dato_ent_clt.php") ?>
 <?php
 $id = $_GET['id_persona'];
@@ -17,6 +19,9 @@ $ficha = get_ficha($id);
 	<link rel="stylesheet" type="text/css" href="CSS_ENt_CLT_SEl/principal_ent_clt.css">
 	<link rel="stylesheet" type="text/css" href="CSS_ENT_CLT_SEL/principal_ent_clt_taR.css">
 	<script language="javascript" src="js\jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css_ent_rut/popup.css">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 
@@ -32,6 +37,46 @@ $ficha = get_ficha($id);
 				<a href="adm_ent.php">Agregar ficha antropometrica</a>
 				<a href="adm_ent.php">Configuracion</a>
 			</nav>
+		</div>
+		<!-- clase overlay es una ventana emergente para agregar una rutina -->
+		<div class="overlay-agregar-rutina" id="overlay-agregar-rutina">
+			<div class="popup-agregar-rutina" id="popup-agregar-rutina">
+				<a href="#" id="btn-cerrar-popup-agregar-rutina" class="btn-cerrar-popup-agregar-rutina"><i class="fas fa-times"></i></a>
+				<h3>AGREGAR RUTINA</h3>
+				<h4>completa el siguiente formulario</h4>
+				<form action="db_connection/agregarRutina.php" method="post">
+					<?php
+					$query = "SELECT us.id_user, pe.nombres, pe.apellidos FROM usuarios us, personas pe WHERE us.id_persona = pe.id_persona AND tipo_user LIKE 'cliente';";
+					$consul = mysqli_query($conexion, $query);
+					?>
+					<select name="clientes" id="ejers">
+						<option value="100">Seleccionar cliente</option>
+						<?php foreach($consul as $personas):?>
+							<option value="<?php echo $personas['id_user']; ?>"><?php echo $personas['nombres']." ".$personas['apellidos']; ?></option>
+						<?php endforeach ?>
+					</select>
+
+					<select name="ejercicios" id="ejers">
+							<option value="100">Seleccionar ejercicio</option>
+						<?php foreach($consulta as $ejercicios):?>
+							<option value="<?php echo $ejercicios['id_ejercicio']; ?>"><?php echo $ejercicios['nombre_ejercicio']; ?></option>
+						<?php endforeach ?>
+					</select>
+
+					<select name="dias" id="ejers">
+						<option value="100">Seleccionar día</option>
+						<?php $semana = ['LUNES','MARTES','MIERCOLES','JUEVES','VIERNES','SABADO','DOMINGO']?>
+						<?php foreach($semana as $index => $dia):?>
+							<option value="<?php echo $dia; ?>"><?php echo $dia; ?></option>
+							<!--<option value="<?php echo array_search($dia,array_keys($semana)); ?>"><?php echo $dia; ?></option>-->
+						<?php endforeach ?>
+					</select>
+
+					<input type="number" name="num_series" placeholder="Numero de series">
+					<input type="number" name="num_repeticiones" placeholder="Numero de repeticiones">
+					<input type="submit" value="Guardar">
+				</form>
+			</div>
 		</div>
 	</header>
 	<main>
@@ -74,6 +119,7 @@ $ficha = get_ficha($id);
 				<div class="rutina " id="tar">
 					<div class="adelante">
 						<h1>Rutina</h1>
+						<input id="btn-popup-agregar-rutina" class="btn btn-popup-agregar-rutina" type="button" name="btnAgregarRutina" value="Agregar rutina">
 						<table>
 							<thead>
 								<th>Dia</th>
@@ -108,5 +154,5 @@ $ficha = get_ficha($id);
 	</footer>
 </body>
 <script src="CSS_ENT_CLT_SEL\combobox.js"></script>
-
+<script src="css_ent_rut/popup.js"></script>
 </html>
