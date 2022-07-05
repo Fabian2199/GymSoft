@@ -1,0 +1,172 @@
+
+
+.contenedor  .btn-popup-pagar-factura {
+	padding: 0 20px;
+	margin-bottom: 20px;
+	height:60px;
+	line-height: 40px;
+	border: none;
+	color: #fff;
+	background: #f47a21;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .3s ease all;
+	cursor: pointer;
+}
+
+.contenedor  .btn-popup-pagar-factura:hover {
+	background: #f47a21;
+}
+
+/* ------------------------- */
+/* POPUP */
+/* ------------------------- */
+
+.overlay-pagar-factura {
+	background: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	visibility: hidden;
+}
+
+.overlay-pagar-factura.active {
+	visibility: visible;
+}
+
+.popup-pagar-factura {
+	background: #ea5e22;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	padding: 20px;
+	text-align: center;
+	width: 600px;
+	
+	transition: .3s ease all;
+	transform: scale(0.7);
+	opacity: 0;
+}
+
+.popup-pagar-factura .btn-cerrar-popup-pagar-factura {
+	font-size: 16px;
+	line-height: 16px;
+	display: block;
+	text-align: right;
+	transition: .3s ease all;
+	color: #BBBBBB;
+}
+
+.popup-pagar-factura .btn-cerrar-popup-pagar-factura:hover {
+	color: #000;
+}
+
+.popup-pagar-factura h3 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	opacity: 0;
+}
+
+.popup-pagar-factura h4 {
+	font-size: 26px;
+	font-weight: 300;
+	margin-bottom: 40px;
+	opacity: 0;
+}
+
+.popup-pagar-factura form .contenedor-inputs {
+	opacity: 0;
+}
+
+.popup-pagar-factura form .contenedor-inputs input {
+	width: 100%;
+	margin-bottom: 20px;
+	height: 52px;
+	font-size: 18px;
+	line-height: 52px;
+	text-align: center;
+}
+.popup-pagar-factura form .contenedor-inputs label {
+	width: 90%;
+	height: 52px;
+	font-size: 45px;
+	font-family: 'Montserrat';
+	line-height: 52px;
+	text-align: left;
+	background-color: #ea5e22;
+	margin-top: 0%;
+	margin-bottom: 5px;
+}
+
+.popup-pagar-factura form .contenedor-inputs textarea {
+	width: 100%;
+	height: 150px;
+	font-size: 18px;
+	line-height: 52px;
+	text-align: center;
+	margin-top: 0%;
+	margin-bottom: 20px;
+}
+
+.popup-pagar-factura form .btn-submit {
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	color: #fff;
+	background: #f47a21;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .3s ease all;
+}
+
+.popup-pagar-factura form .btn-submit:hover {
+	background: #bd9b828c;
+}
+
+/* ------------------------- */
+/* ANIMACIONES */
+/* ------------------------- */
+.popup-pagar-factura.active {	transform: scale(1); opacity: 1; }
+.popup-pagar-factura.active h3 { animation: entradaTitulo .8s ease .5s forwards; }
+.popup-pagar-factura.active h4 { animation: entradaSubtitulo .8s ease .5s forwards; }
+.popup-pagar-factura.active .contenedor-inputs { animation: entradaInputs 1s linear 1s forwards; }
+
+@keyframes entradaTitulo {
+	from {
+		opacity: 0;
+		transform: translateY(-25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaSubtitulo {
+	from {
+		opacity: 0;
+		transform: translateY(25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaInputs {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
