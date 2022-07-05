@@ -1,4 +1,5 @@
 <?php include ("db_connection\mtr_ejr.php")?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,12 +10,14 @@
 	<link rel="stylesheet" type="text/css" href="iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<!--<link rel="stylesheet" type="text/css" href="css_adm_ejer/principal_adm_ejer.css">-->
 
-	<link rel="stylesheet" type="text/css" href="CSS_ADM_EJER/banner.css">
+	<!--<link rel="stylesheet" type="text/css" href="CSS_ADM_EJER/banner.css">-->
 	<link rel="stylesheet" type="text/css" href="CSS_ADM_EJeR/principal_adm_ejer_tar.css">
-	<link rel="stylesheet" type="text/css" href="css_adm_eJer/popup.css">
-	<link rel="stylesheet" type="text/css" href="css_adm_ejEr/popup_update.css">
+	<!--<link rel="stylesheet" type="text/css" href="css_adm_eJer/popup.css">-->
 
-	<link rel="stylesheet" type="text/css" href="css/Style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css_adm_Fac/popup.css">
+
+
 	<script language="javascript" src="js\jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -25,25 +28,33 @@
 			<label class="fas fa-bars" for="menu-bar"></label>
 			<nav class="menu2">
 				<a href="adm_clt.php">CLIENTES</a>
-				<a href="">ENTRENADORES</a>
+				<a href="adm_ent.php">ENTRENADORES</a>
 				<a href="facturacion.php">FACTURACION</a>
 				<a href="">INGRESO</a>
 			</nav>
-            <!-- clase overlay es una ventana emergente para agregar un ejercicio -->
-            <div class="overlay" id="overlay">
-                <div class="popup" id="popup">
-                    <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-                    <h3>AÑADIR EJERCICIO</h3>
+            <!-- clase overlay es una ventana emergente para pagar una factura -->
+            <div class="overlay-pagar-factura" id="overlay-pagar-factura">
+                <div class="popup-pagar-factura" id="popup-pagar-factura">
+                    <a href="#" id="btn-cerrar-popup-pagar-factura" class="btn-cerrar-popup-pagar-factura"><i class="fas fa-times"></i></a>
+                    <h3>PAGAR FACTURA</h3>
                     <h4>completa el siguiente formulario</h4>
-                    <form action="db_connection\reg_ejr.php" method="post">
-                        <div class="contenedor-inputs">
-                            <input type="text" placeholder="Nombre Ejercicio" name="ejercicio">
-                            <textarea name="descripcion" placeholder="Descripcion" ></textarea>
-                            <input type="text" placeholder="URL video ejercicio (opcional)" name="video">
-                            <label for="">Seleccione Imagen: </label>
-                            <input type="file" name="imagen">
-                        </div>
-                        <input type="submit" class="btn-submit" value="AÑADIR">
+                    <form action="db_connection/pagarFactura.php" method="post">
+                        <input type="text" name="doc_cliente" placeholder="Documento">
+
+                        <?php
+                        $query = "SELECT id_plan, nombre_plan FROM planes;";
+                        $consul = mysqli_query($conexion, $query);
+                        ?>
+                        <select name="nombre_plan" id="ejers">
+                            <option value="100">Seleccionar plan</option>
+                            <?php foreach($consul as $personas):?>
+                                <option value="<?php echo $personas['id_plan']; ?>"><?php echo $personas['nombre_plan']; ?></option>
+                            <?php endforeach ?>
+                        </select>
+
+
+                        <input type="date" name="fecha_inicio_plan" placeholder="Fecha inicio">
+                        <input type="submit" value="Pagar">
                     </form>
                 </div>
             </div>
@@ -55,7 +66,7 @@
                 <input class="inp-doc" type="text" placeholder="Documento" name="buscarFactura">
                 <div class="div-btns">
                     <input class="btn" id="btnBuscar" onclick="buscarPersona()" type="submit" name="btnBuscar" value="Buscar">
-                    <input id="btn_update" class="btn btn_update" type="button" name="btnPagar" value="Pagar">
+                    <input id="btn-popup-pagar-factura" class="btn btn-popup-pagar-factura" type="button" name="btnPagar" value="Pagar">
                 </div>
             </form>
         </div>
@@ -67,26 +78,30 @@
                 <thead class="text-muted">
                     <th class="text-center">ID</th>
                     <th class="text-center">Cliente</th>
-                    <th class="text-center">Fecha de pago</th>
-                    <th class="text-center">Plan</th>
+                    <th class="text-center">Nombre del plan</th>
                     <th class="text-center">Fecha inicio</th>
+                    <th class="text-center">Fecha fin</th>
+                    <th class="text-center">Estado del plan</th>
                     <th class="text-center"></th>
                 </thead>
                 <tbody>
                     <?php include 'db_connection/connection.php';?>
                     <?php if(isset($_GET['btnBuscar'])) { ?>
                         <?php $busqueda = $_GET['buscarFactura']; ?>
-                        <?php $consulta = $conexion->query("SELECT * FROM detalles_fac WHERE nombre LIKE '%$busqueda%'"); ?>
+                        <?php $consulta = $conexion->query("SELECT det.id_factura, per.nombres, per.apellidos, pl.nombre_plan, det.fecha_ini, det.fecha_fin, det.estado_plan FROM detalles_fac det, planes pl, facturas fac, usuarios us, personas per where det.id_plan = pl.id_plan and det.id_factura = fac.id_factura and fac.id_cliente = us.id_user and us.id_persona = per.id_persona and per.id_persona = $busqueda"); // <------- query correcto ?;?>
+                        <?php// SELECT det.id_factura, per.nombres, per.apellidos, pl.nombre_plan, det.fecha_ini, det.fecha_fin, det.estado_plan FROM detalles_fac det, planes pl, facturas fac, usuarios us, personas per where det.id_plan = pl.id_plan and det.id_factura = fac.id_factura and fac.id_cliente = us.id_user and us.id_persona = per.id_persona and per.id_persona = 1598762665;?>
                         <?php while($row = $consulta->fetch_array()) { ?>
                             <tr>
-                                <td><?php echo $row['id']; ?></td>
-                                <td><?php echo $row['nombre']; ?></td>
-                                <td><?php echo $row['fecha_pago']; ?></td>
-                                <td><?php echo $row['plan']; ?></td>
-                                <td><?php echo $row['fecha_inicio']; ?></td>
-                                <?php $variable = $row['id']; ?>
-                                <td><input class="" type="submit" name="btnDescargarPDF" value="Descargar"><?php $id_dowload_pdf = $row['id']; ?></td>
-                                <!--<td><a href="crearPDF.php?id=<?php echo $row['id']; ?>">Descargar</a></td>-->
+                                <td><?php echo $row['id_factura']; ?></td>
+                                <td><?php echo $row['nombres']." ".$row['apellidos']; ?></td>
+                                <td><?php echo $row['nombre_plan']; ?></td>
+                                <td><?php $feI = explode(" ", $row['fecha_ini']); echo $feI[0]; ?></td>
+                                <td><?php $feF = explode(" ", $row['fecha_fin']); echo $feF[0]; ?></td>
+                                <td><?php if($row['estado_plan'] == 0){echo "Activado";} if($row['estado_plan'] == 1){echo "Desactivado";}?></td>
+                                <?php $variable = $row['id_factura']; ?>
+                                <td><a href="db_connection/misDatosPdf.php?id=<?php echo $row['id_factura']; ?>">Descargar</a></td>
+                                <!--<td><input class="" type="submit" name="btnDescargarPDF" value="Descargar"><?php $id_dowload_pdf = $row['id_factura']; ?></td>-->
+                                <!--<td><a href="crearPDF.php?id=<?php echo $row['id_factura']; ?>">Descargar</a></td>-->
                             </tr>
                         <?php } ?>
                     <?php } ?>
@@ -100,8 +115,10 @@
 			<a class="fab fa-instagram" href="https://www.instagram.com/bfreegym/"></a>
 		</div>
 	</footer>
-	<script src="css_adm_ejer/popup.js"></script>
+	<!--<script src="css_adm_ejer/popup.js"></script>
 	<script src="css_adm_ejeR/popup_update.js"></script>
-	<script src="css_adm_eJer/combobox.js"></script>
+	<script src="css_adm_eJer/combobox.js"></script>-->
+
+    <script src="css_adm_fac/popup.js"></script>
 </body>
 </html>
