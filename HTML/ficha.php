@@ -66,7 +66,7 @@
 				<input type="text" name="t_cuerpo" placeholder="Tipo de cuerpo">
 				<input type="number" name="imc"  placeholder="IMC"><br>
 				<h3><br>Situación de embarazo</h3><br>
-				<label class="container">Si
+				<label class="container" name="embarazo">Si
 				  <input type="radio"  value="0" name="embarazo">
 				  <span class="checkmark"></span>
 				</label>
@@ -76,7 +76,7 @@
 				</label>
 
 				<h3><br>Problemas cardiacos</h3><br>
-				<label class="container">Si
+				<label class="container" name="cardiaco">Si
 				  <input type="radio"  value="0" name="cardiaco">
 				  <span class="checkmark"></span>
 				</label>
@@ -86,7 +86,7 @@
 				</label>
 
 				<h3><br>Hipoglisemia</h3><br>
-				<label class="container">Si
+				<label class="container" name="hipoglisemia">Si
 				  <input type="radio"  value="0" name="hipoglisemia">
 				  <span class="checkmark"></span>
 				</label>
@@ -95,8 +95,8 @@
 				  <span class="checkmark"></span>
 				</label>
 
-				<h3><br>Alergias</h3><br>
-				<label class="container">Si
+				<h3><br>Alergias </h3><br>
+				<label class="container"  name="alergias">Si
 					<input type="radio"  value="0" name="alergias">
 					<span class="checkmark"></span>
 				</label>
@@ -106,17 +106,17 @@
 				</label>
 
 				<h3><br>Migraña</h3><br>
-				<label class="container">Si
+				<label class="container" name="migrana">Si
 					<input type="radio" value="0" name="migrana">
 					<span class="checkmark"></span>
 				</label>
-				<label class="container">No
+				<label class="container" name="migrana">No
 					<input type="radio" value="1" name="migrana">
 					<span class="checkmark"></span>
 				</label>
 
 				<h3><br>Asma</h3><br>
-				<label class="container">Si
+				<label class="container" name="asma">Si
 					<input type="radio"  value="0" name="asma">
 					<span class="checkmark"></span>
 				</label>
@@ -126,7 +126,7 @@
 				</label>
 
 				<h3><br>Lesiones oseas</h3><br>
-				<label class="container">Si
+				<label class="container" name="les_osea">Si
 					<input type="radio" value="0" name="les_osea">
 					<span class="checkmark"></span>
 				</label>
@@ -136,17 +136,17 @@
 				</label>
 
 				<h3><br>Lesiones musculares</h3><br>
-				<label class="container">Si
+				<label class="container" name="les_musc">Si
 					<input type="radio" value="0" name="les_musc">
 					<span class="checkmark"></span>
 				</label>
-				<label class="container">No
+				<label class="container" name="les_musc">No
 					<input type="radio" value="1" name="les_musc">
 					<span class="checkmark"></span>
 				</label>
 
-				<h3><br>Tension Arterial</h3><br>
-				<label class="container">Si
+				<h3><br>Tension Arterial </h3><br>
+				<label class="container" name="tens_arterial">Si
 					<input type="radio" value="0" name="tens_arterial">
 					<span class="checkmark"></span>
 				</label>
@@ -156,7 +156,7 @@
 				</label>
 
 				<h3><br>Colesterol</h3><br>
-				<label class="container">Si
+				<label class="container" name="colesterol">Si
 					<input type="radio"  value="0" name="colesterol">
 					<span class="checkmark"></span>
 				</label>
@@ -166,7 +166,7 @@
 				</label>
 
 				<h3><br>Trigliceridos</h3><br>
-				<label class="container">Si
+				<label class="container" name="trigliceridos">Si
 					<input type="radio"  value="0" name="trigliceridos">
 					<span class="checkmark"></span>
 				</label>
