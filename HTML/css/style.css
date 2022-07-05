@@ -7,13 +7,15 @@
 }
 
 body{
-	background: url(../img_gen/fondo.jpg) no-repeat center center fixed;
+	/*
+    background: url(../img_gen/fondo.jpg) no-repeat center center fixed;
+    */
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 	background: auto;
-	background-color: #db9271;
+	background-color: white;
 	z-index: 100%;
 }
 
