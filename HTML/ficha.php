@@ -179,7 +179,7 @@
 				</div>
     </form>
         <?php
-        include("db_connection.php");
+        include("db_connection/reg_ficha.php");
         ?>
 </body>
 </html>
