@@ -5,7 +5,7 @@
 
 	<?php require_once "scripts.php"; ?>
 </head>
-<body style="background: url('fondo.jpg') 50% fixed">
+<body style="background: url('img_login/fondo.jpg') 50% fixed">
 	<br><br><br>
 	<div class="container">
 		<div class="row">
