@@ -24,7 +24,7 @@
 
 ?>
 </head>
-<body style="background: url('fondo.jpg') 50% fixed">
+<body style="background: url('img_ficha/fondo.jpg') 50% fixed">
 <body>
     <form method="post">
 		<a href="ent_index.php" class="boton">Volver</a>
