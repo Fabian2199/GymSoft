@@ -20,6 +20,10 @@
 						<p></p>
 						<label>Usuario</label>
 						<input type="text" id="id_user" class="form-control input-sm" name="id_user">
+						<?php
+							$id_user = $_GET["id_user"];
+
+					  ?>
 						<label>Password</label>
 						<input type="password" id="contrasena" class="form-control input-sm" name="">
 						<p></p>
