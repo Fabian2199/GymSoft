@@ -27,7 +27,7 @@
 <body style="background: url('fondo.jpg') 50% fixed">
 <body>
     <form method="post">
-		<a href="ent_index.php" class="boton">Volvers</a>
+		<a href="ent_index.php" class="boton">Volver</a>
     	<h1><br>Ficha Antropometrica</h1>
 			<form action="reg_ficha.php" method="post">
 				<div class="contenedor-inputs">
