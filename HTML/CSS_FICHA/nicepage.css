@@ -4,7 +4,6 @@
  * Copyright 2014-2021 Froala Labs
  */
 
-
 .fr-clearfix::after {
   clear: both;
   display: block;
