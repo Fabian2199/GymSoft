@@ -1,5 +1,7 @@
 <?php
     include ("connection.php");
+    include ("login.php");
+    require_once "ficha.php";
     $id_ficha=$_POST['id_ficha'];
     $id_entrenador=$_POST['id_entrenador'];
     $id_cliente=$_POST['id_cliente'];
@@ -41,7 +43,7 @@
     $colesterol = $_POST['colesterol'];
     $trigliceridos = $_POST['trigliceridos'];
     $observaciones = $_POST['observaciones'];
-  
+
 
     $registro ="INSERT INTO `ficha_antropometrica` (`id_ficha`, `id_entrenador`, `id_cliente`, `fecha`, `edad`, `peso`, `estatura`, `cuello`, `hombro`, `pecho`, `espalda`, `br_izq`, `br_der`, `ant_izq`, `ant_der`, `cintura`, `abdomen`,
     `cadera`,`pr_izq`, `pr_der`, `pnt_izq`, `pnt_der`, `por_grasa`, `valor_tension`, `pulso`, `adipo_tri`, `adipo_abdo`, `adipo_supra`, `adipo_sube`, `t_cuerpo`, `imc`, `embarazo`, `cardiaco`, `hipoglisemia`, `alergias`, `migrana`, `asma`, `les_osea`,
