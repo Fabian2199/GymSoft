@@ -1,5 +1,5 @@
+/*Validacion de usuario en la base de datos*/
 <?php
-
 
 	session_start();
 	require_once "connection.php";
