@@ -27,7 +27,7 @@
 			<nav class="menu2">
 				<a href="adm_ejer.php">Agregar rutina</a>
 				<a href="ficha.php">Agregar ficha antropometrica</a>
-				<a href="adm_ent.php">Configuracion</a>
+				<a href="Configuracion.php">Configuracion</a>
 			</nav>
 			<div class="busqueda">
 				<h1>Buscar documento</h1>

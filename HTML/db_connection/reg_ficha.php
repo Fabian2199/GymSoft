@@ -1,7 +1,10 @@
 <?php
+    session_start();
     include ("connection.php");
+    include ("login.php");
+    require_once "ficha.php";
     $id_ficha=$_POST['id_ficha'];
-    $id_entrenador=$_POST['id_entrenador'];
+    $id_entrenador=$_SESSION['user'];
     $id_cliente=$_POST['id_cliente'];
     $fecha= $_POST['fecha'];
     $edad = $_POST['edad'];
@@ -20,6 +23,8 @@
     $cadera = $_POST['cadera'];
     $pr_izq = $_POST['pr_izq'];
     $pr_der = $_POST['pr_der'];
+    $pnt_izq = $_POST['pnt_izq'];
+    $pnt_der = $_POST['pnt_der'];
     $por_grasa = $_POST['por_grasa'];
     $valor_tension = $_POST['valor tension'];
     $pulso = $_POST['pulso'];
@@ -41,13 +46,13 @@
     $colesterol = $_POST['colesterol'];
     $trigliceridos = $_POST['trigliceridos'];
     $observaciones = $_POST['observaciones'];
-  
+
 
     $registro ="INSERT INTO `ficha_antropometrica` (`id_ficha`, `id_entrenador`, `id_cliente`, `fecha`, `edad`, `peso`, `estatura`, `cuello`, `hombro`, `pecho`, `espalda`, `br_izq`, `br_der`, `ant_izq`, `ant_der`, `cintura`, `abdomen`,
-    `cadera`,`pr_izq`, `pr_der`, `pnt_izq`, `pnt_der`, `por_grasa`, `valor_tension`, `pulso`, `adipo_tri`, `adipo_abdo`, `adipo_supra`, `adipo_sube`, `t_cuerpo`, `imc`, `embarazo`, `cardiaco`, `hipoglisemia`, `alergias`, `migrana`, `asma`, `les_osea`,
-    `les_musc`, `tens_arterial`, `colesterol`, `trigliceridos`, `observaciones`) VALUES ('$id_ficha', '$id_entrenador', '$id_cliente', '$fecha', '$edad', '$peso', '$estatura', '$cuello', '$hombro', '$pecho', '$espalda', '$br_izq', '$br_der', '$ant_izq', '$ant_der', '$cintura', '$abdomen', '$cadera',
-    '$pr_izq', '$pr_der', '$pnt_izq', '$pnt_der', '$por_grasa', '$valor_tension', '$pulso', '$adipo_tri', '$adipo_abdo', '$adipo_supra', '$adipo_sube', '$t_cuerpo', '$imc', '$embarazo', '$cardiaco', '$hipoglisemia', '$alergias', '$migrana', '$asma', '$les_osea',
-    '$les_musc', '$tens_arterial', '$colesterol', '$trigliceridos', '$observaciones')";
+    `cadera`,`pr_izq`, `pr_der`, `pnt_izq`, `pnt_der`, `por_grasa`, `valor_tension`, `pulso`, `adipo_tri`, `adipo_abdo`, `adipo_supra`, `adipo_sube`, `t_cuerpo`, `imc`, `embarazo`, `cardiaco`, `hipoglisemia`, `alergias`, `migrana`, `asma`,
+     `les_osea`,`les_musc`, `tens_arterial`, `colesterol`, `trigliceridos`, `observaciones`) VALUES ('$id_ficha', '$id_entrenador', '$id_cliente', '$fecha', '$edad', '$peso', '$estatura', '$cuello', '$hombro', '$pecho', '$espalda', '$br_izq', '$br_der', '$ant_izq',
+    '$ant_der', '$cintura', '$abdomen', '$cadera','$pr_izq', '$pr_der', '$pnt_izq', '$pnt_der', '$por_grasa', '$valor_tension', '$pulso', '$adipo_tri', '$adipo_abdo', '$adipo_supra', '$adipo_sube', '$t_cuerpo', '$imc', '$embarazo', '$cardiaco', '$hipoglisemia',
+    '$alergias', '$migrana', '$asma', '$les_osea','$les_musc', '$tens_arterial', '$colesterol', '$trigliceridos', '$observaciones')";
     $validar = mysqli_query($conexion,$registro);
 
 ?>

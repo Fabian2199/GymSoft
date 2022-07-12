@@ -11,8 +11,10 @@
 
 		$sql="SELECT * from usuarios where id_user='$usuario' and contrasena='$pass' and tipo_user='administrador'";
 		$sql_cliente="SELECT * from usuarios where id_user='$usuario' and contrasena='$pass' and tipo_user='cliente'";
+		$sql_entrenador="SELECT * from usuarios where id_user='$usuario' and contrasena='$pass' and tipo_user='entrenador'";
 		$result=mysqli_query($conexion,$sql);
 		$result_cliente=mysqli_query($conexion,$sql_cliente);
+		$result_entrenador=mysqli_query($conexion,$sql_entrenador);
 
 		if(mysqli_num_rows($result) > 0){
 			$_SESSION['user']=$usuario;
@@ -20,6 +22,9 @@
 		}elseif (mysqli_num_rows($result_cliente) > 0) {
 			$_SESSION['user']=$usuario;
 			echo 2;
+		}elseif (mysqli_num_rows($result_entrenador) > 0) {
+			$_SESSION['user']=$usuario;
+			echo 3;
 		}else{
 			echo 0;
 		}
