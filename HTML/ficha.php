@@ -5,8 +5,8 @@
     <meta name="keywords" content="Doing The Right Thing,&nbsp;At The Right Time">
     <meta name="description" content="">
     <title>Ficha AP</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Page-3.css" media="screen">
+    <link rel="stylesheet" href="CSS_FICHA/nicepage.css" media="screen">
+<link rel="stylesheet" href="CSS_FICHA/Page-3.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.13.4, nicepage.com">
