@@ -56,6 +56,8 @@
 									window.location="adm_ent.php";
 								}else if (r==2) {
 									window.location="prueba.php";
+								}else if (r==3) {
+								window.location="ent_index.php";
 								}else{
 									alertify.alert("Fallo al entrar :(");
 								}
