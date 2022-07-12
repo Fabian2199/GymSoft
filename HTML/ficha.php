@@ -1,3 +1,4 @@
+/*ficha antropometrica*/
 <!DOCTYPE html>
 <html style="font-size: 16px;"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,6 +51,7 @@
           <h1 class="u-align-center u-custom-font u-font-playfair-display u-text u-text-1">Ficha Antropometrica</h1>
           <h5 class="u-align-center u-text u-text-2">Rellene todos los campos</h5>
           <div class="u-expanded-width u-form u-form-1">
+            /*Formulario con los campos correspondientes a la ficha_antropometrica*/
             <form action="#" method="POST" class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form" style="padding: 0;" name="form">
               <div class="u-form-group u-form-select u-form-group-1">
                 <label for="select-0c1a" class="u-label">Cliente</label>
