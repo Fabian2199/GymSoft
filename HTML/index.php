@@ -1,3 +1,4 @@
+/*Login al sistema BodyFree*/
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +47,7 @@
 
 				cadena="id_user=" + $('#id_user').val() +
 						"&contrasena=" + $('#contrasena').val();
-
+						/*Direccionar al modulo que pertenece el usuario*/
 						$.ajax({
 							type:"POST",
 							url:"db_connection/login.php",
