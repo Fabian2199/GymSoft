@@ -31,39 +31,40 @@
 			<div class="col-sm-4"></div>
 		</div>
 	</div>
-	</body>
-	</html>
+</body>
+</html>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#entrarSistema').click(function(){
+			if($('#id_user').val()==""){
+				alertify.alert("Debes agregar el usuario");
+				return false;
+			}else if($('#contrasena').val()==""){
+				alertify.alert("Debes agregar el password");
+				return false;
+			}
+			
+			cadena="id_user=" + $('#id_user').val() +"&contrasena=" + $('#contrasena').val();
 
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('#entrarSistema').click(function(){
-				if($('#id_user').val()==""){
-					alertify.alert("Debes agregar el usuario");
-					return false;
-				}else if($('#contrasena').val()==""){
-					alertify.alert("Debes agregar el password");
-					return false;
+			$.ajax({
+				type:"POST",
+				url:"db_connection/login.php",
+				data:cadena,
+				success:function(r){
+					if(r==1){
+						//admin
+						window.location="adm_ent.php";
+					}else if (r==2) {
+						//cliente
+						window.location="prueba.php";
+					}else if (r==3) {
+						//entrenador
+						window.location="ent_index.php";
+					}else {
+						alertify.alert("Fallo al entrar :(");
+					}
 				}
-
-				cadena="id_user=" + $('#id_user').val() +
-						"&contrasena=" + $('#contrasena').val();
-						/*Direccionar al modulo que pertenece el usuario*/
-						$.ajax({
-							type:"POST",
-							url:"db_connection/login.php",
-							data:cadena,
-							success:function(r){
-								if(r==1){
-									window.location="adm_ent.php";
-								}else if (r==2) {
-									window.location="prueba.php";
-								}else if (r==3) {
-								window.location="ent_index.php";
-								}else{
-									alertify.alert("Fallo al entrar :(");
-								}
-							}
-						});
 			});
 		});
-	</script>
+	});
+</script>
