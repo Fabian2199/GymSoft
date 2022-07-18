@@ -76,111 +76,111 @@
               </div>
               <div class="u-form-group u-form-name u-form-partition-factor-3 u-form-group-3">
                 <label for="name-d70e" class="u-label">Edad</label>
-                <input type="number" placeholder="Edad" id="name-d70e" name="edad" class="u-input u-input-rectangle u-white" required="">
+                <input type="number" min="1" placeholder="Edad" id="name-d70e" name="edad" class="u-input u-input-rectangle u-white" required="">
               </div>
               <div class="u-form-address u-form-group u-form-partition-factor-3 u-form-group-4">
                 <label for="address-2127" class="u-label">Peso</label>
-                <input type="number" placeholder="Peso en kg" id="address-2127" name="peso" class="u-input u-input-rectangle u-white" required="">
+                <input type="number" min="1" placeholder="Peso en kg" id="address-2127" name="peso" class="u-input u-input-rectangle u-white" required="">
               </div>
               <div class="u-form-email u-form-group u-form-partition-factor-3 u-form-group-5">
                 <label for="email-d70e" class="u-label">Estatura</label>
-                <input type="number" placeholder="Estatura en cm" id="email-d70e" name="estatura" class="u-input u-input-rectangle u-white" required="required">
+                <input type="number" min="1" placeholder="Estatura en cm" id="email-d70e" name="estatura" class="u-input u-input-rectangle u-white" required="required">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-6">
                 <label for="text-b538" class="u-label">Cuello</label>
-                <input type="number" placeholder="Cuello" id="text-b538" name="cuello" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="Cuello" id="text-b538" name="cuello" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-7">
                 <label for="text-7664" class="u-label">Hombro</label>
-                <input type="number" placeholder="Hombro" id="text-7664" name="hombro" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="Hombro" id="text-7664" name="hombro" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-8">
                 <label for="text-6d16" class="u-label">Pecho</label>
-                <input type="number" placeholder="Pecho" id="text-6d16" name="pecho" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="Pecho" id="text-6d16" name="pecho" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-9">
                 <label for="text-c7cd" class="u-label">Espalda</label>
-                <input type="number" placeholder="Espalda" id="text-c7cd" name="espalda" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="Espalda" id="text-c7cd" name="espalda" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-10">
                 <label for="text-dfe2" class="u-label">Brazo Izquierdo</label>
-                <input type="number" placeholder="Brazo Izquierdo" id="text-dfe2" name="br_izq" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="Brazo Izquierdo" id="text-dfe2" name="br_izq" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-11">
                 <label for="text-c082" class="u-label">Brazo Derecho</label>
-                <input type="number" placeholder="Brazo Derecho" id="text-c082" name="br_der" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="Brazo Derecho" id="text-c082" name="br_der" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-12">
                 <label for="text-9f76" class="u-label">Ante-Brazo Izquierdo</label>
-                <input type="number" placeholder="Ante-Brazo Izquierdo" id="text-9f76" name="ant_izq" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="Ante-Brazo Izquierdo" id="text-9f76" name="ant_izq" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-13">
                 <label for="text-d504" class="u-label">Ante-Brazo Derecho</label>
-                <input type="number" placeholder="Ante-Brazo Derecho" id="text-d504" name="ant_der" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="Ante-Brazo Derecho" id="text-d504" name="ant_der" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-14">
                 <label for="text-ff79" class="u-label">Cintura</label>
-                <input type="number" placeholder="Cintura" id="text-ff79" name="cintura" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="Cintura" id="text-ff79" name="cintura" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-15">
                 <label for="text-8320" class="u-label">abdomen</label>
-                <input type="number" placeholder="abdomen" id="text-8320" name="abdomen" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="abdomen" id="text-8320" name="abdomen" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-16">
                 <label for="text-9534" class="u-label">cadera</label>
-                <input type="number" placeholder="cadera" id="text-9534" name="cadera" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="cadera" id="text-9534" name="cadera" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-17">
                 <label for="text-484e" class="u-label">Pierna Izquierda</label>
-                <input type="number" placeholder="Pierna Izquierda" id="text-484e" name="pr_izq" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="Pierna Izquierda" id="text-484e" name="pr_izq" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-18">
                 <label for="text-deec" class="u-label">Pierna Derecha</label>
-                <input type="number" placeholder="Pierna Derecha" id="text-deec" name="pr_der" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="Pierna Derecha" id="text-deec" name="pr_der" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-19">
                 <label for="text-d7f7" class="u-label">Pantorrilla Izquierda</label>
-                <input type="number" placeholder="Pantorrilla Izquierda" id="text-d7f7" name="pnt_izq" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="Pantorrilla Izquierda" id="text-d7f7" name="pnt_izq" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-20">
                 <label for="text-dccc" class="u-label">Pantorrilla Derecha</label>
-                <input type="number" placeholder="Pantorrilla Derecha" id="text-dccc" name="pnt_der" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="Pantorrilla Derecha" id="text-dccc" name="pnt_der" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-21">
                 <label for="text-7484" class="u-label">% de grasa</label>
-                <input type="number" placeholder="% de grasa" id="text-7484" name="por_grasa" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="% de grasa" id="text-7484" name="por_grasa" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-22">
                 <label for="text-6553" class="u-label">valor tension</label>
-                <input type="number" placeholder="valor tension" id="text-6553" name="valor_tension" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="valor tension" id="text-6553" name="valor_tension" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-23">
                 <label for="text-7b43" class="u-label">pulso</label>
-                <input type="number" placeholder="pulso" id="text-7b43" name="pulso" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="pulso" id="text-7b43" name="pulso" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-24">
                 <label for="text-1d9b" class="u-label">adipo_tri</label>
-                <input type="number" placeholder="adipo_tri" id="text-1d9b" name="adipo_tri" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="adipo_tri" id="text-1d9b" name="adipo_tri" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-25">
                 <label for="text-6676" class="u-label">adipo_apdo</label>
-                <input type="number" placeholder="adipo_apdo" id="text-6676" name="adipo_apdo" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="adipo_apdo" id="text-6676" name="adipo_apdo" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-26">
                 <label for="text-47d3" class="u-label">adipo_supra</label>
-                <input type="number" placeholder="adipo_supra" id="text-47d3" name="adipo_supra" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="adipo_supra" id="text-47d3" name="adipo_supra" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-27">
                 <label for="text-4ad9" class="u-label">adipo_sube</label>
-                <input type="number" placeholder="adipo_sube" id="text-4ad9" name="adipo_sube" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="adipo_sube" id="text-4ad9" name="adipo_sube" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-28">
                 <label for="text-d5d2" class="u-label">Tipo de Cuerpo</label>
-                <input type="number" placeholder="Tipo de Cuerpo" id="text-d5d2" name="t_cuerpo" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="Tipo de Cuerpo" id="text-d5d2" name="t_cuerpo" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-group-29">
                 <label for="text-51a6" class="u-label">IMC</label>
-                <input type="number" placeholder="IMC" id="text-51a6" name="imc" class="u-input u-input-rectangle u-white">
+                <input type="number" min="1" placeholder="IMC" id="text-51a6" name="imc" class="u-input u-input-rectangle u-white">
               </div>
               <div class="u-form-group u-form-partition-factor-3 u-form-select u-form-group-30">
                 <label for="select-b6df" class="u-label">Situación de embarazo</label>
