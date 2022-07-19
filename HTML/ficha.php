@@ -48,6 +48,7 @@
       <img alt="" class="u-expanded-height u-image u-image-default u-image-1" data-image-width="1000" data-image-height="1502" src="img/lateral.jpg">
       <div class="u-align-left u-container-style u-group u-group-1">
         <div class="u-container-layout u-valign-top u-container-layout-1">
+          <a href="ent_index.php" class="boton">Regresar</a>
           <h1 class="u-align-center u-custom-font u-font-playfair-display u-text u-text-1">Ficha Antropometrica</h1>
           <h5 class="u-align-center u-text u-text-2">Rellene todos los campos</h5>
           <div class="u-expanded-width u-form u-form-1">
