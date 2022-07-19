@@ -26,15 +26,6 @@
 	<header>
 		<div class="contenedor">
 			<img src="img_gen/logoBFree.png" class="logogym">
-			<input type="checkbox" id="menu-bar">
-			<label class="fas fa-bars" for="menu-bar"></label>
-			<nav class="menu2">
-				<a href="adm_ejer.php">EJERCICIOS</a>
-				<a href="adm_clt.php">CLIENTES</a>
-				<a href="facturacion.php">FACTURACION</a>
-				<a href="">INGRESO</a>
-			</nav>
-
 		</div>
 	</header>
 	<br>
@@ -44,6 +35,7 @@
             <input type="text" name="usuario" placeholder="Ingresa contraseña actual" class="form-control my-3">
             <input type="text" name="pass" placeholder="Ingresa contraseña nueva" class="form-control my-3">
             <button class="btn btn-primary" type="submit">Actualizar</button>
+                  <a href="ent_index.php" class="boton">Regresar</a>
         </form>
         <div class="mt-3" id="respuesta">
 
