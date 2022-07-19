@@ -26,7 +26,7 @@
     $pnt_izq = $_POST['pnt_izq'];
     $pnt_der = $_POST['pnt_der'];
     $por_grasa = $_POST['por_grasa'];
-    $valor_tension = $_POST['valor tension'];
+    $valor_tension = $_POST['valor_tension'];
     $pulso = $_POST['pulso'];
     $adipo_tri = $_POST['adipo_tri'];
     $adipo_abdo = $_POST['adipo_apdo'];
