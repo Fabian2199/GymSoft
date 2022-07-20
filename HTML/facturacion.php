@@ -29,7 +29,7 @@
 			<nav class="menu2">
 				<a href="adm_clt.php">CLIENTES</a>
 				<a href="adm_ent.php">ENTRENADORES</a>
-				<a href="facturacion.php">FACTURACION</a>
+				<a href="adm_ejer.php">EJERCICIOS</a>
 				<a href="">INGRESO</a>
 			</nav>
             <!-- clase overlay es una ventana emergente para pagar una factura -->
@@ -70,10 +70,7 @@
                 </div>
             </form>
         </div>
-        <div class="torniquete" id="torniquete">
-            <h2 class="torniquete" id="pruebaH2">SI puede ingresar</h2>
-        </div>
-        <div class="hijo-2" id="hijo-2">
+        <div class="hijo-2" id="hijo-2" style="margin-top: 50px; margin-bottom: 50px;">
             <table class="table">
                 <thead class="text-muted">
                     <th class="text-center">ID</th>
