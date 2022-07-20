@@ -1,4 +1,9 @@
-<?php include("db_connection\mtr_ent.php") ?>
+<?php
+	include("db_connection\mtr_ent.php");
+	include 'db_connection/connection.php';
+	$query_01 = "UPDATE detalles_fac SET estado_plan = 1 WHERE fecha_fin < current_date;";
+	$consulta_01 = mysqli_query($conexion, $query_01);
+?>
 <!DOCTYPE html>
 <html>
 
