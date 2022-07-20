@@ -33,8 +33,8 @@ $ficha = get_ficha($id);
 			<label class="fas fa-bars" for="menu-bar"></label>
 			<nav class="menu2">
 				<a href="ent_index.php">Inicio</a>
-				<a href="adm_ejer.php">Agregar rutina</a>
-				<a href="adm_ent.php">Agregar ficha antropometrica</a>
+				<!--<a href="adm_ejer.php">Agregar rutina</a>-->
+				<a href="ficha.php">Agregar ficha antropometrica</a>
 				<a href="adm_ent.php">Configuracion</a>
 			</nav>
 		</div>
@@ -45,16 +45,19 @@ $ficha = get_ficha($id);
 				<h3>AGREGAR RUTINA</h3>
 				<h4>completa el siguiente formulario</h4>
 				<form action="db_connection/agregarRutina.php" method="post">
+					<input name="clientes" id="ejers" type="hidden" value='<?php echo $id;?>'>
+					<!--
 					<?php
-					$query = "SELECT us.id_user, pe.nombres, pe.apellidos FROM usuarios us, personas pe WHERE us.id_persona = pe.id_persona AND tipo_user LIKE 'cliente';";
+					$query = "SELECT us.id_user, pe.nombres, pe.apellidos FROM usuarios us, personas pe WHERE us.id_persona = pe.id_persona AND tipo_user LIKE 'cliente'";
 					$consul = mysqli_query($conexion, $query);
 					?>
-					<select name="clientes" id="ejers">
+					<select name="clientes" id="ejers" type="hidden">
 						<option value="100">Seleccionar cliente</option>
 						<?php foreach($consul as $personas):?>
 							<option value="<?php echo $personas['id_user']; ?>"><?php echo $personas['nombres']." ".$personas['apellidos']; ?></option>
 						<?php endforeach ?>
 					</select>
+					-->
 
 					<select name="ejercicios" id="ejers">
 							<option value="100">Seleccionar ejercicio</option>
@@ -119,7 +122,7 @@ $ficha = get_ficha($id);
 				<div class="rutina " id="tar">
 					<div class="adelante">
 						<h1>Rutina</h1>
-						<input id="btn-popup-agregar-rutina" class="btn btn-popup-agregar-rutina" type="button" name="btnAgregarRutina" value="Agregar rutina">
+						<input style="display: block; margin: 0 auto; margin-top: 10px; height: 25px; width: 100px;" id="btn-popup-agregar-rutina" class="btn btn-popup-agregar-rutina" type="button" name="btnAgregarRutina" value="Agregar rutina">
 						<table>
 							<thead>
 								<th>Dia</th>
