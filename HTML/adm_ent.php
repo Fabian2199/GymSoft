@@ -36,7 +36,7 @@
 			<nav class="menu2">
 				<a href="adm_ejer.php">EJERCICIOS</a>
 				<a href="adm_clt.php">CLIENTES</a>
-				<a href="facturacion.php">FACTURACION</a>
+				<a href="ADMIN/html/facturacion.php">FACTURACION</a>
 				<a href="">INGRESO</a>
 			</nav>
 			<!-- clase overlay es una ventana emergente para agregar un cliente -->
