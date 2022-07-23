@@ -28,7 +28,7 @@
 				<a href="adm_clt.php">CLIENTES</a>
 				<a href="adm_ent.php">ENTRENADORES</a>
 				<a href="ADMIN/html/facturacion.php">FACTURACION</a>
-				<a href="">INGRESO</a>
+				<a href="torniquete.php">INGRESO</a>
 			</nav>
 			<!-- clase overlay es una ventana emergente para agregar un ejercicio -->
 			<div class="overlay" id="overlay">
@@ -87,14 +87,14 @@
 								</select>
 							</div>
 							<div class="contenedor-inputs" id="contenedor-inputs">
-								
+
 							</div>
 						</div>
 						<input type="submit" class="btn_actu" value="Actualizar" id="btn_actu" disabled = true>
 					</form>
 				</div>
 			</div>
-		</div>					
+		</div>
 	</main>
 	<footer>
 		<div class="sociales">
