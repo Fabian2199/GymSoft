@@ -299,7 +299,7 @@
               </div>
               <div class="u-align-left u-form-group  u-form-group-42">
                 <a href="ent_index.php" class="boton">Regresar</a>
-                <input type="submit" name="register" class="registrar u-btn u-btn-submit u-button-style u-hover-grey-25 u-white u-btn-1" onclick="location.href='ent_index.php';"/>
+                <input type="submit" name="register" class="registrar u-btn u-btn-submit u-button-style u-hover-grey-25 u-white u-btn-1" id="registrar" onclick="location.href='ent_index.php';"/>
               </div>
             </form>
 
