@@ -1,6 +1,11 @@
 <?php
   include ("connection.php");
-  $id_persona=$_POST['clt'];
+  
+  if(isset($_POST['clt'])){
+    $id_persona=$_POST['clt'];
+  }else{
+    $id_persona=$_POST['ent'];
+  }
   $nombres =$_POST['nombres'];
   $apellidos=$_POST['apellidos'];
   $fecha= $_POST['cumpleanos'];
@@ -12,5 +17,5 @@
 
   $actualizar="UPDATE personas SET `nombres`='$nombres',`apellidos`='$apellidos',`foto`='$foto',`email`='$email',`celular`=$cel,`fecha_nac`='$fecha' WHERE id_persona='$id_persona'";
   $validar = mysqli_query($conexion,$actualizar);
-  header('Location: ..\adm_clt.php');
+  header('Location: ..\html\adm_clt.php');
 ?>

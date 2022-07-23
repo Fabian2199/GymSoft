@@ -1,4 +1,4 @@
-<?php include ("..\..\db_connection\mtr_ejr.php")?>
+<?php include ("..\php\mtr_ejr.php")?>
 
 <!DOCTYPE html>
 <html>
@@ -6,15 +6,17 @@
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Facturación #2</title>
-	<link rel="stylesheet" type="text/css" href="../../css_adm_ejer/menu.css">
+	<link rel="stylesheet" type="text/css" href="../css/css/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
+	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
+	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
 	<!--<link rel="stylesheet" type="text/css" href="css_adm_ejer/principal_adm_ejer.css">-->
 
 	<!--<link rel="stylesheet" type="text/css" href="CSS_ADM_EJER/banner.css">-->
 	<link rel="stylesheet" type="text/css" href="../../CSS_ADM_EJeR/principal_adm_ejer_tar.css">
 	<!--<link rel="stylesheet" type="text/css" href="css_adm_eJer/popup.css">-->
 
-	<link rel="stylesheet" type="text/css" href="../css/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/Css/style.css">
 	<link rel="stylesheet" type="text/css" href="../css/css_adm_Fac/popup.css">
 
 
@@ -27,9 +29,9 @@
 			<input type="checkbox" id="menu-bar">
 			<label class="fas fa-bars" for="menu-bar"></label>
 			<nav class="menu2">
-				<a href="../../adm_clt.php">CLIENTES</a>
-				<a href="../../adm_ent.php">ENTRENADORES</a>
-				<a href="../../adm_ejer.php">EJERCICIOS</a>
+				<a href="adm_clt.php">CLIENTES</a>
+				<a href="adm_ent.php">ENTRENADORES</a>
+				<a href="adm_ejer.php">EJERCICIOS</a>
 				<a href="">INGRESO</a>
 			</nav>
             <!-- clase overlay es una ventana emergente para pagar una factura -->
@@ -86,7 +88,6 @@
                     <?php if(isset($_GET['btnBuscar'])) { ?>
                         <?php $busqueda = $_GET['buscarFactura']; ?>
                         <?php $consulta = $conexion->query("SELECT det.id_factura, per.nombres, per.apellidos, pl.nombre_plan, det.fecha_ini, det.fecha_fin, det.estado_plan FROM detalles_fac det, planes pl, facturas fac, usuarios us, personas per where det.id_plan = pl.id_plan and det.id_factura = fac.id_factura and fac.id_cliente = us.id_user and us.id_persona = per.id_persona and per.id_persona = $busqueda"); // <------- query correcto ?;?>
-                        <?php// SELECT det.id_factura, per.nombres, per.apellidos, pl.nombre_plan, det.fecha_ini, det.fecha_fin, det.estado_plan FROM detalles_fac det, planes pl, facturas fac, usuarios us, personas per where det.id_plan = pl.id_plan and det.id_factura = fac.id_factura and fac.id_cliente = us.id_user and us.id_persona = per.id_persona and per.id_persona = 1598762665;?>
                         <?php while($row = $consulta->fetch_array()) { ?>
                             <tr>
                                 <td><?php echo $row['id_factura']; ?></td>
