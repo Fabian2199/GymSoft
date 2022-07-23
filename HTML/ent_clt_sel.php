@@ -35,7 +35,7 @@ $ficha = get_ficha($id);
 				<a href="ent_index.php">Inicio</a>
 				<!--<a href="adm_ejer.php">Agregar rutina</a>-->
 				<a href="ficha.php">Agregar ficha antropometrica</a>
-				<a href="adm_ent.php">Configuracion</a>
+				<a href="configuracion.php">Configuracion</a>
 			</nav>
 		</div>
 		<!-- clase overlay es una ventana emergente para agregar una rutina -->
