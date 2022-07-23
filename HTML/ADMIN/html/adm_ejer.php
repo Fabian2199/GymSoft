@@ -87,14 +87,14 @@
 								</select>
 							</div>
 							<div class="contenedor-inputs" id="contenedor-inputs">
-								
+
 							</div>
 						</div>
 						<input type="submit" class="btn_actu" value="Actualizar" id="btn_actu" disabled = true>
 					</form>
 				</div>
 			</div>
-		</div>					
+		</div>
 	</main>
 	<footer>
 		<div class="sociales">

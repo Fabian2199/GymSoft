@@ -28,7 +28,7 @@
 				<a href="adm_clt.php">CLIENTES</a>
 				<a href="adm_ent.php">ENTRENADORES</a>
 				<a href="facturacion.php">FACTURACION</a>
-				<a href="">INGRESO</a>
+				<a href="torniquete.php">INGRESO</a>
 			</nav>
             <!-- clase overlay es una ventana emergente para agregar una rutina -->
             <div class="overlay-agregar-rutina" id="overlay-agregar-rutina">

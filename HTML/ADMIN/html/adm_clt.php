@@ -32,7 +32,7 @@
 				<a href="adm_ejer.php">Ejercicios</a>
 				<a href="adm_ent.php">Entrenadores</a>
 				<a href="facturacion.php">Facturacion</a>
-				<a href="">Ingreso</a>
+				<a href="torniquete.php">Ingreso</a>
 			</nav>
 			<!-- clase overlay es una ventana emergente para agregar un cliente -->
 			<div class="overlay" id="overlay">
