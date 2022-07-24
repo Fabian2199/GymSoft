@@ -1,30 +1,24 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="Doing The Right Thing,&nbsp;At The Right Time">
-    <meta name="description" content="">
+<html style="font-size: 16px;">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Entrenadores inicio</title>
+	<link rel="stylesheet" type="text/css" href="CSS_ENT_INDEx/menu.css">
+	<link rel="stylesheet" type="text/css" href="iconos/web-fonts-with-css/css/fontawesome-all.css">
+	<link rel="stylesheet" type="text/css" href="CSS_ENT_INDEx/principal_ent_clt.css">
+	<link rel="stylesheet" type="text/css" href="CSS_ENT_INDEx/principal_ent_clt_taR.css">
+	<link rel="stylesheet" type="text/css" href="CSS_ENT_INDEX/popup.css">
+	<link rel="stylesheet" type="text/css" href="CSS_ENT_INDEX/popup_update.css">
+	<script language="javascript" src="js\jquery-3.6.0.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <title>Ficha AP</title>
+
     <link rel="stylesheet" href="CSS_FICHA/nicepage.css" media="screen">
 <link rel="stylesheet" href="CSS_FICHA/Page-3.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 4.13.4, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
-
-
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "",
-		"logo": "images/default-logo.png",
-		"sameAs": []
-}</script>
-    <meta name="theme-color" content="#88bcec">
-    <meta property="og:title" content="Page 3">
-    <meta property="og:type" content="website">
-
     <?php
 	include ("db_connection/connection.php");
 	session_start();
@@ -39,10 +33,20 @@
 
 ?>
   </head>
-  <body data-home-page="Page-3.html" data-home-page-title="Page 3" class="u-body u-xl-mode"><header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-4f93"><a href="" class="u-image u-logo u-image-1">
-      </a><a href="" class="u-image u-logo u-image-2" data-image-width="127" data-image-height="90">
-        <img src="img/logoBFree.png" class="u-logo-image u-logo-image-2">
-      </a></header>
+  <body data-home-page="Page-3.html" data-home-page-title="Page 3" class="u-body u-xl-mode">
+    <header>
+  		<div class="contenedor">
+  			<img src="img_gen/logoBFree.png" class="logogym">
+  			<input type="checkbox" id="menu-bar">
+  			<label class="fas fa-bars" for="menu-bar"></label>
+  			<nav class="menu2">
+  				<a href="adm_ejer.php">Agregar rutina</a>
+  				<a href="ficha.php">Agregar ficha antropometrica</a>
+  				<a href="conf_entrenador.php">Configuracion</a>
+  			</nav>
+  		</div>
+  	</header>
+
     <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="carousel_3034">
       <img alt="" class="u-expanded-height u-image u-image-default u-image-1" data-image-width="1000" data-image-height="1502" src="img/lateral.jpg">
       <div class="u-align-left u-container-style u-group u-group-1">
