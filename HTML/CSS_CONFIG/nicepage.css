@@ -17362,9 +17362,9 @@ a.pswp__share--download:hover {
   --animation-custom_in-scale: 1;
   --animation-custom_in-rotate: 0deg;
   --animation-custom_in-opacity: 0;
-  
-  
-  
+
+
+
 }
 @keyframes bounce {
   from,
@@ -18875,11 +18875,11 @@ a.pswp__share--download:hover {
 }
 /*end-commonstyles animation*/
 .animated.u-absolute-hcenter {
-  
+
   --animation-custom_in-translate_x: -50% !important;
 }
 .animated.u-absolute-vcenter {
-  
+
   --animation-custom_in-translate_y: -50% !important;
 }
 .u-cookies-consent {
@@ -36652,9 +36652,9 @@ a.u-link.u-text-hover-grey-90:hover {
             color: rgba(239,184,41,0.95) !important;
         }
 
-        
 
-        
+
+
         .u-border-custom-color-1,
         .u-separator-custom-color-1:after
         {
@@ -36701,9 +36701,9 @@ a.u-link.u-text-hover-grey-90:hover {
         {
             border-color: rgba(234,174,18,0.95) !important;
         }
-        
 
-        
+
+
         .u-text-custom-color-1,
         li.active > a.u-button-style.u-text-custom-color-1,
         li.active > a.u-button-style.u-text-custom-color-1[class*="u-border-"],
@@ -36770,101 +36770,101 @@ a.u-link.u-text-hover-grey-90:hover {
 
         .u-body
         {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         --theme-sheet-width-xl: 1140px;
         --theme-sheet-width-lg: 940px;
         --theme-sheet-width-md: 720px;
         --theme-sheet-width-sm: 540px;
         --theme-sheet-width-xs: 340px;
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         }
 
         /** common-rules **/
@@ -37025,7 +37025,7 @@ a.u-link.u-text-hover-grey-90:hover {
         /*end-media rules*/
         /** publish-rules **/
 
-        
+
 
         /** cms-rules **/
         /*begin-responsive rules*/
@@ -37137,13 +37137,13 @@ a.u-link.u-text-hover-grey-90:hover {
         color: #ffffff;
         }
         /** alt-color-rules **/
-    
+
 
 
 /*end-variables sitestylecss*/
  .u-header {
   background-image: none;
-  min-height: 84px;
+  min-height: 64px;
 }
 
 .u-header .u-image-1 {
@@ -37164,8 +37164,8 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-header .u-logo-image-2 {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 }
 @media (max-width: 1199px) {
   .u-header .u-image-1 {
@@ -37237,6 +37237,6 @@ a.u-link.u-text-hover-grey-90:hover {
   }
 }
 
- /*begin-variables base-font-size*/ 
+ /*begin-variables base-font-size*/
  html { font-size: 16px; }
  /*end-variables base-font-size*/
