@@ -1,4 +1,4 @@
-<?php include ("db_connection\mtr_ejr.php")?>
+<?php include ("db_connection\mtr_clt.php")?>
 <?php include ("db_connection\connection.php")?>
 <?php include("db_connection\dato_ent_clt.php") ?>
 <?php
