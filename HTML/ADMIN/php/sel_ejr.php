@@ -21,7 +21,7 @@
     ¿Desea cambiars imagen?<input type='checkbox'value= '1' name ='check' id = 'check'>
     <div><input type='text' value=".$imagen." name='imagen' style='display: none;'></div>
   </label>
-  <Script src='../html/css_adm_ejer/checkbox.js'></Script>	
+  <Script src='../css/css_adm_ejer/checkbox.js'></Script>	
   ";
 
   echo $html;

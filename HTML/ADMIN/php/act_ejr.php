@@ -11,5 +11,5 @@
   $actualizar="UPDATE ejercicios SET  `nombre_ejercicio`= '$ejercicio', `descripcion`= '$descripcion', `imagen`= '$imagen', `video`='$video' WHERE id_ejercicio = '$id_ejercicio_seleccionado'";
   $validar = mysqli_query($conexion,$actualizar);
   
-  header('Location: ..\adm_ejer.php');
+  header('Location: ..\html\adm_ejer.php');
 ?>

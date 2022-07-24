@@ -5,7 +5,7 @@ $(document).ready(function(){
 			btn.disabled =false;
 			id_persona = $(this).val();
 			console.log(btn);
-			$.post("db_connection/sel_per.php", { id_persona: id_persona }, function(data){
+			$.post("../php/sel_per.php", { id_persona: id_persona }, function(data){
 				$("#contenedor-inputs").html(data);
 			});            
 		});

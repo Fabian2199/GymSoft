@@ -28,13 +28,13 @@
                 $password = "clt".$cel;
                 $registro_user ="INSERT INTO `usuarios` (`id_user`, `id_persona`, `tipo_user`, `contrasena`, `estado`) VALUES ('$id_user', '$documento', '$user', '$password', '0')";
                 $validar_user = mysqli_query($conexion,$registro_user);
-                header('Location: ..\adm_clt.php');
+                header('Location: ..\html\adm_clt.php');
             }elseif($user=="entrenador"){
                 $id_user = "ent".$documento;
                 $password = "ent".$cel;
                 $registro_user ="INSERT INTO `usuarios` (`id_user`, `id_persona`, `tipo_user`, `contrasena`, `estado`) VALUES ('$id_user', '$documento', '$user', '$password', '0')";
                 $validar_user = mysqli_query($conexion,$registro_user);
-                header('Location: ..\adm_ent.php');
+                header('Location: ..\html\adm_ent.php');
             }else{
                 $id_user = "amd".$documento;
                 $password = "amd".$cel;
@@ -52,13 +52,13 @@
             $password = "clt".$cel;
             $registro_user ="INSERT INTO `usuarios` (`id_user`, `id_persona`, `tipo_user`, `contrasena`, `estado`) VALUES ('$id_user', '$documento', '$user', '$password', '0')";
             $validar_user = mysqli_query($conexion,$registro_user);
-            header('Location: ..\adm_clt.php');
+            header('Location: ..\html\adm_clt.php');
         }elseif($user=="entrenador"){
             $id_user = "ent".$documento;
             $password = "ent".$cel;
             $registro_user ="INSERT INTO `usuarios` (`id_user`, `id_persona`, `tipo_user`, `contrasena`, `estado`) VALUES ('$id_user', '$documento', '$user', '$password', '0')";
             $validar_user = mysqli_query($conexion,$registro_user);
-            header('Location: ..\adm_ent.php');
+            header('Location: ..\html\adm_ent.php');
         }else{
             $id_user = "amd".$documento;
             $password = "amd".$cel;
