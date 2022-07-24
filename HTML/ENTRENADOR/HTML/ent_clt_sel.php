@@ -1,6 +1,8 @@
-<?php include ("db_connection\mtr_clt.php")?>
-<?php include ("db_connection\connection.php")?>
-<?php include("db_connection\dato_ent_clt.php") ?>
+<?php include ("..\php\mtr_clt.php")?>
+<?php include("..\php\mtr_ejr.php") ?>
+<?php include ("..\php\connection.php")?>
+<?php include("..\php\dato_ent_clt.php") ?>
+
 <?php
 $id = $_GET['id_persona'];
 $rutina = get_rutina($id);
@@ -14,13 +16,12 @@ $ficha = get_ficha($id);
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Cliente</title>
-	<link rel="stylesheet" type="text/css" href="CSS_ENT_CLT_SEl/menu.css">
-	<link rel="stylesheet" type="text/css" href="iconos/web-fonts-with-css/css/fontawesome-all.css">
-	<link rel="stylesheet" type="text/css" href="CSS_ENt_CLT_SEl/principal_ent_clt.css">
-	<link rel="stylesheet" type="text/css" href="CSS_ENT_CLT_SEL/principal_ent_clt_taR.css">
-	<script language="javascript" src="js\jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/css/menu.css">
+	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ENt_CLT_SEL/principal_ent_clt.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ENT_CLT_SEL/principal_ent_clt_taR.css">
 
-    <link rel="stylesheet" type="text/css" href="css_ent_rut/popup.css">
+    <link rel="stylesheet" type="text/css" href=" ../css/css_ent_rut/popup.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
@@ -28,12 +29,11 @@ $ficha = get_ficha($id);
 <body>
 	<header>
 		<div class="contenedor">
-			<img src="img_gen/logoBFree.png" class="logogym">
+			<img src="../../img_gen/logoBFree.png" class="logogym">
 			<input type="checkbox" id="menu-bar">
 			<label class="fas fa-bars" for="menu-bar"></label>
 			<nav class="menu2">
 				<a href="ent_index.php">Inicio</a>
-				<!--<a href="adm_ejer.php">Agregar rutina</a>-->
 				<a href="ficha.php">Agregar ficha antropometrica</a>
 				<a href="configuracion.php">Configuracion</a>
 			</nav>
@@ -44,20 +44,8 @@ $ficha = get_ficha($id);
 				<a href="#" id="btn-cerrar-popup-agregar-rutina" class="btn-cerrar-popup-agregar-rutina"><i class="fas fa-times"></i></a>
 				<h3>AGREGAR RUTINA</h3>
 				<h4>completa el siguiente formulario</h4>
-				<form action="db_connection/agregarRutina.php" method="post">
+				<form action="../php/agregarRutina.php" method="post">
 					<input name="clientes" id="ejers" type="hidden" value='<?php echo $id;?>'>
-					<!--
-					<?php
-					$query = "SELECT us.id_user, pe.nombres, pe.apellidos FROM usuarios us, personas pe WHERE us.id_persona = pe.id_persona AND tipo_user LIKE 'cliente'";
-					$consul = mysqli_query($conexion, $query);
-					?>
-					<select name="clientes" id="ejers" type="hidden">
-						<option value="100">Seleccionar cliente</option>
-						<?php foreach($consul as $personas):?>
-							<option value="<?php echo $personas['id_user']; ?>"><?php echo $personas['nombres']." ".$personas['apellidos']; ?></option>
-						<?php endforeach ?>
-					</select>
-					-->
 
 					<select name="ejercicios" id="ejers">
 							<option value="100">Seleccionar ejercicio</option>
@@ -71,7 +59,6 @@ $ficha = get_ficha($id);
 						<?php $semana = ['LUNES','MARTES','MIERCOLES','JUEVES','VIERNES','SABADO','DOMINGO']?>
 						<?php foreach($semana as $index => $dia):?>
 							<option value="<?php echo $dia; ?>"><?php echo $dia; ?></option>
-							<!--<option value="<?php echo array_search($dia,array_keys($semana)); ?>"><?php echo $dia; ?></option>-->
 						<?php endforeach ?>
 					</select>
 
@@ -89,7 +76,7 @@ $ficha = get_ficha($id);
 					<div class="adelante">
 						<h1>Datos</h1>
 						<?php while ($row = $datos->fetch_assoc()) { ?>
-							<img src="<?php echo "img_per\\" . $row['foto']; ?>" alt="">
+							<img src="<?php echo "../../img_per\\" . $row['foto']; ?>" alt="">
 							<h1 class="h1_datos"><?php echo $row['nombres']; ?></h1>
 							<h1 class="h1_datos"><?php echo $row['apellidos']; ?></h1>
 							<h1 class="h1_datos"><?php echo $row['celular']; ?></h1>
@@ -136,7 +123,7 @@ $ficha = get_ficha($id);
 									<tr>
 										<th><?php echo $row['dia']; ?></th>
 										<th><?php echo $row['nombre_ejercicio']; ?></th>
-										<th><img src="<?php echo "img_ejer\\" . $row['imagen']; ?>" alt="" class="imagen_ejr"></th>
+										<th><img src="<?php echo "../../img_ejer\\" . $row['imagen']; ?>" alt="" class="imagen_ejr"></th>
 										<th><?php echo $row['n_series']; ?></th>
 										<th><?php echo $row['n_rep']; ?></th>
 									</tr>
@@ -156,6 +143,6 @@ $ficha = get_ficha($id);
 		</div>
 	</footer>
 </body>
-<script src="CSS_ENT_CLT_SEL\combobox.js"></script>
-<script src="css_ent_rut/popup.js"></script>
+<script src="../Css/CSS_ENT_CLT_SEL\combobox.js"></script>
+<script src="../css/css_ent_rut/popup.js"></script>
 </html>

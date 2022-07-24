@@ -2,7 +2,7 @@
     include 'connection.php';
     //include 'login.php';
     //$entrenador = $usuario;
-    $entrenador = 'ent1265986326'; //<----------- Dónde se almacena el user de la sesión
+    $entrenador = 'ent40037079'; //<----------- Dónde se almacena el user de la sesión
     $cliente = 'clt'.$_POST['clientes'];
     $ejercicio = $_POST['ejercicios'];
     $dia = $_POST['dias'];
@@ -17,7 +17,7 @@
     $consulta = mysqli_query($conexion, $query);
     
     if($consulta){
-        Header("Location: ../ent_index.php");
+        Header("Location: ../html/ent_index.php");
     }
     //*/
 ?>

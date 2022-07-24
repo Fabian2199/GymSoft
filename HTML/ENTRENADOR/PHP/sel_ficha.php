@@ -148,7 +148,7 @@ $html = "
 <h1 class='h1_datos'>Entrenador: </h1>
   <table>    
     <tr>
-        <th>".$nombres." ".$apellidos." Años</th>
+        <th>".$nombres." ".$apellidos."</th>
     </tr>
   </table>
 <div class='medidas'>

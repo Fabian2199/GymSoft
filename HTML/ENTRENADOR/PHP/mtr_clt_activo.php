@@ -15,7 +15,7 @@ if (!empty($_POST)) {
     }
     $consulta_cliente = $conexion->query($sql);
     while ($row = $consulta_cliente->fetch_assoc()) {
-        $imagen = "img_per/".$row['foto'];
+        $imagen = "../../img_per/".$row['foto'];
         echo '<div for="tar" class="gen">';
         echo '<div class="targeta " id="tar">';
         echo '<div class="adelante">';
