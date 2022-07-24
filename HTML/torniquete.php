@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Entrenadores inicio</title>
-	<link rel="stylesheet" type="text/css" href="CSS_ENT_INDEx/menu.css">
+	<link rel="stylesheet" type="text/css" href="CSS_TORNIQUETE/menu.css">
 	<link rel="stylesheet" type="text/css" href="iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="CSS_ENT_INDEx/principal_ent_clt.css">
 	<link rel="stylesheet" type="text/css" href="CSS_ENT_INDEx/principal_ent_clt_taR.css">
