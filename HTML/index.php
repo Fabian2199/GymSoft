@@ -43,7 +43,7 @@
 				alertify.alert("Debes agregar el password");
 				return false;
 			}
-			
+
 			cadena="id_user=" + $('#id_user').val() +"&contrasena=" + $('#contrasena').val();
 
 			$.ajax({
@@ -53,13 +53,13 @@
 				success:function(r){
 					if(r==1){
 						//admin
-						window.location="adm_ent.php";
+						window.location="adm_ent.php?id_user="+ $('#id_user').val();
 					}else if (r==2) {
 						//cliente
-						window.location="prueba.php";
+						window.location="prueba.php?id_user="+ $('#id_user').val();
 					}else if (r==3) {
 						//entrenador
-						window.location="ent_index.php";
+						window.location="ent_index.php?id_user="+ $('#id_user').val();
 					}else {
 						alertify.alert("Fallo al entrar :(");
 					}
