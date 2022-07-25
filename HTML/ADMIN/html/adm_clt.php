@@ -133,7 +133,7 @@
 	<script src="../css/Css_adm_clt/popup.js"></script>
 	<script src="../css/Css_adm_clt/popup_update.js"></script>
 	<script src="../css/Css_adm_clT/combobox.js"></script>
-	<script src="../css/Css_adm_clt/foto.js"></script>
+	<script src="../Css/Css_adm_clt/foto.js"></script>
 	<script src="../css/Css_adm_clT/select2.js"></script>
 </body>
 

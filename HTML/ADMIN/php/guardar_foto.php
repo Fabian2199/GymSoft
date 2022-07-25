@@ -16,7 +16,7 @@ $imagenCodificadaLimpia = str_replace("data:image/png;base64,", "", urldecode($i
 $imagenDecodificada = base64_decode($imagenCodificadaLimpia);
 
 //Calcular un nombre único
-$nombreImagenGuardada = "../img_per/foto_" . uniqid() . ".png";
+$nombreImagenGuardada = "../../img_per/foto_" . uniqid() . ".png";
 
 //Escribir el archivo
 file_put_contents($nombreImagenGuardada, $imagenDecodificada);
