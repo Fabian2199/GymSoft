@@ -53,10 +53,10 @@
 				success:function(r){
 					if(r==1){
 						//admin
-						window.location="adm_ent.php?id_user="+ $('#id_user').val();
+						window.location="admin/html/adm_clt.php?id_user="+ $('#id_user').val();
 					}else if (r==2) {
 						//cliente
-						window.location="prueba.php?id_user="+ $('#id_user').val();
+						window.location="cliente/html/perfil_clt.php?id_user="+ $('#id_user').val();
 					}else if (r==3) {
 						//entrenador
 						window.location="ent_index.php?id_user="+ $('#id_user').val();

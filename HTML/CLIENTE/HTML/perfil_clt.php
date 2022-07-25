@@ -1,7 +1,9 @@
-<?php include ("..\db_connection\connection.php")?>
-<?php include("db_connection\datos_clt.php") ?>
+<?php include ("..\php\connection.php")?>
+<?php include("..\php\datos_clt.php") ?>
 <?php
-$id = 1010136222;//quemado 
+$id_user= $_GET['id_user'];
+
+$id = substr($id_user,3);//quemado 
 $rutina = get_rutina($id);
 $datos = get_datos($id);
 $ficha = get_ficha($id);
@@ -13,11 +15,11 @@ $ficha = get_ficha($id);
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Cliente</title>
-	<link rel="stylesheet" type="text/css" href="CSS/menu.css">
-	<link rel="stylesheet" type="text/css" href="../iconos/web-fonts-with-css/css/fontawesome-all.css">
-	<link rel="stylesheet" type="text/css" href="CSS/principal_clt.css">
-	<link rel="stylesheet" type="text/css" href="CSS/principal_clt_taR.css">
-	<script language="javascript" src="..\js\jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../CSS/menu.css">
+	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/principal_clt.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/principal_clt_taR.css">
+	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
@@ -25,11 +27,11 @@ $ficha = get_ficha($id);
 <body>
 	<header>
 		<div class="contenedor">
-			<img src="..\img_gen/logoBFree.png" class="logogym">
+			<img src="..\..\img_gen/logoBFree.png" class="logogym">
 			<input type="checkbox" id="menu-bar">
 			<label class="fas fa-bars" for="menu-bar"></label>
 			<nav class="menu2">
-				<a href="index_clt.php">Inicio</a>
+				<a href="#">Inicio</a>
 				<a href="">Configuracion</a>
 			</nav>
 		</div>
@@ -41,7 +43,7 @@ $ficha = get_ficha($id);
 					<div class="adelante">
 						<h1>Datos</h1>
 						<?php while ($row = $datos->fetch_assoc()) { ?>
-							<img src="<?php echo "..\img_per\\" . $row['foto']; ?>" alt="">
+							<img src="<?php echo "..\..\img_per\\" . $row['foto']; ?>" alt="">
 							<h1 class="h1_datos"><?php echo $row['nombres']; ?></h1>
 							<h1 class="h1_datos"><?php echo $row['apellidos']; ?></h1>
 							<h1 class="h1_datos"><?php echo $row['celular']; ?></h1>
@@ -87,7 +89,7 @@ $ficha = get_ficha($id);
 									<tr>
 										<th><?php echo $row['dia']; ?></th>
 										<th><?php echo $row['nombre_ejercicio']; ?></th>
-										<th><img src="<?php echo "..\img_ejer\\" . $row['imagen']; ?>" alt="" class="imagen_ejr"></th>
+										<th><img src="<?php echo "..\..\img_ejer\\" . $row['imagen']; ?>" alt="" class="imagen_ejr"></th>
 										<th><?php echo $row['n_series']; ?></th>
 										<th><?php echo $row['n_rep']; ?></th>
 									</tr>
@@ -107,5 +109,5 @@ $ficha = get_ficha($id);
 		</div>
 	</footer>
 </body>
-<script src="CSS\combobox.js"></script>
+<script src="..\cSS\combobox.js"></script>
 </html>
