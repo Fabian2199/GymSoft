@@ -40,7 +40,7 @@
                     <a href="#" id="btn-cerrar-popup-pagar-factura" class="btn-cerrar-popup-pagar-factura"><i class="fas fa-times"></i></a>
                     <h3>PAGAR FACTURA</h3>
                     <h4>completa el siguiente formulario</h4>
-                    <form action="../../db_connection/pagarFactura.php" method="post">
+                    <form action="../php/pagarFactura.php" method="post">
                         <input type="text" name="doc_cliente" placeholder="Documento">
 
                         <?php
@@ -84,7 +84,7 @@
                     <th class="text-center"></th>
                 </thead>
                 <tbody>
-                    <?php include '../../db_connection/connection.php';?>
+                    <?php include '../php/connection.php';?>
                     <?php if(isset($_GET['btnBuscar'])) { ?>
                         <?php $busqueda = $_GET['buscarFactura']; ?>
                         <?php $consulta = $conexion->query("SELECT det.id_factura, per.nombres, per.apellidos, pl.nombre_plan, det.fecha_ini, det.fecha_fin, det.estado_plan FROM detalles_fac det, planes pl, facturas fac, usuarios us, personas per where det.id_plan = pl.id_plan and det.id_factura = fac.id_factura and fac.id_cliente = us.id_user and us.id_persona = per.id_persona and per.id_persona = $busqueda"); // <------- query correcto ?;?>
@@ -97,7 +97,7 @@
                                 <td><?php $feF = explode(" ", $row['fecha_fin']); echo $feF[0]; ?></td>
                                 <td><?php if($row['estado_plan'] == 0){echo "Activado";} if($row['estado_plan'] == 1){echo "Desactivado";}?></td>
                                 <?php $variable = $row['id_factura']; ?>
-                                <td><a href="../../db_connection/misDatosPdf.php?id=<?php echo $row['id_factura']; ?>">Descargar</a></td>
+                                <td><a href="misDatosPdf.php?id=<?php echo $row['id_factura']; ?>">Descargar</a></td>
                                 <!--<td><input class="" type="submit" name="btnDescargarPDF" value="Descargar"><?php $id_dowload_pdf = $row['id_factura']; ?></td>-->
                                 <!--<td><a href="crearPDF.php?id=<?php echo $row['id_factura']; ?>">Descargar</a></td>-->
                             </tr>

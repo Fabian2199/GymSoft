@@ -1,8 +1,8 @@
 <?php
-    include '../HTML/db_connection/connection.php';
+    include '../php/connection.php';
     //include '../index.php';
     // include '.php' <----------- Dónde se almacena el user de la sesión
-    $id_admin = "adm1111111111";
+    $id_admin = "adm1010136222";
     $fecha_actual = date('Y/m/d', time());
     $documento = $_POST['doc_cliente'];
     $nombre_plan = $_POST['nombre_plan']; // entra un ID

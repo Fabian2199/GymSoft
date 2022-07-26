@@ -27,7 +27,7 @@
             <th style="vertical-align: top; border: 1px solid #000;">Fecha fin</th>
         </thead>
         <tbody>
-            <?php include 'connection.php';?>
+            <?php include '../php/connection.php';?>
             <?php $consulta = $conexion->query("SELECT det.id_factura, per.nombres, per.apellidos, pl.nombre_plan, det.fecha_ini, det.fecha_fin, det.estado_plan FROM detalles_fac det, planes pl, facturas fac, usuarios us, personas per where det.id_plan = pl.id_plan and det.id_factura = fac.id_factura and fac.id_cliente = us.id_user and us.id_persona = per.id_persona and fac.id_factura = $id_factura");?>
                 <?php while($row = $consulta->fetch_array()) { ?>
                     <tr>
