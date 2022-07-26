@@ -59,7 +59,7 @@
 						window.location="cliente/html/perfil_clt.php?id_user="+ $('#id_user').val();
 					}else if (r==3) {
 						//entrenador
-						window.location="ent_index.php?id_user="+ $('#id_user').val();
+						window.location="entrenador/html/ent_index.php?id_user="+ $('#id_user').val();
 					}else {
 						alertify.alert("Fallo al entrar :(");
 					}
