@@ -1,4 +1,4 @@
-/*Login al sistema BodyFree*/
+
 <!DOCTYPE html>
 <html>
 <head>
