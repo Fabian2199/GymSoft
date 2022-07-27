@@ -15,22 +15,16 @@ $consulta_01 = mysqli_query($conexion, $query_01);
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
-	<link rel="stylesheet" type="text/css" href="../Css/CSS_ADM_ent/principal_adm_ent_taR.css">
+	<link rel="stylesheet" type="text/css" href="../csS/Css/tablas.css">
+	<link rel="stylesheet" type="text/css" href="../CsS/CSS_ADM_ent/principal_adm_ent_taR.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css_adM_ent/popup.css">
-	<link rel="stylesheet" type="text/css" href="../Css/css_adM_ent/popup_update.css">
-	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>
-	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-</head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <body>
 	<header>
 		<div class="contenedor">
 			<img src="../../img_gen/logoBFree.png" class="logogym">
 			<button id="btn-abrir-popup" class="btn-abrir-popup"><img src="../../img_gen/plus.png" class="plus"></button>
-			<button id="btn_update" class="btn_update">
-				<h1>Actualizar</h1>
-			</button>
 			<input type="checkbox" id="menu-bar">
 			<label class="fas fa-bars" for="menu-bar"></label>
 			<nav class="menu2">
@@ -74,49 +68,20 @@ $consulta_01 = mysqli_query($conexion, $query_01);
 
 		<!-- creacion dinamica de las tarjetas que contienen los entrenadores -->
 		<div class="principal">
-			<?php while ($row = $consulta->fetch_assoc()) { ?>
-				<div for="tar" class="gen">
-					<div class="targeta " id="tar">
-						<div class="adelante">
-							<h1><?php echo $row['nombres'] . " " . $row['apellidos']; ?></h1>
-							<img src=<?php echo "../../img_per\\" . $row['foto']; ?> alt="">
+			<!-- creacion dinamica de la tabla de los clientes -->
+			<div class="principal">
+				<div for="tar" class="ficha_gen">
+					<div class="ficha " id="tar">
+						<div class="datos " id="tar">
+							<div class="busqueda">
+								<h1>Buscar documento</h1>
+								<input onkeyup="buscar_ahora($('#buscar_1').val());" type="text" class="form-control" id="buscar_1" name="buscar_1">
+							</div>
 						</div>
-						<div class="atras">
-							<h1><?php echo $row['nombres'] . " " . $row['apellidos']; ?></h1>
-							<p>
-								<?php echo "Datos Personales"; ?> <br>
-								<?php echo "Documento: " . $row['id_persona']; ?> <br>
-								<?php echo "Email: " . $row['email']; ?> <br>
-								<?php echo "Cel: " . $row['celular']; ?> <br>
-								<?php echo "Fecha de nacimiento: " . $row['fecha_nac']; ?> <br>
-							</p>
+						<div id="datos_busqueda">
+
 						</div>
 					</div>
-				</div>
-			<?php } ?>
-			<!-- ventana emergente de actualizar datos -->
-			<div class="update_over" id="update_over">
-				<div class="update_popup" id="update_popup">
-					<a href="#" id="btn-cerrar-update_popup" class="btn-cerrar-update_popup"><i class="fas fa-times"></i></a>
-					<h3>Actualizar Datos</h3>
-					<form action="../php/act_per.php" method="POST">
-						<div class="inputs-update">
-							<div class="box">
-								<label for="ent">Clientes: </label>
-								<select name="ent" id="ent">
-									<option value="100">Seleccionar Numero del documento </option>
-									<?php foreach ($consulta as $opciones) : ?>
-										<option value="<?php echo $opciones['id_persona']; ?>"><?php echo $opciones['id_persona']; ?></option>
-									<?php endforeach ?>
-								</select>
-							</div>
-							<div class="contenedor-inputs" id="contenedor-inputs">
-
-							</div>
-
-						</div>
-						<input type="submit" class="btn_actu" value="Actualizar" id="btn_actu" disabled=true>
-					</form>
 				</div>
 			</div>
 		</div>
@@ -128,10 +93,23 @@ $consulta_01 = mysqli_query($conexion, $query_01);
 		</div>
 	</footer>
 	<script src="../css/Css_adm_ent/popup.js"></script>
-	<script src="../css/Css_adm_ent/popup_update.js"></script>
 	<script src="../css/Css_adm_ent/combobox.js"></script>
 	<script src="../css/Css_adm_ent/foto.js"></script>
-	<script src="../css/Css_adm_ent/select2.js"></script>
+	<script type="text/javascript">
+		function buscar_ahora(buscar) {
+			var parametros = {
+				"buscar": buscar
+			};
+			$.ajax({
+				data: parametros,
+				type: 'POST',
+				url: '../php/mtr_ent_buscador.php',
+				success: function(data) {
+					document.getElementById("datos_busqueda").innerHTML = data;
+				}
+			});
+		}
+	</script>
 </body>
 
 </html>
