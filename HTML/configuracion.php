@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -6,13 +7,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" type="text/css" href="css_adm_ejeR/menu.css">
+		<link rel="stylesheet" type="text/css" href="ADMIN/css/css/menu.css">
 		<link rel="stylesheet" type="text/css" href="iconos/web-fonts-with-css/css/fontawesome-all.css">
-		<link rel="stylesheet" type="text/css" href="CSS_ADM_ent/banner.css">
-    <link rel="stylesheet" type="text/css" href="CSS_ENT_INDEx/principal_ent_clt.css">
-  	<link rel="stylesheet" type="text/css" href="CSS_ENT_INDEx/principal_ent_clt_taR.css">
-		<link rel="stylesheet" type="text/css" href="css_adM_ent/popup.css">
-		<link rel="stylesheet" type="text/css" href="css_adM_ent/popup_update.css">
+		<link rel="stylesheet" type="text/css" href="ADMIN/css/CSS_ADM_ejer/banner.css">
+    <link rel="stylesheet" type="text/css" href="ENTRENADOR/CSS/CSS_ENT_INDEx/principal_ent_clt.css">
+  	<link rel="stylesheet" type="text/css" href="ENTRENADOR/CSS/CSS_ENT_INDEx/principal_ent_clt_taR.css">
+		<link rel="stylesheet" type="text/css" href="ADMIN/css/css_adM_ent/popup.css">
+		<link rel="stylesheet" type="text/css" href="ADMIN/css/css_adM_ent/popup_update.css">
 		<script language="javascript" src="js\jquery-3.6.0.min.js"></script>
 		<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -98,7 +99,7 @@
             <input type="text" name="pass" placeholder="Ingresa contraseña nueva" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-2">
             <br>
             <button class="btn btn-primary" type="submit">Actualizar</button>
-                  <a href="ent_index.php" class="boton">Regresar</a>
+                  <a href="javascript:history.back()" class="btn btn-primary">Regresar</a>
         </form>
         <div class="mt-3" id="respuesta">
 
