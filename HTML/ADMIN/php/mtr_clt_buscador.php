@@ -38,7 +38,9 @@
                 $estado = "Plan Vencido";
             }
             echo '<th>'.$estado.'</th>';
-            echo '<th>Actualizar</th>';
+            echo '<th>
+                <a href="update_clt_sel.php?id_persona='.$row['id_persona'].'" class= "btn_update">Actualizar</a>
+            </th>';
             echo '</tr>';
         }
         echo '</tbody>';
