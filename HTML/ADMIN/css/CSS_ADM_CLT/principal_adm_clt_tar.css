@@ -20,6 +20,31 @@
 	perspective:1500;
 	
 }
+.ficha_gen {
+	width: 100%;
+	max-width: 800px;
+	margin-top: 1%;
+	margin: 10px;
+	-webkit-perspective: 1500;
+	perspective: 1500;
+
+}
+.ficha {
+	width: 100%;
+	height: 800px;
+	background-color: #ff9b11;
+	;
+	background-size: cover;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: 2s ease;
+	border-radius: 20px;
+	border-color: white;
+	border-width: 5px;
+	border-style: solid;
+
+
+}
 .targeta{
 	width: 100%;
 	height:400px;

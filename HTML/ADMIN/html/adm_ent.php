@@ -1,8 +1,8 @@
 <?php
-	include("../php/mtr_ent.php");
-	include '../php/connection.php';
-	$query_01 = "UPDATE detalles_fac SET estado_plan = 1 WHERE fecha_fin < current_date;";
-	$consulta_01 = mysqli_query($conexion, $query_01);
+include("../php/mtr_ent.php");
+include '../php/connection.php';
+$query_01 = "UPDATE detalles_fac SET estado_plan = 1 WHERE fecha_fin < current_date;";
+$consulta_01 = mysqli_query($conexion, $query_01);
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,6 +71,7 @@
 		</div>
 	</header>
 	<main>
+
 		<!-- creacion dinamica de las tarjetas que contienen los entrenadores -->
 		<div class="principal">
 			<?php while ($row = $consulta->fetch_assoc()) { ?>
