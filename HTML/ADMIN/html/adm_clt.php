@@ -10,10 +10,12 @@
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
-	<link rel="stylesheet" type="text/css" href="../Css/CSS_ADM_Clt/principal_adm_clt_taR.css">
+	<link rel="stylesheet" type="text/css" href="../CSs/CSS_ADM_Clt/principal_adm_clt_taR.css">
+	<link rel="stylesheet" type="text/css" href="../css/css/tablas.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css_adM_clt/popup.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css_adM_clt/popup_update.css">
 	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
@@ -69,35 +71,18 @@
 	<main>
 		<!-- creacion dinamica de las tarjetas que contienen los clientes -->
 		<div class="principal">
-			<?php while ($row = $consulta->fetch_assoc()) { ?>
-				<div for="tar" class="gen">
-					<div class="targeta " id="tar">
-						<div class="adelante">
-							<h1><?php echo $row['nombres'] . " " . $row['apellidos']; ?></h1>
-							<img src=<?php echo "../../img_per\\" . $row['foto']; ?> alt="">
-						</div>
-						<div class="atras">
-							<h1><?php echo $row['nombres'] . " " . $row['apellidos']; ?></h1>
-							<p>
-								<?php echo "Datos Personales"; ?> <br>
-								<?php echo "Documento: " . $row['id_persona']; ?> <br>
-								<?php echo "Email: " . $row['email']; ?> <br>
-								<?php echo "Cel: " . $row['celular']; ?> <br>
-								<?php echo "Fecha de nacimiento: " . $row['fecha_nac']; ?> <br>
-								<?php
-									$estado =" ";
-								 	if($row['estado']==0){
-										$estado ="Plan Vigente";
-									}else{
-										$estado= "Plan Vencido";
-									}
-								?>
-								<?php echo "Datos Plan: ".$estado ; ?> <br>
-							</p>
-						</div>
+			<div for="tar" class="ficha_gen">
+				<div class="ficha " id="tar">
+					<div class="busqueda">
+						<h1>Buscar documento</h1>
+						<input onkeyup="buscar_ahora($('#buscar_1').val());" type="text" class="form-control" id="buscar_1" name="buscar_1">
+					</div>
+					<div id="datos_busqueda">
+
 					</div>
 				</div>
-			<?php } ?>
+			</div>
+
 			<!-- ventana emergente de actualizar datos -->
 			<div class="update_over" id="update_over">
 				<div class="update_popup" id="update_popup">
@@ -136,6 +121,21 @@
 	<script src="../css/Css_adm_clT/combobox.js"></script>
 	<script src="../Css/Css_adm_clt/foto.js"></script>
 	<script src="../css/Css_adm_clT/select2.js"></script>
+	<script type="text/javascript">
+		function buscar_ahora(buscar) {
+			var parametros = {
+				"buscar": buscar
+			};
+			$.ajax({
+				data: parametros,
+				type: 'POST',
+				url: '../php/mtr_clt_buscador.php',
+				success: function(data) {
+					document.getElementById("datos_busqueda").innerHTML = data;
+				}
+			});
+		}
+	</script>
 </body>
 
 </html>
