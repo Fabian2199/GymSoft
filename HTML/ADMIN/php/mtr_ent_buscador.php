@@ -1,13 +1,13 @@
 <?php
     include ("..\php\connection.php");
-    $sql = "SELECT p.id_persona, `nombres`, `apellidos`, `foto`, `email`, `celular`, `fecha_nac`, `estado` FROM personas p JOIN usuarios u ON p.id_persona = u.id_persona WHERE u.tipo_user = 'cliente'";
+    $sql = "SELECT p.id_persona, `nombres`, `apellidos`, `foto`, `email`, `celular`, `fecha_nac`, `estado` FROM personas p JOIN usuarios u ON p.id_persona = u.id_persona WHERE u.tipo_user = 'entrenador'";
     $consulta = $conexion->query($sql);
     if (!isset($_POST['buscar'])) {
         $_POST['buscar'] = '';
     }
     if (!empty($_POST)) {
         $aKeyword = explode(" ", $_POST['buscar']);
-        $sql = "SELECT p.id_persona, `nombres`, `apellidos`, `foto`, `email`, `celular`, `fecha_nac`, `estado` FROM personas p JOIN usuarios u ON p.id_persona = u.id_persona WHERE u.tipo_user = 'cliente' AND p.id_persona LIKE '%".$aKeyword[0]."%'";
+        $sql = "SELECT p.id_persona, `nombres`, `apellidos`, `foto`, `email`, `celular`, `fecha_nac`, `estado` FROM personas p JOIN usuarios u ON p.id_persona = u.id_persona WHERE u.tipo_user = 'entrenador' AND p.id_persona LIKE '%".$aKeyword[0]."%'";
         for ($i = 1; $i < count($aKeyword); $i++) {
             if (!empty($aKeyword[$i])) {
                 $sql .= " AND p.id_persona LIKE '%".$aKeyword[$i]."%'";
@@ -33,13 +33,13 @@
             echo '<th>'.$row['email'].'</th>';
             echo '<th>'.$row['celular'].'</th>';
             if ($row['estado'] == 0) {
-                $estado = "Plan Vigente";
+                $estado = "Contratado";
             } else {
-                $estado = "Plan Vencido";
+                $estado = "Sin contrato";
             }
             echo '<th>'.$estado.'</th>';
             echo '<th>
-                <a href="update_clt_sel.php?id_persona='.$row['id_persona'].'" class= "btn_update">Actualizar</a>
+                <a href="update_ent_sel.php?id_persona='.$row['id_persona'].'" class= "btn_update">Actualizar</a>
             </th>';
             echo '</tr>';
         }
