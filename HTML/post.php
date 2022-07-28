@@ -15,7 +15,7 @@ if($usuario === '' || $pass=== ''){
     echo json_encode('error');
 }else{
    echo json_encode('Correcto: <br>Usuario:'.$usuario.'<br>Pass:'.$pass);
-   $sql=mysqli_query($conexion,"UPDATE `personas` SET `celular` = '$celular' WHERE `personas`.`id_persona` = '1052416004'");
-   $sql1=mysqli_query($conexion,"UPDATE `personas` SET `email` = '$email' WHERE `personas`.`id_persona` = '1052416004'");
+   $sql=mysqli_query($conexion,"UPDATE `personas` JOIN `usuarios` ON `personas`.`id_persona` = `usuarios`.`id_persona` SET `celular` = '$celular' WHERE `usuarios`.`id_user` = '$usuario'");
+   $sql1=mysqli_query($conexion,"UPDATE `personas` JOIN `usuarios` ON `personas`.`id_persona` = `usuarios`.`id_persona`SET `email` = '$email' WHERE `usuarios`.`id_user` = '$usuario'");
    $sql2=mysqli_query($conexion,"UPDATE `usuarios` SET `contrasena` = '$pass' WHERE `usuarios`.`id_user` = '$usuario'");
 }

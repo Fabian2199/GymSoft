@@ -32,7 +32,7 @@ $ficha = get_ficha($id);
 			<label class="fas fa-bars" for="menu-bar"></label>
 			<nav class="menu2">
 				<a href="perfil_clt.php">Datos</a>
-				<a href="../cofiguracion.php">Configuracion</a>
+				<a href="../../cofiguracion.php">Configuracion</a>
 			</nav>
 		</div>
 	</header>

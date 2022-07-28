@@ -25,7 +25,7 @@
 			<label class="fas fa-bars" for="menu-bar"></label>
 			<nav class="menu2">
 				<a href="ficha.php">Agregar ficha antropometrica</a>
-				<a href="configuracion.php">Configuracion</a>
+				<a href="../../configuracion.php">Configuracion</a>
 			</nav>
 			<div class="busqueda">
 				<h1>Buscar documento</h1>

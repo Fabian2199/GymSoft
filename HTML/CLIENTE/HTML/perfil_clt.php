@@ -3,7 +3,7 @@
 <?php
 $id_user= $_GET['id_user'];
 
-$id = substr($id_user,3);//quemado 
+$id = substr($id_user,3);//quemado
 $rutina = get_rutina($id);
 $datos = get_datos($id);
 $ficha = get_ficha($id);
@@ -32,7 +32,7 @@ $ficha = get_ficha($id);
 			<label class="fas fa-bars" for="menu-bar"></label>
 			<nav class="menu2">
 				<a href="#">Inicio</a>
-				<a href="">Configuracion</a>
+				<a href="../../configuracion.php">Configuracion</a>
 			</nav>
 		</div>
 	</header>
