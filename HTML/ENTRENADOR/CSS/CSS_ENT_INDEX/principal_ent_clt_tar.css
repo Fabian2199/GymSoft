@@ -1,11 +1,14 @@
-
 .principal{
 	width: 100%;
 	margin-top: 50px;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	
+	background-color: #ffffff;
+	opacity: 1;
+	background-image:  radial-gradient(#888888 0.7000000000000001px, transparent 0.7000000000000001px), radial-gradient(#888888 0.7000000000000001px, #ffffff 0.7000000000000001px);
+	background-size: 28px 28px;
+	background-position: 0 0,14px 14px;
 }
 .gen{
 	width: 100%;
@@ -16,13 +19,21 @@
 	perspective:1500;
 	
 }
-.targeta{
+
+.ficha_gen {
 	width: 100%;
-	height:400px;
-	background: url(../../../img_gen/fondo_tar.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
+	max-width: 900px;
+	margin-top: 1%;
+	margin: 10px;
+	-webkit-perspective: 1500;
+	perspective: 1500;
+
+}
+.ficha {
+	width: 100%;
+	height: 700px;
+	background-color: #ff9b11;
+	;
 	background-size: cover;
 	position: relative;
 	transform-style: preserve-3d;
@@ -31,43 +42,47 @@
 	border-color: white;
 	border-width: 5px;
 	border-style: solid;
+	text-align: center;
 
-	
+
 }
-.adelante img{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
+.datos {
+	width: 90%;
+	height: 90px;
+	background-color: #ff9b11;
+	;
+	background-size: cover;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: 2s ease;
 	border-radius: 20px;
-	width: 285px;
-	height: 200px;
+	border-color: white;
+	border-width: 5px;
+	border-style: solid;
+	margin: 5%;
 }
-
-.adelante , .atras{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	backface-visibility: hidden;
+.busqueda{
+	text-align: center;
 }
-.adelante h1{
-	padding: 10px;
-	background: rgba(51,51,51,0.7);
-	color: rgba(243,238,218,1);
-	opacity: 0.9;
-	border: 3px solid rgb(0, 0, 0);
+.busqueda h1{
 	margin-top: 10px;
 	margin-right: 10px;
 	margin-left: 10px;
 	text-align: center;
 }
-.adelante a{
+
+.btn_update {
+	padding: 10px;
+	line-height: 50px;
+	background: #f47a21;
+	color: black;
+	opacity: 0.9;
+	border-radius: 15px;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	text-align: center;
 	text-decoration: none;
-}
-.adelante h1:hover{
-	background: rgba(221, 215, 215, 0.7);
 }
 
 footer{

@@ -14,18 +14,35 @@ if (!empty($_POST)) {
         }
     }
     $consulta_cliente = $conexion->query($sql);
-    while ($row = $consulta_cliente->fetch_assoc()) {
-        $imagen = "../../img_per/".$row['foto'];
-        echo '<div for="tar" class="gen">';
-        echo '<div class="targeta " id="tar">';
-        echo '<div class="adelante">';
-        echo '<a  href="ent_clt_sel.php?id_persona='.$row['id_persona'].'">';
-        echo '<h1>' . $row['nombres'] . ' ' . $row['apellidos'] . '</h1>';
-		echo '</a>';
-        echo '<img src= "'.$imagen.'" alt="">';
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
-    }
+    echo '<table>';
+        echo '<thead>';
+        echo '<th>Documento</th>';
+        echo '<th>Nombre</th>';
+        echo '<th>Apellido</th>';
+        echo '<th>Email</th>';
+        echo '<th>Celular</th>';
+        echo '<th>Datos plan</th>';
+        echo '<th>Evaluar</th>';
+        echo '<thead>';
+        echo '<tbody>';
+        while ($row = $consulta_cliente->fetch_assoc()) {
+            echo '<tr>';
+            echo '<th>'.$row['id_persona'].'</th>';
+            echo '<th>'.$row['nombres'].'</th>';
+            echo '<th>'.$row['apellidos'].'</th>';
+            echo '<th>'.$row['email'].'</th>';
+            echo '<th>'.$row['celular'].'</th>';
+            if ($row['estado'] == 0) {
+                $estado = "Plan Vigente";
+            } else {
+                $estado = "Plan Vencido";
+            }
+            echo '<th>'.$estado.'</th>';
+            echo '<th>
+                <a href="ent_clt_sel.php?id_persona='.$row['id_persona'].'" class= "btn_update">Mostrar</a>
+            </th>';
+            echo '</tr>';
+        }
+        echo '</tbody>';
+        echo '</table>';
 }
-?>
