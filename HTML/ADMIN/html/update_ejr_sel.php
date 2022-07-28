@@ -1,8 +1,8 @@
 <?php include("..\php\connection.php") ?>
-<?php include("..\php\dato_ent.php") ?>
+<?php include("..\php\dato_ejr.php") ?>
 
 <?php
-$id = $_GET['id_persona'];
+$id = $_GET['id_ejercicio'];
 $datos = get_datos($id);
 ?>
 
@@ -17,7 +17,7 @@ $datos = get_datos($id);
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
-	<link rel="stylesheet" type="text/css" href="../CSs/CsS_ADM_Clt/update_clt.css">
+	<link rel="stylesheet" type="text/css" href="../CSs/CSS_ADM_ejer/update_ejr.css">
 
 </head>
 
@@ -29,6 +29,7 @@ $datos = get_datos($id);
 			<label class="fas fa-bars" for="menu-bar"></label>
 			<nav class="menu2">
 				<a href="adm_ejer.php">Ejercicios</a>
+				<a href="adm_clt.php">Clientes</a>
 				<a href="adm_ent.php">Entrenadores</a>
 				<a href="facturacion.php">Facturacion</a>
 				<a href="../../torniquete.php">Ingreso</a>
@@ -45,20 +46,19 @@ $datos = get_datos($id);
 
 						<?php while ($row = $datos->fetch_assoc()) { ?>
 							
-							<img src="<?php echo "../../img_per\\" . $row['foto']; ?>" alt="">
-							<?php if ($row['estado'] == 0) { $estado = "Contratado";} else {$estado = "Sin contrato"; }?>
-							<h1 class="h1_datos">Estado: <?php echo $estado; ?></h1>
-							<form action="../php/act_per.php" method="POST">
+							<img src="<?php echo "../../img_ejer\\" . $row['imagen']; ?>" alt="">
+							<form action="../php/act_ejr.php" method="POST">
 								<div class="inputs_update">
-									<input type="text" value=<?php echo $id;?> name= 'id_persona' style='display: none;'>
-									<input type='text' value="<?php echo $row['nombres'];?>" name='nombres' pattern='[A-Za-z ]+' required>
-									<input type='text' value="<?php echo $row['apellidos']; ?>"name='apellidos'pattern='[A-Za-z ]+' required>
-									<input type='text' value=<?php echo $row['celular']; ?> name='celular' pattern='[0-9]{10}' required>
-									<input type='email' value=<?php echo $row['email']; ?> name='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'>
-									<select name="contrato" class="contrato">
-										<option value="0">Contratar</option>
-										<option value="1">Sin contrato</option>
-									</select>
+									<input type="text" value="<?php echo $row['id_ejercicio'];?>" name="id" style="display: none;">
+									<input type="text" value="<?php echo $row['nombre_ejercicio'];?>" name="ejercicio" pattern='[A-Za-z ]+' required>
+									<textarea name="descripcion" pattern='[A-Za-z ]+' required><?php echo $row['descripcion'];?></textarea>
+									<input type="text" value="<?php echo $row['video'];?>" name="video">
+									<label id="divimg">
+										¿Desea cambiar imagen?
+										<input type="checkbox" value="1" name="check" id="check">
+										<div><input type="text" value="<?php echo $row['imagen'];?>" name="imagen" style="display: none;"></div>
+									</label>
+									
 								</div>
 								<input type="submit" class="btn_actu" value="Actualizar" id="btn_actu">
 								
@@ -71,6 +71,7 @@ $datos = get_datos($id);
 		</div>
 	</main>
 	<footer>
+	<script src="../css/css_adm_ejer/checkbox.js"></script>
 		<div class="sociales">
 			<a class="fab fa-facebook" href="https://www.facebook.com/BfreeGym"></a>
 			<a class="fab fa-instagram" href="https://www.instagram.com/bfreegym/"></a>

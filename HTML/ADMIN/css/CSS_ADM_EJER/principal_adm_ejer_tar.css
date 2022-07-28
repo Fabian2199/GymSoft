@@ -57,17 +57,12 @@
 	padding: 5px;
 	justify-content: center;
 	align-items: center;
-	text-align:justify;
+	text-align:center;
 	color: white;
 	font-family: "Swis721 BlkCn BT";
 }
 .gen:hover .targeta{
 	transform: rotateY(180deg);
-}
-.ironman1{
-	background-image: url(../imgCine/ironman1.jpg);
-	background-size: 100% 100%;
-	border-radius: 0px;
 }
 
 
@@ -111,4 +106,17 @@
 .datos_buscador{
 	width: 90%;
 	display: flex;
+}
+.btn_update {
+	padding: 0 20px;
+	height:60px;
+	line-height: 40px;
+	border: none;
+	color: #fff;
+	background: #fdb425;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	cursor: pointer;
+	transition: .3s ease all;
+	cursor: pointer;
 }

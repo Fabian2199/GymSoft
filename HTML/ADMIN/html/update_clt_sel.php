@@ -30,6 +30,7 @@ $datos = get_datos($id);
 			<nav class="menu2">
 				<a href="adm_ejer.php">Ejercicios</a>
 				<a href="adm_ent.php">Entrenadores</a>
+				<a href="adm_clt.php">Clientes</a>
 				<a href="facturacion.php">Facturacion</a>
 				<a href="../../torniquete.php">Ingreso</a>
 				<a href="../../configuracion.php">COf</a>

@@ -1,4 +1,3 @@
-<?php include("..\php\mtr_ejr.php") ?>
 <!DOCTYPE html>
 <html>
 
@@ -10,12 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
-	<link rel="stylesheet" type="text/css" href="../Css/cSS_ADM_EJeR/principal_adm_ejer_tar.css">
+	<link rel="stylesheet" type="text/css" href="../CSs/cSS_ADM_EJeR/principal_adm_ejer_tar.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css_adm_eJer/popup.css">
-	<link rel="stylesheet" type="text/css" href="../Css/css_adm_ejEr/popup_update.css">
 	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>
-	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 
@@ -24,9 +20,6 @@
 		<div class="contenedor">
 			<img src="../../img_gen/logoBFree.png" class="logogym">
 			<button id="btn-abrir-popup" class="btn-abrir-popup"><img src="../../img_gen/plus.png" class="plus"></button>
-			<button id="btn_update" class="btn_update">
-				<h1>Actualizar</h1>
-			</button>
 			<input type="checkbox" id="menu-bar">
 			<label class="fas fa-bars" for="menu-bar"></label>
 			<nav class="menu2">
@@ -67,31 +60,6 @@
 			<div id="datos_buscador" class="datos_buscador">
 				
 			</div>
-
-			<!-- ventana emergente de actualizar datos -->
-			<div class="update_over" id="update_over">
-				<div class="update_popup" id="update_popup">
-					<a href="#" id="btn-cerrar-update_popup" class="btn-cerrar-update_popup"><i class="fas fa-times"></i></a>
-					<h3>Actualizar Datos</h3>
-					<form action="..\php\act_ejr.php" method="POST">
-						<div class="inputs-update">
-							<div class="box">
-								<label for="ejers">Ejercicio: </label>
-								<select name="ejers" id="ejers">
-									<option value="100">Seleccionar ejercicio </option>
-									<?php foreach ($consulta as $opciones) : ?>
-										<option value="<?php echo $opciones['id_ejercicio']; ?>"><?php echo $opciones['nombre_ejercicio']; ?></option>
-									<?php endforeach ?>
-								</select>
-							</div>
-							<div class="contenedor-inputs" id="contenedor-inputs">
-
-							</div>
-						</div>
-						<input type="submit" class="btn_actu" value="Actualizar" id="btn_actu" disabled=true>
-					</form>
-				</div>
-			</div>
 		</div>
 	</main>
 	<footer>
@@ -101,9 +69,6 @@
 		</div>
 	</footer>
 	<script src="../css/css_adm_ejer/popup.js"></script>
-	<script src="../css/css_adm_ejeR/popup_update.js"></script>
-	<script src="../Css/css_adm_eJer/combobox.js"></script>
-	<script src="../css/css_adm_ejeR/select2.js"></script>
 	<script type="text/javascript">
 		function buscar_ahora(buscar) {
 			var parametros = {
