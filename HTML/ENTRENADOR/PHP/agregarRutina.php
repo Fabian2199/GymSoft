@@ -17,7 +17,7 @@
     $consulta = mysqli_query($conexion, $query);
     
     if($consulta){
-        Header("Location: ../html/ent_index.php");
+        header('Location: ..\html\ent_clt_sel.php?id_persona='.$_POST['clientes']);
     }
     //*/
 ?>
