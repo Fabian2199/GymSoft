@@ -20,7 +20,7 @@ $consulta_01 = mysqli_query($conexion, $query_01);
 	<link rel="stylesheet" type="text/css" href="../Css/css_adM_ent/popup.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-	<link rel="stylesheet" href="../css/css/stylemenu.css">
+	<link rel="stylesheet" href="../css/css/styleMEnu.css">
 
 <body>
 <div id="sidemenu" class="menu-collapsed">

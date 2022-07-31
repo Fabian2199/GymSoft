@@ -15,7 +15,7 @@
 	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-	<link rel="stylesheet" href="../css/css/stylemenu.css">
+	<link rel="stylesheet" href="../css/css/styleMEnu.css">
 </head>
 
 <body>
