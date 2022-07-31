@@ -97,7 +97,7 @@ $consulta_01 = mysqli_query($conexion, $query_01);
 	<header>
 		<div class="contenedor">
 			<img src="../../img_gen/logoBFree.png" class="logogym">
-			
+			<button id="btn-abrir-popup" class="btn-abrir-popup"><img src="../../img_gen/plus.png" class="plus"></button>
 			<!-- clase overlay es una ventana emergente para agregar un cliente -->
 			<div class="overlay" id="overlay">
 				<div class="popup" id="popup">

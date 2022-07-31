@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Clientes</title>
-	<link rel="stylesheet" type="text/css" href="../css/css/Menu.css">
+	<link rel="stylesheet" type="text/css" href="../css/css/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
@@ -93,7 +93,8 @@
 	<header>
 		<div class="contenedor">
 			<img src="../../img_gen/logoBFree.png" class="logogym">
-			
+			<button id="btn-abrir-popup" class="btn-abrir-popup"><img src="../../img_gen/plus.png" class="plus"></button>
+
 			<!-- clase overlay es una ventana emergente para agregar un cliente -->
 			<div class="overlay" id="overlay">
 				<div class="popup" id="popup">
