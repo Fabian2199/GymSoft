@@ -44,7 +44,7 @@
                 </a>
             </div>
             <div class="item">
-                <a href="../../torniquete.php">
+                <a href="torniquete.php">
                     <div class="icon"><img src="../../iconos/admin/ingreso.png" alt=""></div>
                     <div class="title"><span>Ingreso</span></div>
                 </a>
@@ -62,7 +62,7 @@
                 </a>
             </div>
             <div class="item">
-                <a href="adm_ejer.php">
+                <a href="#">
                     <div class="icon"><img src="../../iconos/admin/ejercicios.png" alt=""></div>
                     <div class="title"><span>Ejercicios</span></div>
                 </a>
@@ -75,7 +75,7 @@
             </div>
             <div class="item separator"></div>
             <div class="item">
-                <a href="../../configuracion.php">
+                <a href="configuracion.php">
                     <div class="icon"><img src="../../iconos/admin/configuracion.png" alt=""></div>
                     <div class="title"><span>Configuración</span></div>
                 </a>

@@ -49,7 +49,7 @@ $consulta_01 = mysqli_query($conexion, $query_01);
                 </a>
             </div>
             <div class="item">
-                <a href="../../torniquete.php">
+                <a href="torniquete.php">
                     <div class="icon"><img src="../../iconos/admin/ingreso.png" alt=""></div>
                     <div class="title"><span>Ingreso</span></div>
                 </a>
@@ -61,7 +61,7 @@ $consulta_01 = mysqli_query($conexion, $query_01);
                 </a>
             </div>
             <div class="item">
-                <a href="adm_ent.php">
+                <a href="#">
                     <div class="icon"><img src="../../iconos/admin/entrenadores.png" alt=""></div>
                     <div class="title"><span>Entrenadores</span></div>
                 </a>
@@ -80,7 +80,7 @@ $consulta_01 = mysqli_query($conexion, $query_01);
             </div>
             <div class="item separator"></div>
             <div class="item">
-                <a href="../../configuracion.php">
+                <a href="configuracion.php">
                     <div class="icon"><img src="../../iconos/admin/configuracion.png" alt=""></div>
                     <div class="title"><span>Configuración</span></div>
                 </a>
