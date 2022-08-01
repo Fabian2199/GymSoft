@@ -16,25 +16,72 @@ $datos_rut = get_rut($id_ejercicio, $id, $dia);
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Actualizar rutina</title>
-	<link rel="stylesheet" type="text/css" href="../css/css/menu.css">
+	<link rel="stylesheet" type="text/css" href="../css/css/Menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
 	<link rel="stylesheet" type="text/css" href="../css/CSS_ENT_CLT_SEl/update_clt.css">
 
+	<link rel="stylesheet" href="../css/css/styleMenu.css">
 </head>
 
 <body>
+<div id="sidemenu" class="menu-collapsed">
+        <!-- HEADER -->
+        <div id="header">
+            <div id="title"><span>Gimnasio BFree</span></div>
+            <div id="menu-btn">
+                <div class="btn-hamburger"></div>
+                <div class="btn-hamburger"></div>
+                <div class="btn-hamburger"></div>
+            </div>
+        </div>
+        
+        <!-- PROFILE -->
+        <div id="profile">
+            <div id="photo"><img src="photo.jpeg" alt=""></div>
+            <div id="name"><span>Camilo Sanguino</span></div>
+        </div>
+
+        <!-- ITEMS -->
+        <div id="menu-items">
+            <div class="item">
+                <a href="homeMenu.php">
+                    <div class="icon"><img src="../../iconos/admin/home.png" alt=""></div>
+                    <div class="title"><span>Inicio</span></div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="ent_index.php">
+                    <div class="icon"><img src="../../iconos/admin/clientes.png" alt=""></div>
+                    <div class="title"><span>Clientes</span></div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="ficha.php">
+                    <div class="icon"><img src="../../iconos/admin/facturacion.png" alt=""></div>
+                    <div class="title"><span>Ficha antropometrica</span></div>
+                </a>
+            </div>
+            <div class="item separator"></div>
+            <div class="item">
+                <a href="configuracion.php">
+                    <div class="icon"><img src="../../iconos/admin/configuracion.png" alt=""></div>
+                    <div class="title"><span>Configuración</span></div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="icon"><img src="../../iconos/admin/cerrar_sesion.png" alt=""></div>
+                    <div class="title"><span>Cerrar sesión</span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
 	<header>
 		<div class="contenedor">
 			<img src="../../img_gen/logoBFree.png" class="logogym">
-			<input type="checkbox" id="menu-bar">
-			<label class="fas fa-bars" for="menu-bar"></label>
-			<nav class="menu2">
-				<a href="ent_index.php">Inicio</a>
-				<a href="ficha.php">Agregar ficha antropometrica</a>
-				<a href="configuracion.php">Configuracion</a>
-			</nav>
 		</div>
 	</header>
 	<main>
@@ -76,6 +123,15 @@ $datos_rut = get_rut($id_ejercicio, $id, $dia);
 			<a class="fab fa-instagram" href="https://www.instagram.com/bfreegym/"></a>
 		</div>
 	</footer>
+	<script>
+        const btn = document.querySelector('#menu-btn');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e => {
+            menu.classList.toggle("menu-expanded");
+            menu.classList.toggle("menu-collapsed");
+            document.querySelector('body').classList.toggle('body-expanded');
+        });
+    </script>
 </body>
 
 </html>

@@ -22,11 +22,66 @@ $ficha = get_ficha($id);
 	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ENT_CLT_SEL/principal_ent_clt_tar.css">
 
     <link rel="stylesheet" type="text/css" href=" ../Css/css_ent_rut/popup.css">
+	
+	<link rel="stylesheet" href="../css/css/styleMEnu.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 
 <body>
+	<div id="sidemenu" class="menu-collapsed">
+        <!-- HEADER -->
+        <div id="header">
+            <div id="title"><span>Gimnasio BFree</span></div>
+            <div id="menu-btn">
+                <div class="btn-hamburger"></div>
+                <div class="btn-hamburger"></div>
+                <div class="btn-hamburger"></div>
+            </div>
+        </div>
+        
+        <!-- PROFILE -->
+        <div id="profile">
+            <div id="photo"><img src="photo.jpeg" alt=""></div>
+            <div id="name"><span>Camilo Sanguino</span></div>
+        </div>
+
+        <!-- ITEMS -->
+        <div id="menu-items">
+            <div class="item">
+                <a href="homeMenu.php">
+                    <div class="icon"><img src="../../iconos/admin/home.png" alt=""></div>
+                    <div class="title"><span>Inicio</span></div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="ent_index.php">
+                    <div class="icon"><img src="../../iconos/admin/clientes.png" alt=""></div>
+                    <div class="title"><span>Clientes</span></div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="ficha.php">
+                    <div class="icon"><img src="../../iconos/admin/facturacion.png" alt=""></div>
+                    <div class="title"><span>Ficha antropometrica</span></div>
+                </a>
+            </div>
+            <div class="item separator"></div>
+            <div class="item">
+                <a href="configuracion.php">
+                    <div class="icon"><img src="../../iconos/admin/configuracion.png" alt=""></div>
+                    <div class="title"><span>Configuración</span></div>
+                </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <div class="icon"><img src="../../iconos/admin/cerrar_sesion.png" alt=""></div>
+                    <div class="title"><span>Cerrar sesión</span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+	
 	<header>
 		<div class="contenedor">
 			<img src="../../img_gen/logoBFree.png" class="logogym">
@@ -146,6 +201,15 @@ $ficha = get_ficha($id);
 			<a class="fab fa-instagram" href="https://www.instagram.com/bfreegym/"></a>
 		</div>
 	</footer>
+	<script>
+        const btn = document.querySelector('#menu-btn');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e => {
+            menu.classList.toggle("menu-expanded");
+            menu.classList.toggle("menu-collapsed");
+            document.querySelector('body').classList.toggle('body-expanded');
+        });
+    </script>
 </body>
 <script src="../Css/CSS_ENT_CLT_SEL\combobox.js"></script>
 <script src="../css/css_ent_rut/popup.js"></script>
