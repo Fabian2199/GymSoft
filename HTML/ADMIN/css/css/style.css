@@ -51,11 +51,34 @@
 }
 
 table {
-    width: 200%;
-    margin: auto -50%;
+    padding: auto;
+    width: 150%;
+    margin: auto -25%;
     border-spacing: 0;
 }
 
+tr:nth-of-type(odd) {
+	background: #eee;
+}
+
+td,
+th {
+	padding: 6px;
+	border: 1px solid #ccc;
+	text-align: center;
+    background: #333;
+    color: white;
+    font-weight: bold;
+}
+
+.table a {
+    padding: 0 15px;
+    background: #ff9b11;
+    color: white;
+    border-radius: 7%;
+}
+
+/*
 th, td {
     vertical-align: top;
     border: 1px solid #000;
@@ -64,3 +87,4 @@ th, td {
 td {
     text-align: center;
 }
+*/
