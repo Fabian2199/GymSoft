@@ -16,7 +16,7 @@ $ficha = get_ficha($id);
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Cliente</title>
-	<link rel="stylesheet" type="text/css" href="../css/css/menu.css">
+	<link rel="stylesheet" type="text/css" href="../css/css/Menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ENt_CLT_SEL/principal_ent_clt.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ENT_CLT_SEL/principal_ent_clt_tar.css">
@@ -85,13 +85,6 @@ $ficha = get_ficha($id);
 	<header>
 		<div class="contenedor">
 			<img src="../../img_gen/logoBFree.png" class="logogym">
-			<input type="checkbox" id="menu-bar">
-			<label class="fas fa-bars" for="menu-bar"></label>
-			<nav class="menu2">
-				<a href="ent_index.php">Inicio</a>
-				<a href="ficha.php">Agregar ficha antropometrica</a>
-				<a href="configuracion.php">Configuracion</a>
-			</nav>
 		</div>
 		<!-- clase overlay es una ventana emergente para agregar una rutina -->
 		<div class="overlay-agregar-rutina" id="overlay-agregar-rutina">
