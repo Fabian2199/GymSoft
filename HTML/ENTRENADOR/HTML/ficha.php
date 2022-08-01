@@ -54,32 +54,32 @@
         <div id="menu-items">
             <div class="item">
                 <a href="homeMenu.php">
-                    <div class="icon"><img src="../../iconos/admin/home.png" alt=""></div>
+                    <div class="icon"><img src="../../iconos/entrenador/home.png" alt=""></div>
                     <div class="title"><span>Inicio</span></div>
                 </a>
             </div>
             <div class="item">
                 <a href="ent_index.php">
-                    <div class="icon"><img src="../../iconos/admin/clientes.png" alt=""></div>
+                    <div class="icon"><img src="../../iconos/entrenador/clientes.png" alt=""></div>
                     <div class="title"><span>Clientes</span></div>
                 </a>
             </div>
             <div class="item">
                 <a href="#">
-                    <div class="icon"><img src="../../iconos/admin/facturacion.png" alt=""></div>
+                    <div class="icon"><img src="../../iconos/entrenador/fichaAntropometrica.png" alt=""></div>
                     <div class="title"><span>Ficha antropometrica</span></div>
                 </a>
             </div>
             <div class="item separator"></div>
             <div class="item">
                 <a href="configuracion.php">
-                    <div class="icon"><img src="../../iconos/admin/configuracion.png" alt=""></div>
+                    <div class="icon"><img src="../../iconos/entrenador/configuracion.png" alt=""></div>
                     <div class="title"><span>Configuración</span></div>
                 </a>
             </div>
             <div class="item">
                 <a href="#">
-                    <div class="icon"><img src="../../iconos/admin/cerrar_sesion.png" alt=""></div>
+                    <div class="icon"><img src="../../iconos/entrenador/cerrar_sesion.png" alt=""></div>
                     <div class="title"><span>Cerrar sesión</span></div>
                 </a>
             </div>
