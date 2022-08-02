@@ -1,6 +1,6 @@
 <?php
     ob_start();
-    $id_usuario = $_GET['id'];
+    //$id_usuario = $_GET['id'];
     $rol = "Entrenador"; //><-------------- que le entre el rol o id pa buscarlo
 ?>
 
@@ -93,8 +93,8 @@
         <div class="icon"><h3><?php echo $rol;?> - GymSoft</h3></div>
         <br><br>
         <div class="redesSociales">
-            <a title="Facebook" href="https://www.facebook.com/BfreeGym"><img id="imgFacebook" src="../img/logoFacebook.png" alt="Logo facebook"/></a>
-            <a title="Instagram" href="https://www.instagram.com/bfreegym/"><img id="imgInstagram" src="../img/logoInstagram.png" alt="Logo instagram" /></a>
+            <a title="Facebook" href="https://www.facebook.com/BfreeGym"><img id="imgFacebook" src="../../img/logoFacebook.png" alt="Logo facebook"/></a>
+            <a title="Instagram" href="https://www.instagram.com/bfreegym/"><img id="imgInstagram" src="../../img/logoInstagram.png" alt="Logo instagram" /></a>
         </div>
     </div>
 
