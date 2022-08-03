@@ -39,7 +39,7 @@
             }
             echo '<th>'.$estado.'</th>';
             echo '<th>
-                <a href="update_clt_sel.php?id_persona='.$row['id_persona'].'" class= "btn_update">Actualizar</a>
+                <a href="update_clt_sel.php?id_persona='.$row['id_persona'].'" >Actualizar</a>
             </th>';
             echo '</tr>';
         }

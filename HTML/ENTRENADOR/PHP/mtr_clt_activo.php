@@ -39,7 +39,7 @@ if (!empty($_POST)) {
             }
             echo '<th>'.$estado.'</th>';
             echo '<th>
-                <a href="ent_clt_sel.php?id_persona='.$row['id_persona'].'" class= "btn_update">Mostrar</a>
+                <a href="ent_clt_sel.php?id_persona='.$row['id_persona'].'&id_ent='.$_GET['id_ent'].'" class= "btn_update">Mostrar</a>
             </th>';
             echo '</tr>';
         }

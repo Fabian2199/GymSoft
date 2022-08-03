@@ -1,7 +1,10 @@
 
 <!DOCTYPE html>
 <html>
-
+<?php
+    ob_start();
+    $id_ent = $_GET['id_ent'];
+?>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -11,7 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
 	<link rel="stylesheet" type="text/css" href="../csS/Css/tablas.css">
-	<link rel="stylesheet" type="text/css" href="../csS/CsS_ENt_INDEx/principal_Ent_clt_taR.css">
+	<link rel="stylesheet" type="text/css" href="../csS/CsS_ENt_INDEX/principal_Ent_clt_taR.css">
 	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
@@ -39,21 +42,9 @@
         <!-- ITEMS -->
         <div id="menu-items">
             <div class="item">
-                <a href="homeMenu.php">
+                <a href="homeMenu.php?id_user=ent<?php echo $id_ent?>">
                     <div class="icon"><img src="../../iconos/entrenador/home.png" alt=""></div>
                     <div class="title"><span>Inicio</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="#.php">
-                    <div class="icon"><img src="../../iconos/entrenador/clientes.png" alt=""></div>
-                    <div class="title"><span>Clientes</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="ficha.php">
-                    <div class="icon"><img src="../../iconos/entrenador/fichaAntropometrica.png" alt=""></div>
-                    <div class="title"><span>Ficha antropometrica</span></div>
                 </a>
             </div>
             <div class="item separator"></div>
@@ -109,7 +100,7 @@
 			$.ajax({
 				data: parametros,
 				type: 'POST',
-				url: '../php/mtr_clt_activo.php',
+				url: '../php/mtr_clt_activo.php?id_ent=<?php echo $id_ent?>',
 				success: function(data) {
 					document.getElementById("datos_busqueda").innerHTML = data;
 				}

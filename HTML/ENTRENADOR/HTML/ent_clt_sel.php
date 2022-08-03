@@ -8,6 +8,7 @@ $id = $_GET['id_persona'];
 $rutina = get_rutina($id);
 $datos = get_datos($id);
 $ficha = get_ficha($id);
+$id_ent = $_GET['id_ent'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,7 @@ $ficha = get_ficha($id);
 	<link rel="stylesheet" type="text/css" href="../css/css/Menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ENt_CLT_SEL/principal_ent_clt.css">
-	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ENT_CLT_SEL/principal_ent_clt_tar.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ENt_CLT_SEL/principal_ent_clt_tar.css">
 
     <link rel="stylesheet" type="text/css" href=" ../Css/css_ent_rut/popup.css">
 	
@@ -49,21 +50,15 @@ $ficha = get_ficha($id);
         <!-- ITEMS -->
         <div id="menu-items">
             <div class="item">
-                <a href="homeMenu.php">
+                <a href="homeMenu.php?id_user=ent<?php echo $id_ent?>">
                     <div class="icon"><img src="../../iconos/entrenador/home.png" alt=""></div>
                     <div class="title"><span>Inicio</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="ent_index.php">
+                <a href="ent_index.php?id_ent=<?php echo $id_ent?>">
                     <div class="icon"><img src="../../iconos/entrenador/clientes.png" alt=""></div>
                     <div class="title"><span>Clientes</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="ficha.php">
-                    <div class="icon"><img src="../../iconos/entrenador/fichaAntropometrica.png" alt=""></div>
-                    <div class="title"><span>Ficha antropometrica</span></div>
                 </a>
             </div>
             <div class="item separator"></div>
@@ -92,7 +87,7 @@ $ficha = get_ficha($id);
 				<a href="#" id="btn-cerrar-popup-agregar-rutina" class="btn-cerrar-popup-agregar-rutina"><i class="fas fa-times"></i></a>
 				<h3>AGREGAR RUTINA</h3>
 				<h4>completa el siguiente formulario</h4>
-				<form action="../php/agregarRutina.php" method="post">
+				<form action="../php/agregarRutina.php?id_ent=<?php echo $id_ent?>" method="post">
 					<input name="clientes" id="ejers" type="hidden" value='<?php echo $id;?>'>
 
 					<select name="ejercicios" id="ejers" class="select" required>
@@ -137,12 +132,14 @@ $ficha = get_ficha($id);
 				<div class="ficha " id="tar">
 					<div class="adelante">
 						<h1>Valoraciones</h1>
+						<a href="add_ficha.php?id_clt=<?php echo $id?>&id_ent=<?php echo $id_ent?>" >Agregar ficha antropometrica</a>
 						<select name="ficha" id="ficha" class="select">
 							<option value="100">Seleccionar fecha </option>
 							<?php foreach ($ficha as $opciones) : ?>
 								<option value="<?php echo $opciones['id_ficha']; ?>"><?php echo $opciones['fecha']; ?></option>
 							<?php endforeach ?>
 						</select>
+						
 						<div class="contenedor-inputs" id="contenedor-inputs">
 							<h1 class='h1_datos'>Entrenador: </h1>
 							<h1 class='h1_datos'>Datos y medidas:</h1>
@@ -175,8 +172,8 @@ $ficha = get_ficha($id);
 										<th><?php echo $row['n_series']; ?></th>
 										<th><?php echo $row['n_rep']; ?></th>
 										<th>
-											<a href="update_clt_rut.php?id_persona=<?php echo $id; ?>&id_ejercicio=<?php echo $row['id_ejercicio']; ?>&dia=<?php echo $row['dia']; ?>" class= "btn_update">Actualizar</a>
-											<a href="../php/del_rut.php?id_persona=<?php echo $id; ?>&id_ejercicio=<?php echo $row['id_ejercicio']; ?>&dia=<?php echo $row['dia']; ?>" class= "btn_update">Borrar</a>
+											<a href="update_clt_rut.php?id_persona=<?php echo $id; ?>&id_ejercicio=<?php echo $row['id_ejercicio']; ?>&dia=<?php echo $row['dia']; ?>&id_ent=<?php echo $id_ent?>" >Actualizar</a>
+											<a href="../php/del_rut.php?id_persona=<?php echo $id; ?>&id_ejercicio=<?php echo $row['id_ejercicio']; ?>&dia=<?php echo $row['dia']; ?>&id_ent=<?php echo $id_ent?>">Borrar</a>
 										</th>
 									</tr>
 								<?php } ?>

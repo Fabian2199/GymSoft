@@ -3,7 +3,7 @@
 <?php
 $id_user= $_GET['id_user'];
 
-$id = substr($id_user,3);//quemado
+$id = substr($id_user,3);
 $rutina = get_rutina($id);
 $datos = get_datos($id);
 $ficha = get_ficha($id);

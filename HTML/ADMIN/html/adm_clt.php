@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
-	<link rel="stylesheet" type="text/css" href="../CSS/CsS_ADm_Clt/principal_adm_clt_taR.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CsS_ADM_Clt/principal_adm_clt_tar.css">
 	<link rel="stylesheet" type="text/css" href="../csS/Css/tablas.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css_adM_clt/popup.css">
 	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>

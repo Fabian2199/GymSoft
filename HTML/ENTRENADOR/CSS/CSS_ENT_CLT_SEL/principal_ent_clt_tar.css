@@ -73,6 +73,7 @@
 	border-width: 5px;
 	border-style: solid;
 	overflow: scroll;
+	text-align: center;
 
 
 }
@@ -155,6 +156,7 @@ table .imagen_ejr {
 	margin-top: 10px;
 	margin-right: 10px;
 	margin-left: 10px;
+	margin-bottom: 10px;
 	text-align: center;
 }
 .adelante .h1_datos{
@@ -178,14 +180,32 @@ table .imagen_ejr {
 	color: black;
 	opacity: 0.9;
 	border-radius: 15px;
-	margin-top: 10px;
+	margin-top: 15px;
 	margin-right: 10px;
 	margin-left: 10px;
 	text-align: center;
 	text-decoration: none;
+	margin-bottom: 20px;
+	height:60px;
+	border: none;
+	background: #f47a21;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .3s ease all;
+	border-radius: 15px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	
 }
 .adelante a:hover{
 	background: #f3934e;
+}
+
+a .add_ficha{
+	font-family: 'Courier New', Courier, monospace;
 }
 
 footer {

@@ -1,6 +1,7 @@
 <?php
     ob_start();
-    $id_usuario = $_GET['id'];
+    $id_usuario = $_GET['id_user'];
+    $id_ent = substr($id_usuario,3);
 ?>
 
 <!DOCTYPE html>
@@ -39,15 +40,9 @@
                 </a>
             </div>
             <div class="item">
-                <a href="ent_index.php">
+                <a href="ent_index.php?id_ent=<?php echo $id_ent?>">
                     <div class="icon"><img src="../../iconos/entrenador/clientes.png" alt=""></div>
                     <div class="title"><span>Clientes</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="ficha.php">
-                    <div class="icon"><img src="../../iconos/entrenador/fichaAntropometrica.png" alt=""></div>
-                    <div class="title"><span>Ficha antropometrica</span></div>
                 </a>
             </div>
             <div class="item separator"></div>
