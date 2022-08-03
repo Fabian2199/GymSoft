@@ -56,7 +56,7 @@
 						window.location="admin/html/adm_clt.php?id_user="+ $('#id_user').val();
 					}else if (r==2) {
 						//cliente
-						window.location="cliente/html/perfil_clt.php?id_user="+ $('#id_user').val();
+						window.location="cliente/html/homeMenu.php?id_user="+ $('#id_user').val();
 					}else if (r==3) {
 						//entrenador
 						window.location="entrenador/html/homeMenu.php?id_user="+ $('#id_user').val();
