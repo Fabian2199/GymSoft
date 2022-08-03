@@ -102,7 +102,7 @@
                     <a href="#" id="btn-cerrar-popup-pagar-factura" class="btn-cerrar-popup-pagar-factura"><i class="fas fa-times"></i></a>
                     <h3>PAGAR FACTURA</h3>
                     <h4>completa el siguiente formulario</h4>
-                    <form action="../../db_connection/pagarFactura.php" method="post">
+                    <form action="../php/pagarFactura.php" method="post">
                         <input type="text" name="doc_cliente" placeholder="Documento">
 
                         <?php
