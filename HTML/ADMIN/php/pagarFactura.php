@@ -1,4 +1,8 @@
+<script src="../../js/alertifyjs/alertify.js"></script>
+
 <?php
+    //$pru_1 = '<script src="../../js/alertifyjs/alertify.js"></script>';
+    //include '../../scripts.php';
     include '../php/connection.php';
     //include '../index.php';
     // include '.php' <----------- Dónde se almacena el user de la sesión
@@ -8,62 +12,80 @@
     $nombre_plan = $_POST['nombre_plan']; // entra un ID
     $fecha_inicio = $_POST['fecha_inicio_plan'];
 
-    // Obtener el ultimo ID para crear uno nuevo
-    $query = "SELECT MAX(id_factura) max FROM facturas";
+    // Revisar que la fecha inicio sea mayor a la ultima fecha final
+    $query = "SELECT MAX(detFac.fecha_fin) ultima FROM facturas fac, detalles_fac detFac WHERE fac.id_factura = detFac.id_factura AND fac.id_cliente = concat('clt',$documento) ORDER BY detFac.fecha_fin DESC";
     $consulta = mysqli_query($conexion, $query);
 
-    while($row = $consulta->fetch_array()) {
-        $contador = $row['max'] + 1;
+    //$ultimaFactura = 0;
+    while($resul = $consulta->fetch_array()) {
+        $ultimaFactura = $resul['ultima'];
     }
 
-    // Obtiene el ID perteneciente a ese documento
-    $query = "SELECT id_user FROM usuarios where id_persona = $documento";
-    $consulta = mysqli_query($conexion, $query);
-    
-    while($row = $consulta->fetch_array()) {
-        $documento = $row['id_user'];
-    }
-    
-    // Obtener el tiempo en meses del plan
-    $query = "SELECT Duracion FROM planes WHERE id_plan = '$nombre_plan'";
-    $consulta = mysqli_query($conexion, $query);
+    //echo $ultimaFactura." - ".$fecha_inicio;
 
-    while($row = $consulta->fetch_array()) {
-        $meses = $row['Duracion'];
+    if($ultimaFactura < $fecha_inicio){
+        // Obtener el ultimo ID para crear uno nuevo
+        $query = "SELECT MAX(id_factura) max FROM facturas";
+        $consulta = mysqli_query($conexion, $query);
+    
+        while($row = $consulta->fetch_array()) {
+            $contador = $row['max'] + 1;
+        }
+    
+        // Obtiene el ID perteneciente a ese documento
+        $query = "SELECT id_user FROM usuarios where id_persona = $documento";
+        $consulta = mysqli_query($conexion, $query);
+        
+        while($row = $consulta->fetch_array()) {
+            $documento = $row['id_user'];
+        }
+        
+        // Obtener el tiempo en meses del plan
+        $query = "SELECT Duracion FROM planes WHERE id_plan = '$nombre_plan'";
+        $consulta = mysqli_query($conexion, $query);
+    
+        while($row = $consulta->fetch_array()) {
+            $meses = $row['Duracion'];
+        }
+    
+        $meses = explode(" ", $meses)[0];
+        
+        // Obtener la fecha fin del plan
+        $query = "SELECT DATE_ADD('$fecha_inicio', INTERVAL '$meses' MONTH) fin FROM facturas";
+        $consulta = mysqli_query($conexion, $query);
+        
+        while($row = $consulta->fetch_array()) {
+            $fecha_fin = $row['fin'];
+        }
+        
+        //echo "Fecha fin: ".$fecha_fin
+        
+        /*
+        $query = "SELECT us.id_persona FROM usuarios us where us.id_user = '$id_admin'";
+        $consulta = mysqli_query($conexion, $query);
+    
+        while($row = $consulta->fetch_array()) {
+            $id_admin = $row['id_persona'];
+        }
+        */
+    
+        // Agrega la nueva factura
+        $query = "INSERT INTO facturas VALUES('$contador', '$fecha_actual', '$id_admin', '$documento');";
+        //$query = "INSERT INTO factura VALUES(0, '$documento', '$fecha_actual', '$nombre_plan', '$fecha_inicio');";
+        $consulta = mysqli_query($conexion, $query);
+    
+        $id_servicio = 402;
+        $estado_plan = 0;
+        $query = "INSERT INTO detalles_fac VALUES('$nombre_plan', '$contador', '$id_servicio', '$estado_plan', '$fecha_inicio', '$fecha_fin');";
+        $consulta = mysqli_query($conexion, $query);
+    } else {
+        echo '<script type="text/JavaScript"> alertify.alert("Fallo al entrar :("); </script>';
     }
 
-    $meses = explode(" ", $meses)[0];
-    
-    // Obtener la fecha fin del plan
-    $query = "SELECT DATE_ADD('$fecha_inicio', INTERVAL '$meses' MONTH) fin FROM facturas";
-    $consulta = mysqli_query($conexion, $query);
-    
-    while($row = $consulta->fetch_array()) {
-        $fecha_fin = $row['fin'];
-    }
-    
-    //echo "Fecha fin: ".$fecha_fin
-    
+    Header("Location: ../html/facturacion.php");
     /*
-    $query = "SELECT us.id_persona FROM usuarios us where us.id_user = '$id_admin'";
-    $consulta = mysqli_query($conexion, $query);
-
-    while($row = $consulta->fetch_array()) {
-        $id_admin = $row['id_persona'];
-    }
-    */
-
-    // Agrega la nueva factura
-    $query = "INSERT INTO facturas VALUES('$contador', '$fecha_actual', '$id_admin', '$documento');";
-    //$query = "INSERT INTO factura VALUES(0, '$documento', '$fecha_actual', '$nombre_plan', '$fecha_inicio');";
-    $consulta = mysqli_query($conexion, $query);
-
-    $id_servicio = 402;
-    $estado_plan = 0;
-    $query = "INSERT INTO detalles_fac VALUES('$nombre_plan', '$contador', '$id_servicio', '$estado_plan', '$fecha_inicio', '$fecha_fin');";
-    $consulta = mysqli_query($conexion, $query);
-
     if($consulta){
         Header("Location: ../html/facturacion.php");
     }
+    */
 ?>
