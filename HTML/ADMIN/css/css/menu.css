@@ -20,5 +20,10 @@ header{
 	width: 85px;
 	height: 47px;
 }
+.plus{
+	text-decoration: none;
+	margin-top: 5px;
+	width: 87px;
+}
 
 
