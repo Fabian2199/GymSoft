@@ -5,13 +5,13 @@
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Clientes</title>
-	<link rel="stylesheet" type="text/css" href="../css/css/Menu.css">
+	<link rel="stylesheet" type="text/css" href="../css/css/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/CsS_ADM_Clt/principal_adm_clt_tar.css">
 	<link rel="stylesheet" type="text/css" href="../csS/Css/tablas.css">
-	<link rel="stylesheet" type="text/css" href="../Css/css_adM_clt/popup.css">
+	<link rel="stylesheet" type="text/css" href="../Css/css_adM_clt/Popup.css">
 	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 

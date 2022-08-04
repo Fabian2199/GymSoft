@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
 	<link rel="stylesheet" type="text/css" href="../CSs/cSS_ADM_EJER/principal_adm_ejer_tar.css">
-	<link rel="stylesheet" type="text/css" href="../Css/css_adm_eJer/popup.css">
+	<link rel="stylesheet" type="text/css" href="../Css/css_adm_eJer/Popup.css">
 	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
