@@ -108,15 +108,28 @@
 	display: flex;
 }
 .btn_update {
-	padding: 0 20px;
+	padding: 10px;
+	line-height: 50px;
+	background: #f47a21;
+	color: black;
+	opacity: 0.9;
+	border-radius: 15px;
+	margin-top: 15px;
+	margin-right: 10px;
+	margin-left: 10px;
+	text-align: center;
+	text-decoration: none;
+	margin-bottom: 20px;
 	height:60px;
-	line-height: 40px;
 	border: none;
-	color: #fff;
-	background: #fdb425;
+	background: #f47a21;
 	border-radius: 3px;
 	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
 	cursor: pointer;
 	transition: .3s ease all;
-	cursor: pointer;
+	border-radius: 15px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
 }

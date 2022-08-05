@@ -7,6 +7,7 @@
   $cel = $_POST['celular'];
   $email = $_POST['email'];
   $contrato = $_POST['contrato'];
+  $id_userH = $_GET['id_user'];
   
   
 
@@ -18,5 +19,5 @@
     $validar2 =mysqli_query($conexion,$actualizar_contrato);
   };
 
-  header('Location: ..\html\adm_clt.php');
+  header('Location: ..\html\homeMenu.php?id_user=adm'.$id_userH);
 ?>

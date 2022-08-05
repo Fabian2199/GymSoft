@@ -2,7 +2,7 @@
     include 'connection.php';
     //include 'login.php';
     //$entrenador = $usuario;
-    $entrenador = 'ent40037079'; //<----------- Dónde se almacena el user de la sesión
+    $entrenador = 'ent'.$_GET['id_ent']; //<----------- Dónde se almacena el user de la sesión
     $cliente = 'clt'.$_POST['clientes'];
     $ejercicio = $_POST['ejercicios'];
     $dia = $_POST['dias'];
@@ -17,7 +17,7 @@
     $consulta = mysqli_query($conexion, $query);
     
     if($consulta){
-        header('Location: ..\html\ent_clt_sel.php?id_persona='.$_POST['clientes']);
+        header('Location: ..\html\ent_clt_sel.php?id_persona='.$_POST['clientes'].'&id_ent='.$_GET['id_ent']);
     }
     //*/
 ?>

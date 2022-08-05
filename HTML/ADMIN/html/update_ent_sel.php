@@ -1,9 +1,18 @@
+<?php
+session_start();
+include("../PHP/connection.php");
+$usuario = $_SESSION['user'];
+if(!isset($usuario)){
+    header("location:../../index.php");
+}
+?>
 <?php include("..\php\connection.php") ?>
 <?php include("..\php\dato_ent.php") ?>
 
 <?php
 $id = $_GET['id_persona'];
 $datos = get_datos($id);
+$id_user = $_GET['id_user'];
 ?>
 
 <!DOCTYPE html>
@@ -25,16 +34,6 @@ $datos = get_datos($id);
 	<header>
 		<div class="contenedor">
 			<img src="../../img_gen/logoBFree.png" class="logogym">
-			<input type="checkbox" id="menu-bar">
-			<label class="fas fa-bars" for="menu-bar"></label>
-			<nav class="menu2">
-				<a href="adm_ejer.php">Ejercicios</a>
-				<a href="adm_ent.php">Entrenadores</a>
-				<a href="adm_clt.php">Clientes</a>
-				<a href="facturacion.php">Facturacion</a>
-				<a href="../../torniquete.php">Ingreso</a>
-				<a href="../../configuracion.php">COf</a>
-			</nav>
 		</div>
 	</header>
 	<main>
@@ -49,7 +48,7 @@ $datos = get_datos($id);
 							<img src="<?php echo "../../img_per\\" . $row['foto']; ?>" alt="">
 							<?php if ($row['estado'] == 0) { $estado = "Contratado";} else {$estado = "Sin contrato"; }?>
 							<h1 class="h1_datos">Estado: <?php echo $estado; ?></h1>
-							<form action="../php/act_per.php" method="POST">
+							<form action="../php/act_per.php?id_user=<?php echo $id_user; ?>" method="POST">
 								<div class="inputs_update">
 									<input type="text" value=<?php echo $id;?> name= 'id_persona' style='display: none;'>
 									<input type='text' value="<?php echo $row['nombres'];?>" name='nombres' pattern='[A-Za-z ]+' required>
@@ -64,7 +63,7 @@ $datos = get_datos($id);
 								<input type="submit" class="btn_actu" value="Actualizar" id="btn_actu">
 								
 							</form>
-
+							<a href="homeMenu.php?id_user=adm<?php echo $id_user; ?>" class="boton">Inicio</a>
 						<?php } ?>
 					</div>
 				</div>

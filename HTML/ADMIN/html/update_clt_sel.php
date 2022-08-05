@@ -1,9 +1,18 @@
+<?php
+session_start();
+include("../PHP/connection.php");
+$usuario = $_SESSION['user'];
+if(!isset($usuario)){
+    header("location:../../index.php");
+}
+?>
 <?php include("..\php\connection.php") ?>
 <?php include("..\php\dato_clt.php") ?>
 
 <?php
 $id = $_GET['id_persona'];
 $datos = get_datos($id);
+$id_user =$_GET['id_user'];
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +22,7 @@ $datos = get_datos($id);
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Actualizar cliente</title>
-	<link rel="stylesheet" type="text/css" href="../css/css/menu.css">
+	<link rel="stylesheet" type="text/css" href="../css/css/Menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
@@ -25,16 +34,6 @@ $datos = get_datos($id);
 	<header>
 		<div class="contenedor">
 			<img src="../../img_gen/logoBFree.png" class="logogym">
-			<input type="checkbox" id="menu-bar">
-			<label class="fas fa-bars" for="menu-bar"></label>
-			<nav class="menu2">
-				<a href="adm_ejer.php">Ejercicios</a>
-				<a href="adm_ent.php">Entrenadores</a>
-				<a href="adm_clt.php">Clientes</a>
-				<a href="facturacion.php">Facturacion</a>
-				<a href="../../torniquete.php">Ingreso</a>
-				<a href="../../configuracion.php">COf</a>
-			</nav>
 		</div>
 	</header>
 	<main>
@@ -49,7 +48,7 @@ $datos = get_datos($id);
 							<img src="<?php echo "../../img_per\\" . $row['foto']; ?>" alt="">
 							<?php if ($row['estado'] == 0) { $estado = "Plan Vigente";} else {$estado = "Plan Vencido"; }?>
 							<h1 class="h1_datos">Estado: <?php echo $estado; ?></h1>
-							<form action="../php/act_per.php" method="POST">
+							<form action="../php/act_per.php?id_user=<?php echo $id_user; ?>" method="POST">
 								<div class="inputs_update">
 									<input type="text" value=<?php echo $id;?> name= 'id_persona' style='display: none;'>
 									<input type='text' value="<?php echo $row['nombres'];?>" name='nombres' pattern='[A-Za-z ]+' required>
@@ -61,6 +60,7 @@ $datos = get_datos($id);
 							</form>
 
 						<?php } ?>
+						<a href="homeMenu.php?id_user=adm<?php echo $id_user; ?>" class="boton">Inicio</a>
 					</div>
 				</div>
 			</div>

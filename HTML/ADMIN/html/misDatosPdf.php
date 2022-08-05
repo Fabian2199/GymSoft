@@ -1,4 +1,12 @@
 <?php
+session_start();
+include("../PHP/connection.php");
+$usuario = $_SESSION['user'];
+if(!isset($usuario)){
+    header("location:../../index.php");
+}
+?>
+<?php
     ob_start();
     $id_factura = $_GET['id'];
     //echo $id_factura;

@@ -24,7 +24,7 @@
 .ficha_gen {
 	width: 100%;
 	max-height: 910px;
-	max-width: 700px;
+	max-width: 1000px;
 	margin-top: 1%;
 	margin: 10px;
 
@@ -42,7 +42,7 @@
 	border-color: white;
 	border-width: 5px;
 	border-style: solid;
-
+	overflow: scroll;
 
 }
 .adelante img{

@@ -1,3 +1,22 @@
+<?php
+session_start();
+include("../PHP/connection.php");
+$usuario = $_SESSION['user'];
+if(!isset($usuario)){
+    header("location:../../index.php");
+}
+?>
+<?php
+$id = $_GET['id_user'];
+include("../PHP/dato_login.php");
+$foto = "";
+$nombres = "";
+$datos = get_datos($id);
+while ($row = $datos->fetch_assoc()) {
+	$foto = $row['foto'];
+	$nombres = $row['nombres'] . " " . $row['apellidos'];
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -9,8 +28,8 @@
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
-	<link rel="stylesheet" type="text/css" href="../CSs/cSS_ADM_EJeR/principal_adm_ejer_tar.css">
-	<link rel="stylesheet" type="text/css" href="../Css/css_adm_eJer/popup.css">
+	<link rel="stylesheet" type="text/css" href="../CSs/cSS_ADM_EJER/principal_adm_ejer_tar.css">
+	<link rel="stylesheet" type="text/css" href="../Css/css_adm_eJer/Popup.css">
 	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
@@ -19,75 +38,69 @@
 
 <body>
 	<div id="sidemenu" class="menu-collapsed">
-        <!-- HEADER -->
-        <div id="header">
-            <div id="title"><span>Gimnasio BFree</span></div>
-            <div id="menu-btn">
-                <div class="btn-hamburger"></div>
-                <div class="btn-hamburger"></div>
-                <div class="btn-hamburger"></div>
-            </div>
-        </div>
-        
-        <!-- PROFILE -->
-        <div id="profile">
-            <div id="photo"><img src="photo.jpeg" alt=""></div>
-            <div id="name"><span>Camilo Sanguino</span></div>
-        </div>
+		<!-- HEADER -->
+		<div id="header">
+			<div id="title"><span>Gimnasio BFree</span></div>
+			<div id="menu-btn">
+				<div class="btn-hamburger"></div>
+				<div class="btn-hamburger"></div>
+				<div class="btn-hamburger"></div>
+			</div>
+		</div>
 
-        <!-- ITEMS -->
-        <div id="menu-items">
-            <div class="item">
-                <a href="homeMenu.php">
-                    <div class="icon"><img src="../../iconos/admin/home.png" alt=""></div>
-                    <div class="title"><span>Inicio</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="torniquete.php">
-                    <div class="icon"><img src="../../iconos/admin/ingreso.png" alt=""></div>
-                    <div class="title"><span>Ingreso</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="adm_clt.php">
-                    <div class="icon"><img src="../../iconos/admin/clientes.png" alt=""></div>
-                    <div class="title"><span>Clientes</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="adm_ent.php">
-                    <div class="icon"><img src="../../iconos/admin/entrenadores.png" alt=""></div>
-                    <div class="title"><span>Entrenadores</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="#">
-                    <div class="icon"><img src="../../iconos/admin/ejercicios.png" alt=""></div>
-                    <div class="title"><span>Ejercicios</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="facturacion.php">
-                    <div class="icon"><img src="../../iconos/admin/facturacion.png" alt=""></div>
-                    <div class="title"><span>Facturación</span></div>
-                </a>
-            </div>
-            <div class="item separator"></div>
-            <div class="item">
-                <a href="configuracion.php">
-                    <div class="icon"><img src="../../iconos/admin/configuracion.png" alt=""></div>
-                    <div class="title"><span>Configuración</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="·">
-                    <div class="icon"><img src="../../iconos/admin/cerrar_sesion.png" alt=""></div>
-                    <div class="title"><span>Cerrar sesión</span></div>
-                </a>
-            </div>
-        </div>
-    </div>
+		<!-- PROFILE -->
+		<div id="profile">
+			<div id="photo"><img src="../../img_per/<?php echo $foto ?>" alt=""></div>
+			<div id="name"><span><?php echo $nombres ?></span></div>
+		</div>
+
+		<!-- ITEMS -->
+		<div id="menu-items">
+			<div class="item">
+				<a href="homeMenu.php?id_user=adm<?php echo $id; ?>">
+					<div class="icon"><img src="../../iconos/admin/home.png" alt=""></div>
+					<div class="title"><span>Inicio</span></div>
+				</a>
+			</div>
+			<div class="item">
+				<a href="torniquete.php">
+					<div class="icon"><img src="../../iconos/admin/ingreso.png" alt=""></div>
+					<div class="title"><span>Ingreso</span></div>
+				</a>
+			</div>
+			<div class="item">
+				<a href="adm_clt.php?id_user=<?php echo $id; ?>">
+					<div class="icon"><img src="../../iconos/admin/clientes.png" alt=""></div>
+					<div class="title"><span>Clientes</span></div>
+				</a>
+			</div>
+			<div class="item">
+				<a href="adm_ent.php?id_user=<?php echo $id; ?>">
+					<div class="icon"><img src="../../iconos/admin/entrenadores.png" alt=""></div>
+					<div class="title"><span>Entrenadores</span></div>
+				</a>
+			</div>
+			<div class="item">
+				<a href="facturacion.php?id_user=<?php echo $id; ?>">
+					<div class="icon"><img src="../../iconos/admin/facturacion.png" alt=""></div>
+					<div class="title"><span>Facturación</span></div>
+				</a>
+			</div>
+			<div class="item separator"></div>
+			<div class="item">
+				<a href="config_adm.php?id_persona=<?php echo $id; ?>">
+					<div class="icon"><img src="../../iconos/admin/configuracion.png" alt=""></div>
+					<div class="title"><span>Configuración</span></div>
+				</a>
+			</div>
+			<div class="item">
+				<a href="../PHP/cerrarS.php">
+					<div class="icon"><img src="../../iconos/admin/cerrar_sesion.png" alt=""></div>
+					<div class="title"><span>Cerrar sesión</span></div>
+				</a>
+			</div>
+		</div>
+	</div>
 
 	<header>
 		<div class="contenedor">
@@ -99,7 +112,7 @@
 					<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
 					<h3>Añadir ejercicio</h3>
 					<h4>Completa el siguiente formulario</h4>
-					<form action="..\php\reg_ejr.php" method="post">
+					<form action="..\php\reg_ejr.php?id_user=<?php echo $id; ?>" method="post">
 						<div class="contenedor-inputs">
 							<input type="text" placeholder="Nombre Ejercicio" name="ejercicio" required>
 							<textarea name="descripcion" placeholder="Descripcion" required></textarea>
@@ -123,7 +136,7 @@
 				</div>
 			</div>
 			<div id="datos_buscador" class="datos_buscador">
-				
+
 			</div>
 		</div>
 	</main>
@@ -142,7 +155,7 @@
 			$.ajax({
 				data: parametros,
 				type: 'POST',
-				url: '../php/mtr_ejr_buscador.php',
+				url: '../php/mtr_ejr_buscador.php?id_user=<?php echo $id; ?>',
 				success: function(data) {
 					document.getElementById("datos_buscador").innerHTML = data;
 				}
@@ -150,14 +163,14 @@
 		}
 	</script>
 	<script>
-        const btn = document.querySelector('#menu-btn');
-        const menu = document.querySelector('#sidemenu');
-        btn.addEventListener('click', e => {
-            menu.classList.toggle("menu-expanded");
-            menu.classList.toggle("menu-collapsed");
-            document.querySelector('body').classList.toggle('body-expanded');
-        });
-    </script>
+		const btn = document.querySelector('#menu-btn');
+		const menu = document.querySelector('#sidemenu');
+		btn.addEventListener('click', e => {
+			menu.classList.toggle("menu-expanded");
+			menu.classList.toggle("menu-collapsed");
+			document.querySelector('body').classList.toggle('body-expanded');
+		});
+	</script>
 </body>
 
 </html>

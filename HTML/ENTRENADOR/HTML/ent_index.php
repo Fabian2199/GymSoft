@@ -1,6 +1,25 @@
-
+<?php
+session_start();
+include("../PHP/connection.php");
+$usuario = $_SESSION['user'];
+if(!isset($usuario)){
+    header("location:../../index.php");
+}
+?>
 <!DOCTYPE html>
 <html>
+<?php
+ob_start();
+include("../PHP/dato_login.php");
+$id_ent = $_GET['id_ent'];
+$foto = "";
+$nombres = "";
+$datos = get_datos($id_ent);
+while ($row = $datos->fetch_assoc()) {
+	$foto = $row['foto'];
+	$nombres = $row['nombres'] . " " . $row['apellidos'];
+}
+?>
 
 <head>
 	<meta charset="utf-8">
@@ -11,7 +30,7 @@
 	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
 	<link rel="stylesheet" type="text/css" href="../csS/Css/tablas.css">
-	<link rel="stylesheet" type="text/css" href="../csS/CsS_ENt_INDEx/principal_Ent_clt_taR.css">
+	<link rel="stylesheet" type="text/css" href="../csS/CsS_ENt_INDEX/principal_Ent_clt_taR.css">
 	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
@@ -20,57 +39,45 @@
 
 <body>
 	<div id="sidemenu" class="menu-collapsed">
-        <!-- HEADER -->
-        <div id="header">
-            <div id="title"><span>Gimnasio BFree</span></div>
-            <div id="menu-btn">
-                <div class="btn-hamburger"></div>
-                <div class="btn-hamburger"></div>
-                <div class="btn-hamburger"></div>
-            </div>
-        </div>
-        
-        <!-- PROFILE -->
-        <div id="profile">
-            <div id="photo"><img src="photo.jpeg" alt=""></div>
-            <div id="name"><span>Camilo Sanguino</span></div>
-        </div>
+		<!-- HEADER -->
+		<div id="header">
+			<div id="title"><span>Gimnasio BFree</span></div>
+			<div id="menu-btn">
+				<div class="btn-hamburger"></div>
+				<div class="btn-hamburger"></div>
+				<div class="btn-hamburger"></div>
+			</div>
+		</div>
 
-        <!-- ITEMS -->
-        <div id="menu-items">
-            <div class="item">
-                <a href="homeMenu.php">
-                    <div class="icon"><img src="../../iconos/entrenador/home.png" alt=""></div>
-                    <div class="title"><span>Inicio</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="#.php">
-                    <div class="icon"><img src="../../iconos/entrenador/clientes.png" alt=""></div>
-                    <div class="title"><span>Clientes</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="ficha.php">
-                    <div class="icon"><img src="../../iconos/entrenador/fichaAntropometrica.png" alt=""></div>
-                    <div class="title"><span>Ficha antropometrica</span></div>
-                </a>
-            </div>
-            <div class="item separator"></div>
-            <div class="item">
-                <a href="configuracion.php">
-                    <div class="icon"><img src="../../iconos/entrenador/configuracion.png" alt=""></div>
-                    <div class="title"><span>Configuración</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="#">
-                    <div class="icon"><img src="../../iconos/entrenador/cerrar_sesion.png" alt=""></div>
-                    <div class="title"><span>Cerrar sesión</span></div>
-                </a>
-            </div>
-        </div>
-    </div>
+		<!-- PROFILE -->
+		<div id="profile">
+			<div id="photo"><img src="../../img_per/<?php echo $foto ?>" alt=""></div>
+            <div id="name"><span><?php echo $nombres ?></span></div>
+		</div>
+
+		<!-- ITEMS -->
+		<div id="menu-items">
+			<div class="item">
+				<a href="homeMenu.php?id_user=ent<?php echo $id_ent ?>">
+					<div class="icon"><img src="../../iconos/entrenador/home.png" alt=""></div>
+					<div class="title"><span>Inicio</span></div>
+				</a>
+			</div>
+			<div class="item separator"></div>
+			<div class="item">
+				<a href="config_ent.php?id_ent=<?php echo $id_ent ?>">
+					<div class="icon"><img src="../../iconos/entrenador/configuracion.png" alt=""></div>
+					<div class="title"><span>Configuración</span></div>
+				</a>
+			</div>
+			<div class="item">
+				<a href="../PHP/cerrarS.php">
+					<div class="icon"><img src="../../iconos/entrenador/cerrar_sesion.png" alt=""></div>
+					<div class="title"><span>Cerrar sesión</span></div>
+				</a>
+			</div>
+		</div>
+	</div>
 
 	<header>
 		<div class="contenedor">
@@ -109,7 +116,7 @@
 			$.ajax({
 				data: parametros,
 				type: 'POST',
-				url: '../php/mtr_clt_activo.php',
+				url: '../php/mtr_clt_activo.php?id_ent=<?php echo $id_ent ?>',
 				success: function(data) {
 					document.getElementById("datos_busqueda").innerHTML = data;
 				}
@@ -117,14 +124,14 @@
 		}
 	</script>
 	<script>
-        const btn = document.querySelector('#menu-btn');
-        const menu = document.querySelector('#sidemenu');
-        btn.addEventListener('click', e => {
-            menu.classList.toggle("menu-expanded");
-            menu.classList.toggle("menu-collapsed");
-            document.querySelector('body').classList.toggle('body-expanded');
-        });
-    </script>
+		const btn = document.querySelector('#menu-btn');
+		const menu = document.querySelector('#sidemenu');
+		btn.addEventListener('click', e => {
+			menu.classList.toggle("menu-expanded");
+			menu.classList.toggle("menu-collapsed");
+			document.querySelector('body').classList.toggle('body-expanded');
+		});
+	</script>
 </body>
 
 

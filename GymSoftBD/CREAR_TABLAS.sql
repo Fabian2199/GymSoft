@@ -36,7 +36,7 @@ create table USUARIOS(
    id_user		VARCHAR(50)  not null,
    id_persona		 BIGINT	     not null,
    tipo_user	 	VARCHAR(20)  not null,
-   contrasena		VARCHAR(20)  not null,
+   contrasena		VARCHAR(100)  not null,
    estado		 INT	     not null		     
 );
 

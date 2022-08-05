@@ -1,12 +1,31 @@
-<?php include ("..\php\connection.php")?>
-<?php include("..\php\datos_clt.php") ?>
 <?php
-$id_user= $_GET['id_user'];
+session_start();
+include("../PHP/connection.php");
+$usuario = $_SESSION['user'];
+if(!isset($usuario)){
+    header("location:../../index.php");
+}
+?>
+<?php 
+include("..\php\connection.php"); 
+include ("../PHP/dato_login.php");
+$id = $_GET['id_user'];
+$datosL = get_datos($id);
+$foto = "";
+$nombres = "";
+while ($row = $datosL->fetch_assoc()) {
+	$foto = $row['foto'];
+	$nombres = $row['nombres'] . " " . $row['apellidos'];
+}
+?>
+<?php include("..\php\datos_clt.php") ?>
 
-$id = substr($id_user,3);//quemado
+<?php
 $rutina = get_rutina($id);
-$datos = get_datos($id);
+$datos = get_datoss($id);
 $ficha = get_ficha($id);
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,10 +34,11 @@ $ficha = get_ficha($id);
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Cliente</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/menu.css">
+	<link rel="stylesheet" href="../css/stylemEnu.css">
+	<link rel="stylesheet" href="../css/menU.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/principal_clt.css">
-	<link rel="stylesheet" type="text/css" href="../CSS/principal_clt_taR.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/principal_clt_tar.css">
 	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -27,13 +47,47 @@ $ficha = get_ficha($id);
 <body>
 	<header>
 		<div class="contenedor">
-			<img src="..\..\img_gen/logoBFree.png" class="logogym">
-			<input type="checkbox" id="menu-bar">
-			<label class="fas fa-bars" for="menu-bar"></label>
-			<nav class="menu2">
-				<a href="#">Inicio</a>
-				<a href="../../configuracion.php">Configuracion</a>
-			</nav>
+			<img src="../../img_gen/logoBFree.png" class="logogym">
+		</div>
+		<div id="sidemenu" class="menu-collapsed">
+			<!-- HEADER -->
+			<div id="header">
+				<div id="title"><span>Gimnasio BFree</span></div>
+				<div id="menu-btn">
+					<div class="btn-hamburger"></div>
+					<div class="btn-hamburger"></div>
+					<div class="btn-hamburger"></div>
+				</div>
+			</div>
+
+			<!-- PROFILE -->
+			<div id="profile">
+				<div id="photo"><img src="../../img_per/<?php echo $foto ?>" alt=""></div>
+				<div id="name"><span><?php echo $nombres ?></span></div>
+			</div>
+
+			<!-- ITEMS -->
+			<div id="menu-items">
+				<div class="item">
+					<a href="homeMenu.php?id_user=clt<?php echo $id ?>">
+						<div class="icon"><img src="../../iconos/admin/home.png" alt=""></div>
+						<div class="title"><span>Inicio</span></div>
+					</a>
+				</div>
+				<div class="item separator"></div>
+				<div class="item">
+					<a href="config_clt.php?id_user=<?php echo $id ?>">
+						<div class="icon"><img src="../../iconos/admin/configuracion.png" alt=""></div>
+						<div class="title"><span>Configuración</span></div>
+					</a>
+				</div>
+				<div class="item">
+					<a href="../PHP/cerrarS.php">
+						<div class="icon"><img src="../../iconos/admin/cerrar_sesion.png" alt=""></div>
+						<div class="title"><span>Cerrar sesión</span></div>
+					</a>
+				</div>
+			</div>
 		</div>
 	</header>
 	<main>
@@ -57,7 +111,7 @@ $ficha = get_ficha($id);
 				<div class="ficha " id="tar">
 					<div class="adelante">
 						<h1>Valoraciones</h1>
-						<select name="ficha" id="ficha">
+						<select name="ficha" id="ficha" class="select">
 							<option value="100">Seleccionar fecha </option>
 							<?php foreach ($ficha as $opciones) : ?>
 								<option value="<?php echo $opciones['id_ficha']; ?>"><?php echo $opciones['fecha']; ?></option>
@@ -110,4 +164,14 @@ $ficha = get_ficha($id);
 	</footer>
 </body>
 <script src="..\cSS\combobox.js"></script>
+<script>
+	const btn = document.querySelector('#menu-btn');
+	const menu = document.querySelector('#sidemenu');
+	btn.addEventListener('click', e => {
+		menu.classList.toggle("menu-expanded");
+		menu.classList.toggle("menu-collapsed");
+		document.querySelector('body').classList.toggle('body-expanded');
+	});
+</script>
+
 </html>
