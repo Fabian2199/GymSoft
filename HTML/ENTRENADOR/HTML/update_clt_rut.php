@@ -1,3 +1,11 @@
+<?php
+session_start();
+include("../PHP/connection.php");
+$usuario = $_SESSION['user'];
+if(!isset($usuario)){
+    header("location:../../index.php");
+}
+?>
 <?php include("..\php\connection.php");
 $id_ent = $_GET['id_ent'];
 include("../PHP/dato_login.php");
@@ -74,7 +82,7 @@ $datos_rut = get_rut($id_ejercicio, $id, $dia);
                 </a>
             </div>
             <div class="item">
-                <a href="#">
+                <a href="../PHP/cerrarS.php">
                     <div class="icon"><img src="../../iconos/entrenador/cerrar_sesion.png" alt=""></div>
                     <div class="title"><span>Cerrar sesión</span></div>
                 </a>

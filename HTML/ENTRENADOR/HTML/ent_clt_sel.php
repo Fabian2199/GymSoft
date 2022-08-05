@@ -1,3 +1,11 @@
+<?php
+session_start();
+include("../PHP/connection.php");
+$usuario = $_SESSION['user'];
+if(!isset($usuario)){
+    header("location:../../index.php");
+}
+?>
 <?php include ("..\php\mtr_clt.php")?>
 <?php include("..\php\mtr_ejr.php") ?>
 <?php 
@@ -80,7 +88,7 @@ $ficha = get_ficha($id);
                 </a>
             </div>
             <div class="item">
-                <a href="#">
+                <a href="../PHP/cerrarS.php">
                     <div class="icon"><img src="../../iconos/entrenador/cerrar_sesion.png" alt=""></div>
                     <div class="title"><span>Cerrar sesión</span></div>
                 </a>

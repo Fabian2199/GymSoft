@@ -1,4 +1,12 @@
 <?php
+session_start();
+include("../PHP/connection.php");
+$usuario = $_SESSION['user'];
+if(!isset($usuario)){
+    header("location:../../index.php");
+}
+?>
+<?php
     ob_start();
     include ("../PHP/dato_login.php");
     $id_usuario = $_GET['id_user'];
@@ -18,7 +26,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio cliente</title>
     <link rel="stylesheet" href="../css/stylemEnu.css">
     <link rel="stylesheet" href="../css/home.css">
 </head>
@@ -62,7 +70,7 @@
                 </a>
             </div>
             <div class="item">
-                <a href="#">
+                <a href="../PHP/cerrarS.php">
                     <div class="icon"><img src="../../iconos/cliente/cerrar_sesion.png" alt=""></div>
                     <div class="title"><span>Cerrar sesión</span></div>
                 </a>
@@ -74,7 +82,7 @@
         <h1>Logo, contacto, redes</h1>
         <div class="icon"><img src="../../img/BF.png" alt="Logo gimnasio" style="width: 400px; height: 300px;"></div>
         <div class="icon"><h2>Sistema de cliente</h2></div>
-        <div class="icon"><h3><?php echo $id_usuario;?> - GymSoft</h3></div>
+        <div class="icon"><h3><?php echo $usuario;?> - GymSoft</h3></div>
         <br><br>
         <div class="redesSociales">
             <a title="Facebook" href="https://www.facebook.com/BfreeGym"><img id="imgFacebook" src="../../img/logoFacebook.png" alt="Logo facebook"/></a>

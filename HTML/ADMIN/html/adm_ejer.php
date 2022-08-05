@@ -1,4 +1,12 @@
 <?php
+session_start();
+include("../PHP/connection.php");
+$usuario = $_SESSION['user'];
+if(!isset($usuario)){
+    header("location:../../index.php");
+}
+?>
+<?php
 $id = $_GET['id_user'];
 include("../PHP/dato_login.php");
 $foto = "";
@@ -86,7 +94,7 @@ while ($row = $datos->fetch_assoc()) {
 				</a>
 			</div>
 			<div class="item">
-				<a href="·">
+				<a href="../PHP/cerrarS.php">
 					<div class="icon"><img src="../../iconos/admin/cerrar_sesion.png" alt=""></div>
 					<div class="title"><span>Cerrar sesión</span></div>
 				</a>

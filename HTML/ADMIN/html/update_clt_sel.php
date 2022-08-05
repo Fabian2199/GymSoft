@@ -1,3 +1,11 @@
+<?php
+session_start();
+include("../PHP/connection.php");
+$usuario = $_SESSION['user'];
+if(!isset($usuario)){
+    header("location:../../index.php");
+}
+?>
 <?php include("..\php\connection.php") ?>
 <?php include("..\php\dato_clt.php") ?>
 

@@ -1,4 +1,12 @@
 <?php
+session_start();
+include("../PHP/connection.php");
+$usuario = $_SESSION['user'];
+if(!isset($usuario)){
+    header("location:../../index.php");
+}
+?>
+<?php
     ob_start();
     include ("../PHP/dato_login.php");
     $id_user = $_GET['id_user'];
@@ -19,7 +27,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio admin</title>
     <link rel="stylesheet" href="../css/css/styleMEnu.css">
     <link rel="stylesheet" href="../css/css/home.css">
 </head>
@@ -87,7 +95,7 @@
                 </a>
             </div>
             <div class="item">
-                <a href="·">
+                <a href="../PHP/cerrarS.php">
                     <div class="icon"><img src="../../iconos/admin/cerrar_sesion.png" alt=""></div>
                     <div class="title"><span>Cerrar sesión</span></div>
                 </a>
