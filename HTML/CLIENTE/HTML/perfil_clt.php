@@ -130,6 +130,9 @@ $ficha = get_ficha($id);
 				<div class="rutina " id="tar">
 					<div class="adelante">
 						<h1>Rutina</h1>
+						<div style="text-align: center;">
+							<input onclick="location.href='../PHP/rutinaPDF.php?id=<?php echo $id; ?>';" style="display: inline-block; margin: 0 auto; margin-top: 10px; height: 25px; width: 120px;" id="btn-popup-agregar-rutina" class="btn btn-popup-agregar-rutina" type="button" name="btnAgregarRutina" value="Descargar rutina">
+						</div>
 						<table>
 							<thead>
 								<th>Dia</th>
