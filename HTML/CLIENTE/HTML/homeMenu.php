@@ -27,8 +27,8 @@ if(!isset($usuario)){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio cliente</title>
-    <link rel="stylesheet" href="../css/stylemEnu.css">
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/styleMenu.css">
+    <link rel="stylesheet" href="../css/Home.css">
 </head>
 <body>
 <div id="sidemenu" class="menu-collapsed">
@@ -81,8 +81,8 @@ if(!isset($usuario)){
     <div id="inicial">
         <h1>Logo, contacto, redes</h1>
         <div class="icon"><img src="../../img/BF.png" alt="Logo gimnasio" style="width: 400px; height: 300px;"></div>
-        <div class="icon"><h2>Sistema de cliente</h2></div>
-        <div class="icon"><h3><?php echo $usuario;?> - GymSoft</h3></div>
+        <div class="text-color"><h2>Sistema de cliente</h2></div>
+        <div class="text-color"><h3><?php echo $usuario;?> - GymSoft</h3></div>
         <br><br>
         <div class="redesSociales">
             <a title="Facebook" href="https://www.facebook.com/BfreeGym"><img id="imgFacebook" src="../../img/logoFacebook.png" alt="Logo facebook"/></a>
