@@ -55,7 +55,7 @@ $id_user = $_GET['id_user'];
 								<input type="submit" class="btn_actu" value="Actualizar" id="btn_actu">
 								
 							</form>
-							<a href="homeMenu.php?id_user=adm<?php echo $id_user; ?>" class="boton">Regresar</a>
+							<a href="homeMenu.php?id_user=adm<?php echo $id_user; ?>" class="boton">Inicio</a>
 						<?php } ?>
 					</div>
 				</div>

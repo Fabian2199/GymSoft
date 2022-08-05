@@ -1,8 +1,16 @@
 <?php
     ob_start();
+    include ("../PHP/dato_login.php");
     $id_user = $_GET['id_user'];
     $id = substr($id_user,3);
     $rol = "Entrenador"; //><-------------- que le entre el rol o id pa buscarlo
+    $foto = "";
+    $nombres ="";
+    $datos = get_datos($id);
+    while ($row = $datos->fetch_assoc()) {
+        $foto = $row['foto'];
+        $nombres = $row['nombres']." ".$row['apellidos']; 
+    }
 ?>
 
 <!DOCTYPE html>
@@ -29,8 +37,8 @@
         
         <!-- PROFILE -->
         <div id="profile">
-            <div id="photo"><img src="photo.jpeg" alt=""></div>
-            <div id="name"><span>Camilo Sanguino</span></div>
+            <div id="photo"><img src="../../img_per/<?php echo $foto?>" alt=""></div>
+            <div id="name"><span><?php echo $nombres?></span></div>
         </div>
 
         <!-- ITEMS -->
@@ -90,8 +98,8 @@
     <div id="inicial">
         <h1>Logo, contacto, redes</h1>
         <div class="icon"><img src="../../img/BF.png" alt="Logo gimnasio" style="width: 400px; height: 300px;"></div>
-        <div class="icon"><h2>Sistema de HHHHH</h2></div>
-        <div class="icon"><h3><?php echo $rol;?> - GymSoft</h3></div>
+        <div class="icon"><h2>Sistema de administrador</h2></div>
+        <div class="icon"><h3><?php echo $id_user;?> - GymSoft</h3></div>
         <br><br>
         <div class="redesSociales">
             <a title="Facebook" href="https://www.facebook.com/BfreeGym"><img id="imgFacebook" src="../../img/logoFacebook.png" alt="Logo facebook"/></a>

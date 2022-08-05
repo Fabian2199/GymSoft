@@ -52,7 +52,7 @@ $id_user =$_GET['id_user'];
 							</form>
 
 						<?php } ?>
-						<a href="homeMenu.php?id_user=adm<?php echo $id_user; ?>" class="boton">Regresar</a>
+						<a href="homeMenu.php?id_user=adm<?php echo $id_user; ?>" class="boton">Inicio</a>
 					</div>
 				</div>
 			</div>

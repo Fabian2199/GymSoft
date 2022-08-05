@@ -1,4 +1,13 @@
-<?php include("..\php\connection.php") ?>
+<?php include("..\php\connection.php");
+$id_ent = $_GET['id_ent'];
+include("../PHP/dato_login.php");
+$foto = "";
+$nombres = "";
+$datos = get_datos($id_ent);
+while ($row = $datos->fetch_assoc()) {
+    $foto = $row['foto'];
+    $nombres = $row['nombres'] . " " . $row['apellidos'];
+} ?>
 <?php include("..\php\dato_ejr.php") ?>
 
 <?php
@@ -7,7 +16,6 @@ $id_ejercicio = $_GET['id_ejercicio'];
 $dia = $_GET['dia'];
 $datos = get_ejr($id_ejercicio);
 $datos_rut = get_rut($id_ejercicio, $id, $dia);
-$id_ent = $_GET['id_ent']
 ?>
 
 <!DOCTYPE html>
@@ -40,8 +48,8 @@ $id_ent = $_GET['id_ent']
 
         <!-- PROFILE -->
         <div id="profile">
-            <div id="photo"><img src="photo.jpeg" alt=""></div>
-            <div id="name"><span>Camilo Sanguino</span></div>
+            <div id="photo"><img src="../../img_per/<?php echo $foto ?>" alt=""></div>
+            <div id="name"><span><?php echo $nombres ?></span></div>
         </div>
 
         <!-- ITEMS -->

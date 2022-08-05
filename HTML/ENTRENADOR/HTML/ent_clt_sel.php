@@ -1,14 +1,25 @@
 <?php include ("..\php\mtr_clt.php")?>
 <?php include("..\php\mtr_ejr.php") ?>
-<?php include ("..\php\connection.php")?>
+<?php 
+include ("..\php\connection.php");
+$id_ent = $_GET['id_ent'];
+include("../PHP/dato_login.php");
+$foto = "";
+$nombres = "";
+$datos = get_datos($id_ent);
+while ($row = $datos->fetch_assoc()) {
+    $foto = $row['foto'];
+    $nombres = $row['nombres'] . " " . $row['apellidos'];
+}
+?>
 <?php include("..\php\dato_ent_clt.php") ?>
 
 <?php
 $id = $_GET['id_persona'];
 $rutina = get_rutina($id);
-$datos = get_datos($id);
+$datos = get_datoss($id);
 $ficha = get_ficha($id);
-$id_ent = $_GET['id_ent'];
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,8 +54,8 @@ $id_ent = $_GET['id_ent'];
         
         <!-- PROFILE -->
         <div id="profile">
-            <div id="photo"><img src="photo.jpeg" alt=""></div>
-            <div id="name"><span>Camilo Sanguino</span></div>
+            <div id="photo"><img src="../../img_per/<?php echo $foto ?>" alt=""></div>
+            <div id="name"><span><?php echo $nombres ?></span></div>
         </div>
 
         <!-- ITEMS -->

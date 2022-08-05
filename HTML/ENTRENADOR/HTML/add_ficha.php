@@ -6,6 +6,14 @@
 <?php
 $id_clt = $_GET['id_clt'];
 $id_ent = $_GET['id_ent'];
+include("../PHP/dato_login.php");
+$foto = "";
+$nombres = "";
+$datos = get_datos($id_ent);
+while ($row = $datos->fetch_assoc()) {
+    $foto = $row['foto'];
+    $nombres = $row['nombres'] . " " . $row['apellidos'];
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,8 +47,8 @@ $id_ent = $_GET['id_ent'];
 
 		<!-- PROFILE -->
 		<div id="profile">
-			<div id="photo"><img src="photo.jpeg" alt=""></div>
-			<div id="name"><span>Camilo Sanguino</span></div>
+            <div id="photo"><img src="../../img_per/<?php echo $foto ?>" alt=""></div>
+            <div id="name"><span><?php echo $nombres ?></span></div>
 		</div>
 
 		<!-- ITEMS -->

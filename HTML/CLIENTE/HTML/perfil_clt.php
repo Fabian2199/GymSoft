@@ -1,10 +1,23 @@
-<?php include("..\php\connection.php") ?>
-<?php include("..\php\datos_clt.php") ?>
-<?php
+<?php 
+include("..\php\connection.php"); 
+include ("../PHP/dato_login.php");
 $id = $_GET['id_user'];
+$datosL = get_datos($id);
+$foto = "";
+$nombres = "";
+while ($row = $datosL->fetch_assoc()) {
+	$foto = $row['foto'];
+	$nombres = $row['nombres'] . " " . $row['apellidos'];
+}
+?>
+<?php include("..\php\datos_clt.php") ?>
+
+<?php
 $rutina = get_rutina($id);
-$datos = get_datos($id);
+$datos = get_datoss($id);
 $ficha = get_ficha($id);
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,8 +54,8 @@ $ficha = get_ficha($id);
 
 			<!-- PROFILE -->
 			<div id="profile">
-				<div id="photo"><img src="photo.jpeg" alt=""></div>
-				<div id="name"><span>Camilo Sanguino</span></div>
+				<div id="photo"><img src="../../img_per/<?php echo $foto ?>" alt=""></div>
+				<div id="name"><span><?php echo $nombres ?></span></div>
 			</div>
 
 			<!-- ITEMS -->
@@ -55,7 +68,7 @@ $ficha = get_ficha($id);
 				</div>
 				<div class="item separator"></div>
 				<div class="item">
-					<a href="config_clt.php?id_user=<?php echo $id?>">
+					<a href="config_clt.php?id_user=<?php echo $id ?>">
 						<div class="icon"><img src="../../iconos/admin/configuracion.png" alt=""></div>
 						<div class="title"><span>Configuración</span></div>
 					</a>

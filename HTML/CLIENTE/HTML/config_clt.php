@@ -48,7 +48,7 @@ $datos = get_datos($id);
 							</form>
 
 						<?php } ?>
-						<a href="homeMenu.php?id_user=clt<?php echo $id; ?>" class="boton">Regresar</a>
+						<a href="homeMenu.php?id_user=clt<?php echo $id; ?>" class="boton">Inicio</a>
 					</div>
 				</div>
 			</div>
