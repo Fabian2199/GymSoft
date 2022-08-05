@@ -55,7 +55,7 @@ $ficha = get_ficha($id);
 				</div>
 				<div class="item separator"></div>
 				<div class="item">
-					<a href="../../configuracion.php">
+					<a href="config_clt.php?id_user=<?php echo $id?>">
 						<div class="icon"><img src="../../iconos/admin/configuracion.png" alt=""></div>
 						<div class="title"><span>Configuración</span></div>
 					</a>

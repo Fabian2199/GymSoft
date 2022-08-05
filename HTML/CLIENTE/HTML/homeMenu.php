@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/stylemEnu.css">
+    <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
 <div id="sidemenu" class="menu-collapsed">
@@ -34,7 +35,7 @@
         <!-- ITEMS -->
         <div id="menu-items">
             <div class="item">
-                <a href="#">
+                <a href="">
                     <div class="icon"><img src="../../iconos/cliente/home.png" alt=""></div>
                     <div class="title"><span>Inicio</span></div>
                 </a>
@@ -47,7 +48,7 @@
             </div>
             <div class="item separator"></div>
             <div class="item">
-                <a href="configuracion.php">
+                <a href="config_clt.php?id_user=<?php echo $id_clt?>">
                     <div class="icon"><img src="../../iconos/cliente/configuracion.png" alt=""></div>
                     <div class="title"><span>Configuración</span></div>
                 </a>
@@ -64,10 +65,12 @@
     <div id="inicial">
         <h1>Logo, contacto, redes</h1>
         <div class="icon"><img src="../../img/BF.png" alt="Logo gimnasio" style="width: 400px; height: 300px;"></div>
-        <div class="icon"><h1>¿Contacto?</h1></div>
+        <div class="icon"><h2>Sistema de HHHHH</h2></div>
+        <div class="icon"><h3><?php echo 'c';?> - GymSoft</h3></div>
+        <br><br>
         <div class="redesSociales">
-            <a title="Facebook" href="https://www.facebook.com/BfreeGym"><img src="../img/logoFacebook.png" alt="Logo facebook" style="width: 100px; height: 100px;"/></a>
-            <a title="Instagram" href="https://www.instagram.com/bfreegym/"><img src="../img/logoInstagram.png" alt="Logo instagram" style="width: 100px; height: 100px;"/></a>
+            <a title="Facebook" href="https://www.facebook.com/BfreeGym"><img id="imgFacebook" src="../../img/logoFacebook.png" alt="Logo facebook"/></a>
+            <a title="Instagram" href="https://www.instagram.com/bfreegym/"><img id="imgInstagram" src="../../img/logoInstagram.png" alt="Logo instagram" /></a>
         </div>
     </div>
 
