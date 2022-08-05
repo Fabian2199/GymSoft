@@ -1,6 +1,7 @@
 <?php
     ob_start();
-    //$id_usuario = $_GET['id'];
+    $id_user = $_GET['id_user'];
+    $id = substr($id_user,3);
     $rol = "Entrenador"; //><-------------- que le entre el rol o id pa buscarlo
 ?>
 
@@ -47,32 +48,32 @@
                 </a>
             </div>
             <div class="item">
-                <a href="adm_clt.php">
+                <a href="adm_clt.php?id_user=<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/clientes.png" alt=""></div>
                     <div class="title"><span>Clientes</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="adm_ent.php">
+                <a href="adm_ent.php?id_user=<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/entrenadores.png" alt=""></div>
                     <div class="title"><span>Entrenadores</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="adm_ejer.php">
+                <a href="adm_ejer.php?id_user=<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/ejercicios.png" alt=""></div>
                     <div class="title"><span>Ejercicios</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="facturacion.php">
+                <a href="facturacion.php?id_user=<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/facturacion.png" alt=""></div>
                     <div class="title"><span>Facturación</span></div>
                 </a>
             </div>
             <div class="item separator"></div>
             <div class="item">
-                <a href="../../configuracion.php">
+                <a href="config_adm.php?id_persona=<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/configuracion.png" alt=""></div>
                     <div class="title"><span>Configuración</span></div>
                 </a>

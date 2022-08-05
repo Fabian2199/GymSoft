@@ -53,7 +53,7 @@
 				success:function(r){
 					if(r==1){
 						//admin
-						window.location="admin/html/adm_clt.php?id_user="+ $('#id_user').val();
+						window.location="admin/html/homeMenu.php?id_user="+ $('#id_user').val();
 					}else if (r==2) {
 						//cliente
 						window.location="cliente/html/homeMenu.php?id_user="+ $('#id_user').val();

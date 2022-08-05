@@ -6,7 +6,7 @@
     include '../php/connection.php';
     //include '../index.php';
     // include '.php' <----------- Dónde se almacena el user de la sesión
-    $id_admin = "adm1010136222";
+    $id_admin = "adm".$_GET['id_user'];
     $fecha_actual = date('Y/m/d', time());
     $documento = $_POST['doc_cliente'];
     $nombre_plan = $_POST['nombre_plan']; // entra un ID
@@ -82,7 +82,7 @@
         echo '<script type="text/JavaScript"> alertify.alert("Fallo al entrar :("); </script>';
     }
 
-    Header("Location: ../html/facturacion.php");
+    Header("Location: ../html/facturacion.php?id_user=".$_GET['id_user']);
     /*
     if($consulta){
         Header("Location: ../html/facturacion.php");

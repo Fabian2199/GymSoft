@@ -8,6 +8,7 @@
     $sql ="SELECT MAX(id_ejercicio) FROM ejercicios";
     $valor_id = mysqli_query($conexion,$sql);
     $idmax= mysqli_fetch_array($valor_id);
+    $id_user =$_GET['id_user'];
     if($idmax["MAX(id_ejercicio)"]!=null){
         $id_ejercicio=$idmax["MAX(id_ejercicio)"]+1;
     }
@@ -19,6 +20,6 @@
         //header('Location: ..\adm_ejer.php');
     }else{
         $validar = mysqli_query($conexion,$registro);
-        header('Location: ..\html\adm_ejer.php');
+        header('Location: ..\html\adm_ejer.php?id_user='.$id_user);
     };
 ?>

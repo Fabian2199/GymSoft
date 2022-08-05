@@ -1,5 +1,6 @@
 <?php
     include ("..\php\connection.php");
+    $id_user=$_GET['id_user'];
     $sql = "SELECT *FROM ejercicios ";
     $consulta = $conexion->query($sql);
     if (!isset($_POST['buscar'])) {
@@ -26,7 +27,7 @@
             echo '<h1>'.$row['nombre_ejercicio'].'</h1>';
             echo '</a>';
             echo '<p>'.$row['descripcion'].'</p>';
-            echo ' <a href="update_ejr_sel.php?id_ejercicio='.$row['id_ejercicio'].'" class= "btn_update">Actualizar</a>';
+            echo ' <a href="update_ejr_sel.php?id_ejercicio='.$row['id_ejercicio'].'&id_user='.$id_user.'" class= "btn_update">Actualizar</a>';
             echo '</div>';
             echo '</div>';
             echo '</div>';

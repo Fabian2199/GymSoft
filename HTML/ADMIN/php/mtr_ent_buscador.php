@@ -2,6 +2,7 @@
     include ("..\php\connection.php");
     $sql = "SELECT p.id_persona, `nombres`, `apellidos`, `foto`, `email`, `celular`, `fecha_nac`, `estado` FROM personas p JOIN usuarios u ON p.id_persona = u.id_persona WHERE u.tipo_user = 'entrenador'";
     $consulta = $conexion->query($sql);
+    $id = $_GET['id_user'];
     if (!isset($_POST['buscar'])) {
         $_POST['buscar'] = '';
     }
@@ -39,7 +40,7 @@
             }
             echo '<th>'.$estado.'</th>';
             echo '<th>
-                <a href="update_ent_sel.php?id_persona='.$row['id_persona'].'" class= "btn_update">Actualizar</a>
+                <a href="update_ent_sel.php?id_persona='.$row['id_persona'].'&id_user='.$id.'" class= "btn_update">Actualizar</a>
             </th>';
             echo '</tr>';
         }

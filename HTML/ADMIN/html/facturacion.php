@@ -1,4 +1,7 @@
-<?php include ("..\php\mtr_ejr.php")?>
+<?php 
+include ("..\php\mtr_ejr.php");
+$id = $_GET['id_user'];
+?>
 
 <!DOCTYPE html>
 <html>
@@ -41,7 +44,7 @@
         <!-- ITEMS -->
         <div id="menu-items">
             <div class="item">
-                <a href="homeMenu.php">
+                <a href="homeMenu.php?id_user=adm<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/home.png" alt=""></div>
                     <div class="title"><span>Inicio</span></div>
                 </a>
@@ -53,32 +56,26 @@
                 </a>
             </div>
             <div class="item">
-                <a href="adm_clt.php">
+                <a href="adm_clt.php?id_user=<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/clientes.png" alt=""></div>
                     <div class="title"><span>Clientes</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="adm_ent.php">
+                <a href="adm_ent.php?id_user=<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/entrenadores.png" alt=""></div>
                     <div class="title"><span>Entrenadores</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="adm_ejer.php">
+                <a href="adm_ejer.php?id_user=<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/ejercicios.png" alt=""></div>
                     <div class="title"><span>Ejercicios</span></div>
                 </a>
             </div>
-            <div class="item">
-                <a href="#">
-                    <div class="icon"><img src="../../iconos/admin/facturacion.png" alt=""></div>
-                    <div class="title"><span>Facturación</span></div>
-                </a>
-            </div>
             <div class="item separator"></div>
             <div class="item">
-                <a href="configuracion.php">
+                <a href="config_adm.php?id_persona=<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/configuracion.png" alt=""></div>
                     <div class="title"><span>Configuración</span></div>
                 </a>
@@ -102,7 +99,7 @@
                     <a href="#" id="btn-cerrar-popup-pagar-factura" class="btn-cerrar-popup-pagar-factura"><i class="fas fa-times"></i></a>
                     <h3>PAGAR FACTURA</h3>
                     <h4>completa el siguiente formulario</h4>
-                    <form action="../php/pagarFactura.php" method="post">
+                    <form action="../php/pagarFactura.php?id_user=<?php echo $id;?>" method="post">
                         <input type="text" name="doc_cliente" placeholder="Documento">
 
                         <?php

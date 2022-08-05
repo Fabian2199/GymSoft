@@ -1,3 +1,6 @@
+<?php
+$id = $_GET['id_user'];
+?>
 <!DOCTYPE html>
 <html>
 
@@ -39,7 +42,7 @@
         <!-- ITEMS -->
 		<div id="menu-items">
             <div class="item">
-                <a href="homeMenu.php">
+                <a href="homeMenu.php?id_user=adm<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/home.png" alt=""></div>
                     <div class="title"><span>Inicio</span></div>
                 </a>
@@ -51,32 +54,26 @@
                 </a>
             </div>
             <div class="item">
-                <a href="#">
-                    <div class="icon"><img src="../../iconos/admin/clientes.png" alt=""></div>
-                    <div class="title"><span>Clientes</span></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="adm_ent.php">
+                <a href="adm_ent.php?id_user=<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/entrenadores.png" alt=""></div>
                     <div class="title"><span>Entrenadores</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="adm_ejer.php">
+                <a href="adm_ejer.php?id_user=<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/ejercicios.png" alt=""></div>
                     <div class="title"><span>Ejercicios</span></div>
                 </a>
             </div>
             <div class="item">
-                <a href="facturacion.php">
+                <a href="facturacion.php?id_user=<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/facturacion.png" alt=""></div>
                     <div class="title"><span>Facturación</span></div>
                 </a>
             </div>
             <div class="item separator"></div>
             <div class="item">
-                <a href="../../configuracion.php">
+                <a href="config_adm.php?id_persona=<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/configuracion.png" alt=""></div>
                     <div class="title"><span>Configuración</span></div>
                 </a>
@@ -101,7 +98,7 @@
 					<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
 					<h3>Añadir cliente</h3>
 					<h4>Completa el siguiente formulario</h4>
-					<form action="..\php\reg_per.php" method="post">
+					<form action="..\php\reg_per.php?id_user=adm<?php echo $id;?>" method="post">
 						<div class="contenedor-inputs">
 							<input type="text" placeholder="Nombres" name="nombres" pattern="[A-Za-z ]+" required>
 							<input type="text" placeholder="Apellidos" name="apellidos" pattern="[A-Za-z ]+" required>
@@ -161,7 +158,7 @@
 			$.ajax({
 				data: parametros,
 				type: 'POST',
-				url: '../php/mtr_clt_buscador.php',
+				url: '../php/mtr_clt_buscador.php?id_user=<?php echo $id;?>',
 				success: function(data) {
 					document.getElementById("datos_busqueda").innerHTML = data;
 				}

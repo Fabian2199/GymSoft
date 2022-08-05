@@ -1,10 +1,9 @@
 <?php include("..\php\connection.php") ?>
-<?php include("..\php\dato_ent.php") ?>
+<?php include("..\php\dato_clt.php") ?>
 
 <?php
 $id = $_GET['id_persona'];
 $datos = get_datos($id);
-$id_user = $_GET['id_user'];
 ?>
 
 <!DOCTYPE html>
@@ -13,12 +12,12 @@ $id_user = $_GET['id_user'];
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Actualizar entrenador</title>
-	<link rel="stylesheet" type="text/css" href="../css/css/menu.css">
+	<title>Actualizar cliente</title>
+	<link rel="stylesheet" type="text/css" href="../css/css/Menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
-	<link rel="stylesheet" type="text/css" href="../CSs/CsS_ADM_Clt/update_clt.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CsS_ADM_Clt/update_clt.css">
 
 </head>
 
@@ -33,30 +32,24 @@ $id_user = $_GET['id_user'];
 			<div for="tar" class="ficha_gen">
 				<div class="ficha " id="tar">
 					<div class="adelante">
-						<h1>Datos</h1>
 
 						<?php while ($row = $datos->fetch_assoc()) { ?>
 							
 							<img src="<?php echo "../../img_per\\" . $row['foto']; ?>" alt="">
-							<?php if ($row['estado'] == 0) { $estado = "Contratado";} else {$estado = "Sin contrato"; }?>
-							<h1 class="h1_datos">Estado: <?php echo $estado; ?></h1>
-							<form action="../php/act_per.php?id_user=<?php echo $id_user; ?>" method="POST">
+							<h1 class="h1_datos">Actualizar datos:</h1>
+							<form action="../php/act_conf.php?id_persona=<?php echo $id; ?>" method="POST">
 								<div class="inputs_update">
-									<input type="text" value=<?php echo $id;?> name= 'id_persona' style='display: none;'>
-									<input type='text' value="<?php echo $row['nombres'];?>" name='nombres' pattern='[A-Za-z ]+' required>
-									<input type='text' value="<?php echo $row['apellidos']; ?>"name='apellidos'pattern='[A-Za-z ]+' required>
 									<input type='text' value=<?php echo $row['celular']; ?> name='celular' pattern='[0-9]{10}' required>
 									<input type='email' value=<?php echo $row['email']; ?> name='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'>
-									<select name="contrato" class="contrato">
-										<option value="0">Contratar</option>
-										<option value="1">Sin contrato</option>
-									</select>
+									<input type="password" placeholder="ingrese contraseña actual" name="old_pass" >
+									<input type="password" placeholder="ingrese nueva contraseña" name="new_pass1">
+									<input type="password" placeholder="repita nueva contraseña" name="new_pass2">
 								</div>
 								<input type="submit" class="btn_actu" value="Actualizar" id="btn_actu">
-								
 							</form>
-							<a href="homeMenu.php?id_user=adm<?php echo $id_user; ?>" class="boton">Regresar</a>
+
 						<?php } ?>
+						<a href="homeMenu.php?id_user=adm<?php echo $id; ?>" class="boton">Regresar</a>
 					</div>
 				</div>
 			</div>
