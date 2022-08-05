@@ -2,7 +2,7 @@
 <?php include("..\php\dato_login.php") ?>
 
 <?php
-$id = $_GET['id_persona'];
+$id = $_GET['id_ent'];
 $datos = get_datos($id);
 ?>
 
@@ -17,7 +17,7 @@ $datos = get_datos($id);
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
 	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
-	<link rel="stylesheet" type="text/css" href="../CSS/CsS_ADM_Clt/update_clt.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/config.css">
 
 </head>
 
@@ -49,7 +49,7 @@ $datos = get_datos($id);
 							</form>
 
 						<?php } ?>
-						<a href="homeMenu.php?id_user=adm<?php echo $id; ?>" class="boton">Regresar</a>
+						<a href="homeMenu.php?id_user=ent<?php echo $id; ?>" class="boton">Regresar</a>
 					</div>
 				</div>
 			</div>

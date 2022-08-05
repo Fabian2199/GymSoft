@@ -36,7 +36,7 @@
         <!-- ITEMS -->
         <div id="menu-items">
             <div class="item">
-                <a href="#">
+                <a href="">
                     <div class="icon"><img src="../../iconos/admin/home.png" alt=""></div>
                     <div class="title"><span>Inicio</span></div>
                 </a>

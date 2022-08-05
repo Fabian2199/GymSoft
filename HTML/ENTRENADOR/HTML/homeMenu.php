@@ -34,7 +34,7 @@
         <!-- ITEMS -->
         <div id="menu-items">
             <div class="item">
-                <a href="#">
+                <a href="">
                     <div class="icon"><img src="../../iconos/entrenador/home.png" alt=""></div>
                     <div class="title"><span>Inicio</span></div>
                 </a>
@@ -47,7 +47,7 @@
             </div>
             <div class="item separator"></div>
             <div class="item">
-                <a href="configuracion.php">
+                <a href="config_ent.php?id_ent=<?php echo $id_ent?>">
                     <div class="icon"><img src="../../iconos/entrenador/configuracion.png" alt=""></div>
                     <div class="title"><span>Configuración</span></div>
                 </a>
