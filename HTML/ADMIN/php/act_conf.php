@@ -5,10 +5,10 @@ $id_persona = $_GET['id_persona'];
 $id_user = "adm" . $id_persona;
 $cel = $_POST['celular'];
 $email = $_POST['email'];
-$old_pass = $_POST['old_pass'];
+$old_pass = md5($_POST['old_pass']);
 $act_pass = 0;
-$new_pass = $_POST['new_pass1'];
-$ver_pass = $_POST['new_pass2'];
+$new_pass = md5($_POST['new_pass1']);
+$ver_pass = md5($_POST['new_pass2']);
 $pass= "SELECT contrasena FROM usuarios WHERE id_user = '$id_user'";
 $consulta_pass= $conexion->query($pass);
 while ($row = $consulta_pass->fetch_assoc()) { 

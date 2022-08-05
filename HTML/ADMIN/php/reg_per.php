@@ -26,19 +26,19 @@
         }else{
             if($user=="cliente"){
                 $id_user = "clt".$documento;
-                $password = "clt".$cel;
+                $password = md5("clt".$cel);
                 $registro_user ="INSERT INTO `usuarios` (`id_user`, `id_persona`, `tipo_user`, `contrasena`, `estado`) VALUES ('$id_user', '$documento', '$user', '$password', '0')";
                 $validar_user = mysqli_query($conexion,$registro_user);
                 header('Location: ..\html\adm_clt.php?id_user='.$id_userH);
             }elseif($user=="entrenador"){
                 $id_user = "ent".$documento;
-                $password = "ent".$cel;
+                $password = md5("ent".$cel);
                 $registro_user ="INSERT INTO `usuarios` (`id_user`, `id_persona`, `tipo_user`, `contrasena`, `estado`) VALUES ('$id_user', '$documento', '$user', '$password', '0')";
                 $validar_user = mysqli_query($conexion,$registro_user);
                 header('Location: ..\html\adm_ent.php?id_user='.$id_userH);
             }else{
                 $id_user = "amd".$documento;
-                $password = "amd".$cel;
+                $password = md5("amd".$cel);
                 $registro_user ="INSERT INTO `usuarios` (`id_user`, `id_persona`, `tipo_user`, `contrasena`, `estado`) VALUES ('$id_user', '$documento', '$user', '$password', '0')";
                 $validar_user = mysqli_query($conexion,$registro_user);
             }
@@ -50,19 +50,19 @@
         $validar = mysqli_query($conexion,$registro);
         if($user=="cliente"){
             $id_user = "clt".$documento;
-            $password = "clt".$cel;
+            $password = md5("clt".$cel);
             $registro_user ="INSERT INTO `usuarios` (`id_user`, `id_persona`, `tipo_user`, `contrasena`, `estado`) VALUES ('$id_user', '$documento', '$user', '$password', '0')";
             $validar_user = mysqli_query($conexion,$registro_user);
             header('Location: ..\html\adm_clt.php?id_user='.$id_userH);
         }elseif($user=="entrenador"){
             $id_user = "ent".$documento;
-            $password = "ent".$cel;
+            $password = md5("ent".$cel);
             $registro_user ="INSERT INTO `usuarios` (`id_user`, `id_persona`, `tipo_user`, `contrasena`, `estado`) VALUES ('$id_user', '$documento', '$user', '$password', '0')";
             $validar_user = mysqli_query($conexion,$registro_user);
             header('Location: ..\html\adm_ent.php?id_user='.$id_userH);
         }else{
             $id_user = "amd".$documento;
-            $password = "amd".$cel;
+            $password = md5("amd".$cel);
             $registro_user ="INSERT INTO `usuarios` (`id_user`, `id_persona`, `tipo_user`, `contrasena`, `estado`) VALUES ('$id_user', '$documento', '$user', '$password', '0')";
             $validar_user = mysqli_query($conexion,$registro_user);
         }
