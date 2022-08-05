@@ -1,3 +1,16 @@
+body {
+    background-image:  url('../../img_gen/fondo_tar.jpg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 100rem;
+}
+
+.text-color {
+    color: white;
+    /*color: #ff9b11;*/
+}
+
 #inicial {
     text-align: center;
 }
