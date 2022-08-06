@@ -33,7 +33,7 @@ while ($row = $datos->fetch_assoc()) {
 	<link rel="stylesheet" type="text/css" href="../css/CSS_ADM_FAC/principal_adm_ejer_tar.css">
 	<!--<link rel="stylesheet" type="text/css" href="css_adm_eJer/popup.css">-->
 
-	<link rel="stylesheet" type="text/css" href="../css/css/Style.css">
+	<link rel="stylesheet" type="text/css" href="../css/css/style.css">
 	<link rel="stylesheet" type="text/css" href="../css/CSS_ADM_FAC/popup.css">
     <link rel="stylesheet" href="../css/css/styleMEnu.css">
 
