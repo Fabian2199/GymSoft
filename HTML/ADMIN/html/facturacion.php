@@ -141,6 +141,7 @@ while ($row = $datos->fetch_assoc()) {
         <div class="hijo-1">
             <form action="" method="busqueda">
                 <input class="inp-doc" type="text" placeholder="Documento" name="buscarFactura">
+                <input style="visibility: hidden; width: 0px;" value="<?php echo $id; ?>" name="id_user">
                 <div class="div-btns">
                     <input class="btn" id="btnBuscar" onclick="buscarPersona()" type="submit" name="btnBuscar" value="Buscar">
                     <input id="btn-popup-pagar-factura" class="btn btn-popup-pagar-factura" type="button" name="btnPagar" value="Pagar">
@@ -161,22 +162,24 @@ while ($row = $datos->fetch_assoc()) {
                 <tbody>
                     <?php include '../../db_connection/connection.php';?>
                     <?php if(isset($_GET['btnBuscar'])) { ?>
-                        <?php $busqueda = $_GET['buscarFactura']; ?>
-                        <?php $consulta = $conexion->query("SELECT det.id_factura, per.nombres, per.apellidos, pl.nombre_plan, det.fecha_ini, det.fecha_fin, det.estado_plan FROM detalles_fac det, planes pl, facturas fac, usuarios us, personas per where det.id_plan = pl.id_plan and det.id_factura = fac.id_factura and fac.id_cliente = us.id_user and us.id_persona = per.id_persona and per.id_persona = $busqueda"); // <------- query correcto ?;?>
-                        <?php// SELECT det.id_factura, per.nombres, per.apellidos, pl.nombre_plan, det.fecha_ini, det.fecha_fin, det.estado_plan FROM detalles_fac det, planes pl, facturas fac, usuarios us, personas per where det.id_plan = pl.id_plan and det.id_factura = fac.id_factura and fac.id_cliente = us.id_user and us.id_persona = per.id_persona and per.id_persona = 1598762665;?>
-                        <?php while($row = $consulta->fetch_array()) { ?>
-                            <tr>
-                                <td><?php echo $row['id_factura']; ?></td>
-                                <td><?php echo $row['nombres']." ".$row['apellidos']; ?></td>
-                                <td><?php echo $row['nombre_plan']; ?></td>
-                                <td><?php $feI = explode(" ", $row['fecha_ini']); echo $feI[0]; ?></td>
-                                <td><?php $feF = explode(" ", $row['fecha_fin']); echo $feF[0]; ?></td>
-                                <td><?php if($row['estado_plan'] == 0){echo "Activado";} if($row['estado_plan'] == 1){echo "Desactivado";}?></td>
-                                <?php $variable = $row['id_factura']; ?>
-                                <td><a href="../../db_connection/misDatosPdf.php?id=<?php echo $row['id_factura']; ?>">Descargar</a></td>
-                                <!--<td><input class="" type="submit" name="btnDescargarPDF" value="Descargar"><?php $id_dowload_pdf = $row['id_factura']; ?></td>-->
-                                <!--<td><a href="crearPDF.php?id=<?php echo $row['id_factura']; ?>">Descargar</a></td>-->
-                            </tr>
+                        <?php if(($busqueda = $_GET['buscarFactura']) != '') { ?>
+                            <?php //$busqueda = $_GET['buscarFactura']; ?>
+                            <?php $consulta = $conexion->query("SELECT det.id_factura, per.nombres, per.apellidos, pl.nombre_plan, det.fecha_ini, det.fecha_fin, det.estado_plan FROM detalles_fac det, planes pl, facturas fac, usuarios us, personas per where det.id_plan = pl.id_plan and det.id_factura = fac.id_factura and fac.id_cliente = us.id_user and us.id_persona = per.id_persona and per.id_persona = $busqueda"); // <------- query correcto ?;?>
+                            <?php// SELECT det.id_factura, per.nombres, per.apellidos, pl.nombre_plan, det.fecha_ini, det.fecha_fin, det.estado_plan FROM detalles_fac det, planes pl, facturas fac, usuarios us, personas per where det.id_plan = pl.id_plan and det.id_factura = fac.id_factura and fac.id_cliente = us.id_user and us.id_persona = per.id_persona and per.id_persona = 1598762665;?>
+                            <?php while($row = $consulta->fetch_array()) { ?>
+                                <tr>
+                                    <td><?php echo $row['id_factura']; ?></td>
+                                    <td><?php echo $row['nombres']." ".$row['apellidos']; ?></td>
+                                    <td><?php echo $row['nombre_plan']; ?></td>
+                                    <td><?php $feI = explode(" ", $row['fecha_ini']); echo $feI[0]; ?></td>
+                                    <td><?php $feF = explode(" ", $row['fecha_fin']); echo $feF[0]; ?></td>
+                                    <td><?php if($row['estado_plan'] == 0){echo "Activado";} if($row['estado_plan'] == 1){echo "Desactivado";}?></td>
+                                    <?php $variable = $row['id_factura']; ?>
+                                    <td><a href="misDatosPdf.php?id=<?php echo $row['id_factura']; ?>">Descargar</a></td>
+                                    <!--<td><input class="" type="submit" name="btnDescargarPDF" value="Descargar"><?php $id_dowload_pdf = $row['id_factura']; ?></td>-->
+                                    <!--<td><a href="crearPDF.php?id=<?php echo $row['id_factura']; ?>">Descargar</a></td>-->
+                                </tr>
+                            <?php } ?>
                         <?php } ?>
                     <?php } ?>
                 </tbody>
