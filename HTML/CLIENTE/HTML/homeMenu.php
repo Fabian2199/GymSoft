@@ -90,15 +90,6 @@ if(!isset($usuario)){
         </div>
     </div>
 
-    <div id="cambio" style="visibility:hidden">
-        <div class="icon"><img src="photo.jpeg" alt="Logo gimnasio" style="width: 400px; height: 300px;"></div>
-        <div class="icon"><h1>Ey prueba</h1></div>
-        <div class="redesSociales">
-            <a title="Facebook" href="https://www.facebook.com/BfreeGym"><img src="../img/logoFacebook.png" alt="Logo facebook" style="width: 100px; height: 100px;"/></a>
-            <a title="Instagram" href="https://www.instagram.com/bfreegym/"><img src="../img/logoInstagram.png" alt="Logo instagram" style="width: 100px; height: 100px;"/></a>
-        </div>
-    </div>
-
     <script>
         const btn = document.querySelector('#menu-btn');
         const menu = document.querySelector('#sidemenu');

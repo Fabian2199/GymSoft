@@ -28,6 +28,7 @@
 	margin: 10px;
 	-webkit-perspective: 1500;
 	perspective: 1500;
+	overflow: scroll;
 
 }
 .ficha {

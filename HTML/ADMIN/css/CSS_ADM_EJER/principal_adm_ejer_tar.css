@@ -60,6 +60,7 @@
 	text-align:center;
 	color: white;
 	font-family: "Swis721 BlkCn BT";
+	overflow: scroll;
 }
 .gen:hover .targeta{
 	transform: rotateY(180deg);

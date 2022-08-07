@@ -58,12 +58,6 @@ if(!isset($usuario)){
                 </a>
             </div>
             <div class="item">
-                <a href="../../torniquete.php">
-                    <div class="icon"><img src="../../iconos/admin/ingreso.png" alt=""></div>
-                    <div class="title"><span>Ingreso</span></div>
-                </a>
-            </div>
-            <div class="item">
                 <a href="adm_clt.php?id_user=<?php echo $id;?>">
                     <div class="icon"><img src="../../iconos/admin/clientes.png" alt=""></div>
                     <div class="title"><span>Clientes</span></div>
@@ -112,15 +106,6 @@ if(!isset($usuario)){
         <div class="redesSociales">
             <a title="Facebook" href="https://www.facebook.com/BfreeGym"><img id="imgFacebook" src="../../img/logoFacebook.png" alt="Logo facebook"/></a>
             <a title="Instagram" href="https://www.instagram.com/bfreegym/"><img id="imgInstagram" src="../../img/logoInstagram.png" alt="Logo instagram" /></a>
-        </div>
-    </div>
-
-    <div id="cambio" style="visibility:hidden">
-        <div class="icon"><img src="photo.jpeg" alt="Logo gimnasio" style="width: 400px; height: 300px;"></div>
-        <div class="icon"><h1>Ey prueba</h1></div>
-        <div class="redesSociales">
-            <a title="Facebook" href="https://www.facebook.com/BfreeGym"><img src="../img/logoFacebook.png" alt="Logo facebook" style="width: 100px; height: 100px;"/></a>
-            <a title="Instagram" href="https://www.instagram.com/bfreegym/"><img src="../img/logoInstagram.png" alt="Logo instagram" style="width: 100px; height: 100px;"/></a>
         </div>
     </div>
 

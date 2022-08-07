@@ -98,8 +98,7 @@ $ficha = get_ficha($id);
 						<h1>Datos</h1>
 						<?php while ($row = $datos->fetch_assoc()) { ?>
 							<img src="<?php echo "..\..\img_per\\" . $row['foto']; ?>" alt="">
-							<h1 class="h1_datos"><?php echo $row['nombres']; ?></h1>
-							<h1 class="h1_datos"><?php echo $row['apellidos']; ?></h1>
+							<h1 class="h1_datos"><?php echo $row['nombres']." ".$row['apellidos']; ?></h1>
 							<h1 class="h1_datos"><?php echo $row['celular']; ?></h1>
 							<h1 class="h1_datos">Inicio Plan: <?php echo $row['fecha_ini']; ?></h1>
 							<h1 class="h1_datos">Fin Plan: <?php echo $row['fecha_fin']; ?></h1>

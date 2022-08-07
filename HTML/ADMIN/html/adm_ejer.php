@@ -63,12 +63,6 @@ while ($row = $datos->fetch_assoc()) {
 				</a>
 			</div>
 			<div class="item">
-				<a href="torniquete.php">
-					<div class="icon"><img src="../../iconos/admin/ingreso.png" alt=""></div>
-					<div class="title"><span>Ingreso</span></div>
-				</a>
-			</div>
-			<div class="item">
 				<a href="adm_clt.php?id_user=<?php echo $id; ?>">
 					<div class="icon"><img src="../../iconos/admin/clientes.png" alt=""></div>
 					<div class="title"><span>Clientes</span></div>
