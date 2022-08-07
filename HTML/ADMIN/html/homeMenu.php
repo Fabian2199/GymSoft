@@ -28,8 +28,8 @@ if(!isset($usuario)){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio admin</title>
-    <link rel="stylesheet" href="../css/css/styleMEnu.css">
-    <link rel="stylesheet" href="../css/css/home.css">
+    <link rel="stylesheet" href="../css/css/StyleMEnu.css">
+    <link rel="stylesheet" href="../css/css/Home.css">
 </head>
 <body>
     <div id="sidemenu" class="menu-collapsed">

@@ -78,7 +78,7 @@ while ($row = $datos->fetch_assoc()) {
 				</a>
 			</div>
 			<div class="item">
-				<a href="facturacion.ph?id_user=<?php echo $id; ?>">
+				<a href="facturacion.php?id_user=<?php echo $id; ?>">
 					<div class="icon"><img src="../../iconos/admin/facturacion.png" alt=""></div>
 					<div class="title"><span>Facturación</span></div>
 				</a>

@@ -8,9 +8,9 @@
 		$usuario=$_POST['id_user'];
 		$pass=md5($_POST['contrasena']);
 
-		$sql="SELECT * from usuarios where id_user='$usuario' and contrasena='$pass' and tipo_user='administrador'";
-		$sql_cliente="SELECT * from usuarios where id_user='$usuario' and contrasena='$pass' and tipo_user='cliente'";
-		$sql_entrenador="SELECT * from usuarios where id_user='$usuario' and contrasena='$pass' and tipo_user='entrenador'";
+		$sql="SELECT * from usuarios where id_user='$usuario' and contrasena='$pass' and tipo_user='administrador' AND estado = 0";
+		$sql_cliente="SELECT * from usuarios where id_user='$usuario' and contrasena='$pass' and tipo_user='cliente' AND estado = 0";
+		$sql_entrenador="SELECT * from usuarios where id_user='$usuario' and contrasena='$pass' and tipo_user='entrenador' AND estado = 0";
 		$result=mysqli_query($conexion,$sql);
 		$result_cliente=mysqli_query($conexion,$sql_cliente);
 		$result_entrenador=mysqli_query($conexion,$sql_entrenador);

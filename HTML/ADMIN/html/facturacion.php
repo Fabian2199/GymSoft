@@ -25,17 +25,17 @@ while ($row = $datos->fetch_assoc()) {
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Facturación #2</title>
-	<link rel="stylesheet" type="text/css" href="../css/CSS_ADM_FAC/menu.css">
+	<link rel="stylesheet" type="text/css" href="../css/CSS_ADM_FAc/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<!--<link rel="stylesheet" type="text/css" href="css_adm_ejer/principal_adm_ejer.css">-->
 
 	<!--<link rel="stylesheet" type="text/css" href="CSS_ADM_EJER/banner.css">-->
-	<link rel="stylesheet" type="text/css" href="../css/CSS_ADM_FAC/principal_adm_ejer_tar.css">
+	<link rel="stylesheet" type="text/css" href="../css/CSS_ADM_FAc/principal_adm_ejer_tar.css">
 	<!--<link rel="stylesheet" type="text/css" href="css_adm_eJer/popup.css">-->
 
-	<link rel="stylesheet" type="text/css" href="../css/css/style.css">
-	<link rel="stylesheet" type="text/css" href="../css/CSS_ADM_FAC/popup.css">
-    <link rel="stylesheet" href="../css/css/styleMEnu.css">
+	<link rel="stylesheet" type="text/css" href="../css/csS/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/CSS_ADM_FAc/Popup.css">
+    <link rel="stylesheet" href="../css/csS/styleMEnu.css">
 
 	<script language="javascript" src="../../js/jquery-3.6.0.min.js"></script>
 </head>
@@ -110,7 +110,7 @@ while ($row = $datos->fetch_assoc()) {
                     <h3>PAGAR FACTURA</h3>
                     <h4>completa el siguiente formulario</h4>
                     <form action="../php/pagarFactura.php?id_user=<?php echo $id;?>" method="post">
-                        <input type="text" name="doc_cliente" placeholder="Documento">
+                        <input type="text" name="doc_cliente" placeholder="Documento" required>
 
                         <?php
                         $query = "SELECT id_plan, nombre_plan FROM planes;";
@@ -124,8 +124,8 @@ while ($row = $datos->fetch_assoc()) {
                         </select>
 
 
-                        <input type="date" name="fecha_inicio_plan" placeholder="Fecha inicio">
-                        <input type="submit" value="Pagar">
+                        <input type="date" name="fecha_inicio_plan" placeholder="Fecha inicio" required>
+                        <input type="submit" value="Pagar" class="btn-submit">
                     </form>
                 </div>
             </div>

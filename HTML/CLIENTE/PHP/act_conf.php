@@ -2,10 +2,10 @@
 include("connection.php");
 
 $id_persona = $_GET['id_persona'];
-$id_user = "ent" . $id_persona;
+$id_user = "clt" . $id_persona;
 $cel = $_POST['celular'];
 $email = $_POST['email'];
-$old_pass = $_POST['old_pass'];
+$old_pass = md5($_POST['old_pass']);
 $act_pass = 0;
 $new_pass = md5($_POST['new_pass1']);
 $ver_pass = md5($_POST['new_pass2']);
@@ -14,7 +14,13 @@ $consulta_pass= $conexion->query($pass);
 while ($row = $consulta_pass->fetch_assoc()) { 
   $act_pass = $row['contrasena'];
 }
-
+echo $act_pass;
+echo " old ";
+echo $old_pass;
+echo " nueva c ";
+echo $new_pass;
+echo " verific ";
+echo $ver_pass;
 $actualizar = "UPDATE personas SET `email`='$email',`celular`=$cel WHERE id_persona='$id_persona'";
 $validar = mysqli_query($conexion, $actualizar);
 if ($old_pass != null) {
