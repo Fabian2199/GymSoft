@@ -106,7 +106,7 @@ while ($row = $datos->fetch_assoc()) {
 					<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
 					<h3>Añadir ejercicio</h3>
 					<h4>Completa el siguiente formulario</h4>
-					<form action="..\php\reg_ejr.php?id_user=<?php echo $id; ?>" method="post">
+					<form action="..\php\reg_ejr.php?id_user=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
 						<div class="contenedor-inputs">
 							<input type="text" placeholder="Nombre Ejercicio" name="ejercicio" required>
 							<textarea name="descripcion" placeholder="Descripcion" required></textarea>

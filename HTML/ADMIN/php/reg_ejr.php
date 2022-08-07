@@ -1,7 +1,10 @@
 <?php
     include ("connection.php");
     $ejercicio =$_POST['ejercicio'];
-    $imagen =$_POST['imagen'];
+    $imagen =$_FILES['imagen']['name'];
+    echo "hoilaaaaaaa".$_FILES['imagen']['name'];
+    $move_imagen = "../../img_ejer/";
+    move_uploaded_file($_FILES['imagen']['tmp_name'],$move_imagen.$imagen);
     $descripcion=$_POST['descripcion'];
     $video=$_POST['video'];
     $id_ejercicio=101;
