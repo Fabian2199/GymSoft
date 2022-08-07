@@ -1,20 +1,20 @@
 
 
-create table PLANES(
+create table planes(
    id_plan		 INT	     not null,
    nombre_plan	 	VARCHAR(20)  not null,
    Duracion		VARCHAR(20)  not null,
    Valor		 INT	     not null		     
 );
 
-create table OTROS_SERVICIOS(
+create table otros_servicios(
    id_servicio		 INT	     not null,
    nombre_servicio	VARCHAR(20)  not null,
    Duracion		VARCHAR(20)  not null,
    Valor		 INT	     not null		     
 );
 
-create table EJERCICIOS(
+create table ejercicios(
    id_ejercicio		 INT	     not null,
    nombre_ejercicio	VARCHAR(20)  not null,
    descripcion		TEXT         not null,
@@ -22,7 +22,7 @@ create table EJERCICIOS(
    video		VARCHAR(80)	     		     
 );
 
-create table PERSONAS(
+create table personas(
    id_persona		 BIGINT	     not null,
    nombres		VARCHAR(50)  not null,
    apellidos		VARCHAR(50)  not null,
@@ -32,7 +32,7 @@ create table PERSONAS(
    fecha_nac		DATE	     not null   
 );
 
-create table USUARIOS(
+create table usuarios(
    id_user		VARCHAR(50)  not null,
    id_persona		 BIGINT	     not null,
    tipo_user	 	VARCHAR(20)  not null,
@@ -40,14 +40,14 @@ create table USUARIOS(
    estado		 INT	     not null		     
 );
 
-create table FACTURAS(
+create table facturas(
    id_factura		 INT	     not null,
    fecha_fac		DATE     not null,
    id_admin		VARCHAR(50)     not null,
    id_cliente		 VARCHAR(50)	     not null		     
 );
 
-create table DETALLES_FAC(
+create table detalles_fac(
    id_plan		 INT	     not null,
    id_factura		 INT	     not null,
    id_servicio		 INT	     not null,
@@ -56,7 +56,7 @@ create table DETALLES_FAC(
    fecha_fin		DATE    not null	     
 );
 
-create table RUTINAS(
+create table rutinas(
    id_entrenador	 VARCHAR(50)	     not null,
    id_cliente		 VARCHAR(50)     not null,
    id_ejercicio		 INT	     not null,
@@ -65,7 +65,7 @@ create table RUTINAS(
    n_rep 		 INT	     not null	     
 );
 
-create table FICHA_ANTROPOMETRICA(
+create table ficha_antropometrica(
    id_ficha		 INT	     not null,
    id_entrenador	 VARCHAR(50)	     not null,
    id_cliente		 VARCHAR(50)	     not null,
@@ -112,47 +112,47 @@ create table FICHA_ANTROPOMETRICA(
 	     
 );
 
-alter table PLANES 
+alter table planes 
 add CONSTRAINT plan_pk_id PRIMARY KEY (id_plan)
 ;
 
-alter table OTROS_SERVICIOS 
+alter table otros_servicios 
 add CONSTRAINT servicio_pk_id PRIMARY KEY (id_servicio)
 ;
 
-alter table EJERCICIOS 
+alter table ejercicios
 add CONSTRAINT ejer_pk_id PRIMARY KEY (id_ejercicio)
 ;
 
-alter table PERSONAS 
+alter table personas
 add CONSTRAINT per_pk_id PRIMARY KEY (id_persona)
 ;
 
-alter table USUARIOS 
+alter table usuarios
 add CONSTRAINT user_pk_id PRIMARY KEY (id_user),
 add CONSTRAINT per_fk_id FOREIGN KEY (id_persona) REFERENCES personas (id_persona)
 ;
 
-alter table FACTURAS 
+alter table facturas 
 add CONSTRAINT fac_pk_id PRIMARY KEY (id_factura),
 add CONSTRAINT admin_fk_id FOREIGN KEY (id_admin) REFERENCES usuarios (id_user),
 add CONSTRAINT clt_fk_id FOREIGN KEY (id_cliente) REFERENCES usuarios (id_user)
 ;
 
-alter table DETALLES_FAC 
+alter table detalles_fac 
 add CONSTRAINT detfac_pk_id PRIMARY KEY (id_factura,id_plan),
 add CONSTRAINT fac_fk_id FOREIGN KEY (id_factura) REFERENCES facturas (id_factura),
 add CONSTRAINT plan_fk_id FOREIGN KEY (id_plan) REFERENCES planes (id_plan),
 add CONSTRAINT servicio_fk_id FOREIGN KEY (id_servicio) REFERENCES otros_servicios (id_servicio)
 ;
 
-alter table RUTINAS 
+alter table rutinas 
 add CONSTRAINT entr_fk_id FOREIGN KEY (id_entrenador) REFERENCES usuarios (id_user),
 add CONSTRAINT cltRut_fk_id FOREIGN KEY (id_cliente) REFERENCES usuarios (id_user),
 add CONSTRAINT ejer_fk_id FOREIGN KEY (id_ejercicio) REFERENCES ejercicios (id_ejercicio)
 ;
 
-alter table FICHA_ANTROPOMETRICA
+alter table ficha_antropometrica
 add CONSTRAINT fh_pk_id PRIMARY KEY (id_ficha),
 add CONSTRAINT cltFI_fk_id FOREIGN KEY (id_cliente) REFERENCES usuarios (id_user),
 add CONSTRAINT entFI_fk_id FOREIGN KEY (id_entrenador) REFERENCES usuarios (id_user)
