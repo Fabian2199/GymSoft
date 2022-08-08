@@ -150,7 +150,7 @@ while ($row = $datos->fetch_assoc()) {
 											</th>
 											<th>
 												<label for="1">Tension arterial:</label>
-												<input type="number" step="0.01" min="1" placeholder="Tension arterial" id="1" name="valor_tension'" required>
+												<input type="number" step="0.01" min="1" placeholder="Tension arterial" id="1" name="val_tension" required>
 											</th>
 											<th>
 												<label for="1">Pulso:</label>
