@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../PHP/connection.php");
+include("../php/connection.php");
 $usuario = $_SESSION['user'];
 if(!isset($usuario)){
     header("location:../../index.php");
@@ -12,7 +12,7 @@ include '../php/connection.php';
 $query_01 = "UPDATE detalles_fac SET estado_plan = 1 WHERE fecha_fin < current_date;";
 $consulta_01 = mysqli_query($conexion, $query_01);
 $id = $_GET['id_user'];
-include("../PHP/dato_login.php");
+include("../php/dato_login.php");
 $foto = "";
 $nombres = "";
 $datos = get_datos($id);
@@ -28,16 +28,16 @@ while ($row = $datos->fetch_assoc()) {
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Entrenadores</title>
-	<link rel="stylesheet" type="text/css" href="../css/css/Menu.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
-	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
-	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
-	<link rel="stylesheet" type="text/css" href="../csS/Css/tablas.css">
-	<link rel="stylesheet" type="text/css" href="../CsS/CSS_ADM_ent/principal_adm_ent_tar.css">
-	<link rel="stylesheet" type="text/css" href="../Css/css_adM_ent/Popup.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/banner.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/body.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/tablas.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ADM_ENT/principal_adm_ent_tar.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ADM_ENT/Popup.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-	<link rel="stylesheet" href="../css/css/styleMEnu.css">
+	<link rel="stylesheet" href="../CSS/CSS/styleMEnu.css">
 
 <body>
 	<div id="sidemenu" class="menu-collapsed">
@@ -91,7 +91,7 @@ while ($row = $datos->fetch_assoc()) {
 				</a>
 			</div>
 			<div class="item">
-				<a href="../PHP/cerrarS.php">
+				<a href="../php/cerrarS.php">
 					<div class="icon"><img src="../../iconos/admin/cerrar_sesion.png" alt=""></div>
 					<div class="title"><span>Cerrar sesión</span></div>
 				</a>
@@ -162,9 +162,9 @@ while ($row = $datos->fetch_assoc()) {
 			<a class="fab fa-instagram" href="https://www.instagram.com/bfreegym/"></a>
 		</div>
 	</footer>
-	<script src="../css/Css_adm_ent/popup.js"></script>
-	<script src="../css/Css_adm_ent/combobox.js"></script>
-	<script src="../css/Css_adm_ent/foto.js"></script>
+	<script src="../CSS/CSS_ADM_ENT/popup.js"></script>
+	<script src="../CSS/CSS_ADM_ENT/combobox.js"></script>
+	<script src="../CSS/CSS_ADM_ENT/foto.js"></script>
 	<script type="text/javascript">
 		function buscar_ahora(buscar) {
 			var parametros = {

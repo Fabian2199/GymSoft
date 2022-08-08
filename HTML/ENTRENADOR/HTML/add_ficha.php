@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../PHP/connection.php");
+include("../php/connection.php");
 $usuario = $_SESSION['user'];
 if(!isset($usuario)){
     header("location:../../index.php");
@@ -14,7 +14,7 @@ if(!isset($usuario)){
 <?php
 $id_clt = $_GET['id_clt'];
 $id_ent = $_GET['id_ent'];
-include("../PHP/dato_login.php");
+include("../php/dato_login.php");
 $foto = "";
 $nombres = "";
 $datos = get_datos($id_ent);
@@ -30,13 +30,13 @@ while ($row = $datos->fetch_assoc()) {
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Cliente</title>
-	<link rel="stylesheet" type="text/css" href="../css/css/Menu.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
-	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ENt_CLT_SEL/principal_ent_clt.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ENT_CLT_SEL/principal_ent_clt.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ENT_CLT_SEL/ficha_clt.css">
-	<link rel="stylesheet" href="../css/css/tablas.css">
+	<link rel="stylesheet" href="../CSS/CSS/tablas.css">
 
-	<link rel="stylesheet" href="../css/css/styleMEnu.css">
+	<link rel="stylesheet" href="../CSS/CSS/styleMenu.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
@@ -81,7 +81,7 @@ while ($row = $datos->fetch_assoc()) {
 				</a>
 			</div>
 			<div class="item">
-				<a href="../PHP/cerrarS.php">
+				<a href="../php/cerrarS.php">
 					<div class="icon"><img src="../../iconos/entrenador/cerrar_sesion.png" alt=""></div>
 					<div class="title"><span>Cerrar sesión</span></div>
 				</a>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../PHP/connection.php");
+include("../php/connection.php");
 $usuario = $_SESSION['user'];
 if(!isset($usuario)){
     header("location:../../index.php");
@@ -34,8 +34,8 @@ $ficha = get_ficha($id);
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Cliente</title>
-	<link rel="stylesheet" href="../css/stylemEnu.css">
-	<link rel="stylesheet" href="../css/menU.css">
+	<link rel="stylesheet" href="../CSS/styleMenu.css">
+	<link rel="stylesheet" href="../CSS/menU.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/principal_clt.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/principal_clt_tar.css">
@@ -82,7 +82,7 @@ $ficha = get_ficha($id);
 					</a>
 				</div>
 				<div class="item">
-					<a href="../PHP/cerrarS.php">
+					<a href="../php/cerrarS.php">
 						<div class="icon"><img src="../../iconos/admin/cerrar_sesion.png" alt=""></div>
 						<div class="title"><span>Cerrar sesión</span></div>
 					</a>
@@ -130,7 +130,7 @@ $ficha = get_ficha($id);
 					<div class="adelante">
 						<h1>Rutina</h1>
 						<div style="text-align: center;">
-							<input onclick="location.href='../PHP/rutinaPDF.php?id=<?php echo $id; ?>';" id="btn-popup-descargar-rutina" class="btn btn-popup-descargar-rutina" type="button" name="btnDescargarRutina" value="Descargar rutina">
+							<input onclick="location.href='../php/rutinaPDF.php?id=<?php echo $id; ?>';" id="btn-popup-descargar-rutina" class="btn btn-popup-descargar-rutina" type="button" name="btnDescargarRutina" value="Descargar rutina">
 						</div>
 						<table>
 							<thead>
@@ -165,7 +165,7 @@ $ficha = get_ficha($id);
 		</div>
 	</footer>
 </body>
-<script src="..\cSS\combobox.js"></script>
+<script src="..\CSS\combobox.js"></script>
 <script>
 	const btn = document.querySelector('#menu-btn');
 	const menu = document.querySelector('#sidemenu');

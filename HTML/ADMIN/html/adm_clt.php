@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../PHP/connection.php");
+include("../php/connection.php");
 $usuario = $_SESSION['user'];
 if(!isset($usuario)){
     header("location:../../index.php");
@@ -8,7 +8,7 @@ if(!isset($usuario)){
 ?>
 <?php
 $id = $_GET['id_user'];
-include("../PHP/dato_login.php");
+include("../php/dato_login.php");
 $foto = "";
 $nombres = "";
 $datos = get_datos($id);
@@ -24,17 +24,17 @@ while ($row = $datos->fetch_assoc()) {
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Clientes</title>
-	<link rel="stylesheet" type="text/css" href="../css/css/menu.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
-	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
-	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
-	<link rel="stylesheet" type="text/css" href="../CSS/CsS_ADM_Clt/principal_adm_clt_tar.css">
-	<link rel="stylesheet" type="text/css" href="../csS/Css/tablas.css">
-	<link rel="stylesheet" type="text/css" href="../Css/css_adM_clt/Popup.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/banner.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/body.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ADM_CLT/principal_adm_clt_tar.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/tablas.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ADM_CLT/popup.css">
 	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-	<link rel="stylesheet" href="../css/css/styleMEnu.css">
+	<link rel="stylesheet" href="../CSS/CSS/styleMEnu.css">
 </head>
 
 <body>
@@ -89,7 +89,7 @@ while ($row = $datos->fetch_assoc()) {
 				</a>
 			</div>
 			<div class="item">
-				<a href="../PHP/cerrarS.php">
+				<a href="../php/cerrarS.php">
 					<div class="icon"><img src="../../iconos/admin/cerrar_sesion.png" alt=""></div>
 					<div class="title"><span>Cerrar sesión</span></div>
 				</a>
@@ -157,9 +157,9 @@ while ($row = $datos->fetch_assoc()) {
 			<a class="fab fa-instagram" href="https://www.instagram.com/bfreegym/"></a>
 		</div>
 	</footer>
-	<script src="../css/Css_adm_clt/popup.js"></script>
-	<script src="../css/Css_adm_clT/combobox.js"></script>
-	<script src="../Css/Css_adm_clt/foto.js"></script>
+	<script src="../CSS/CSS_ADM_CLT/popup.js"></script>
+	<script src="../CSS/CSS_ADM_CLT/combobox.js"></script>
+	<script src="../CSS/CSS_ADM_CLT/foto.js"></script>
 	<script type="text/javascript">
 		function buscar_ahora(buscar) {
 			var parametros = {

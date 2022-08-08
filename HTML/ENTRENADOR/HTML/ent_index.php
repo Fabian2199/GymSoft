@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../PHP/connection.php");
+include("../php/connection.php");
 $usuario = $_SESSION['user'];
 if(!isset($usuario)){
     header("location:../../index.php");
@@ -10,7 +10,7 @@ if(!isset($usuario)){
 <html>
 <?php
 ob_start();
-include("../PHP/dato_login.php");
+include("../php/dato_login.php");
 $id_ent = $_GET['id_ent'];
 $foto = "";
 $nombres = "";
@@ -25,16 +25,16 @@ while ($row = $datos->fetch_assoc()) {
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Entrenadores inicio</title>
-	<link rel="stylesheet" type="text/css" href="../css/css/Menu.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
-	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
-	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
-	<link rel="stylesheet" type="text/css" href="../csS/Css/tablas.css">
-	<link rel="stylesheet" type="text/css" href="../csS/CsS_ENt_INDEX/principal_Ent_clt_taR.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/banner.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/body.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/tablas.css">
+	<link rel="stylesheet" type="text/css" href="../CCS/CSS_ENT_INDEX/principal_Ent_clt_taR.css">
 	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-	<link rel="stylesheet" href="../css/css/styleMEnu.css">
+	<link rel="stylesheet" href="../CSS/CSS/styleMenu.css">
 </head>
 
 <body>
@@ -71,7 +71,7 @@ while ($row = $datos->fetch_assoc()) {
 				</a>
 			</div>
 			<div class="item">
-				<a href="../PHP/cerrarS.php">
+				<a href="../php/cerrarS.php">
 					<div class="icon"><img src="../../iconos/entrenador/cerrar_sesion.png" alt=""></div>
 					<div class="title"><span>Cerrar sesión</span></div>
 				</a>

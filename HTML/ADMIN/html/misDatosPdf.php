@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../PHP/connection.php");
+include("../php/connection.php");
 $usuario = $_SESSION['user'];
 if(!isset($usuario)){
     header("location:../../index.php");
@@ -18,7 +18,7 @@ if(!isset($usuario)){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/css/StyleFactura.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/CSS/StyleFactura.css">
     <title>Factura</title>
 </head>
 <body>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../PHP/connection.php");
+include("../php/connection.php");
 $usuario = $_SESSION['user'];
 if(!isset($usuario)){
     header("location:../../index.php");
@@ -9,7 +9,7 @@ if(!isset($usuario)){
 <?php 
 include ("..\php\mtr_ejr.php");
 $id = $_GET['id_user'];
-include("../PHP/dato_login.php");
+include("../php/dato_login.php");
 $foto = "";
 $nombres = "";
 $datos = get_datos($id);
@@ -24,18 +24,18 @@ while ($row = $datos->fetch_assoc()) {
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Facturación #2</title>
-	<link rel="stylesheet" type="text/css" href="../css/CSS_ADM_FAc/menu.css">
+	<title>Facturación</title>
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ADM_FAC/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<!--<link rel="stylesheet" type="text/css" href="css_adm_ejer/principal_adm_ejer.css">-->
 
 	<!--<link rel="stylesheet" type="text/css" href="CSS_ADM_EJER/banner.css">-->
-	<link rel="stylesheet" type="text/css" href="../css/CSS_ADM_FAc/principal_adm_ejer_tar.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ADM_FAC/principal_adm_ejer_tar.css">
 	<!--<link rel="stylesheet" type="text/css" href="css_adm_eJer/popup.css">-->
 
-	<link rel="stylesheet" type="text/css" href="../css/csS/style.css">
-	<link rel="stylesheet" type="text/css" href="../css/CSS_ADM_FAc/Popup.css">
-    <link rel="stylesheet" href="../css/csS/styleMEnu.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/style.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ADM_FAC/Popup.css">
+    <link rel="stylesheet" href="../CSS/CSS/styleMEnu.css">
 
 	<script language="javascript" src="../../js/jquery-3.6.0.min.js"></script>
 </head>
@@ -91,7 +91,7 @@ while ($row = $datos->fetch_assoc()) {
                 </a>
             </div>
             <div class="item">
-                <a href="../PHP/cerrarS.php">
+                <a href="../php/cerrarS.php">
                     <div class="icon"><img src="../../iconos/admin/cerrar_sesion.png" alt=""></div>
                     <div class="title"><span>Cerrar sesión</span></div>
                 </a>
@@ -190,7 +190,7 @@ while ($row = $datos->fetch_assoc()) {
 	<script src="css_adm_ejeR/popup_update.js"></script>
 	<script src="css_adm_eJer/combobox.js"></script>-->
 
-    <script src="../css/css_adm_fac/popup.js"></script>
+    <script src="../CSS/CSS_ADM_FAC/popup.js"></script>
     <script>
         const btn = document.querySelector('#menu-btn');
         const menu = document.querySelector('#sidemenu');

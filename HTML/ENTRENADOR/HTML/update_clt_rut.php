@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../PHP/connection.php");
+include("../php/connection.php");
 $usuario = $_SESSION['user'];
 if(!isset($usuario)){
     header("location:../../index.php");
@@ -8,7 +8,7 @@ if(!isset($usuario)){
 ?>
 <?php include("..\php\connection.php");
 $id_ent = $_GET['id_ent'];
-include("../PHP/dato_login.php");
+include("../php/dato_login.php");
 $foto = "";
 $nombres = "";
 $datos = get_datos($id_ent);
@@ -33,13 +33,13 @@ $datos_rut = get_rut($id_ejercicio, $id, $dia);
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Actualizar rutina</title>
-    <link rel="stylesheet" type="text/css" href="../css/css/Menu.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/CSS/menu.css">
     <link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
-    <link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
-    <link rel="stylesheet" type="text/css" href="../Css/css/body.css">
-    <link rel="stylesheet" type="text/css" href="../css/CSS_ENT_CLT_SEl/update_clt.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/CSS/banner.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/CSS/body.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/CSS_ENT_CLT_SEL/update_clt.css">
 
-    <link rel="stylesheet" href="../css/css/styleMenu.css">
+    <link rel="stylesheet" href="../CSS/CSS/styleMenu.css">
 </head>
 
 <body>
@@ -82,7 +82,7 @@ $datos_rut = get_rut($id_ejercicio, $id, $dia);
                 </a>
             </div>
             <div class="item">
-                <a href="../PHP/cerrarS.php">
+                <a href="../php/cerrarS.php">
                     <div class="icon"><img src="../../iconos/entrenador/cerrar_sesion.png" alt=""></div>
                     <div class="title"><span>Cerrar sesión</span></div>
                 </a>

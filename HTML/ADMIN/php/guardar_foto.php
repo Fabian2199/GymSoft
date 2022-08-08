@@ -1,10 +1,5 @@
 <?php
-/*
-    Tomar una fotografía y guardarla en un archivo
-    @date @date 2018-10-22
-    @author parzibyte
-    @web parzibyte.me/blog
-*/
+
 
 $imagenCodificada = file_get_contents("php://input"); //Obtener la imagen
 if(strlen($imagenCodificada) <= 0) exit("No se recibió ninguna imagen");

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../PHP/connection.php");
+include("../php/connection.php");
 $usuario = $_SESSION['user'];
 if(!isset($usuario)){
     header("location:../../index.php");
@@ -8,7 +8,7 @@ if(!isset($usuario)){
 ?>
 <?php
     ob_start();
-    include ("../PHP/dato_login.php");
+    include ("../php/dato_login.php");
     $id_user = $_GET['id_user'];
     $id = substr($id_user,3);
     $rol = "Entrenador"; //><-------------- que le entre el rol o id pa buscarlo
@@ -28,8 +28,8 @@ if(!isset($usuario)){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio admin</title>
-    <link rel="stylesheet" href="../css/css/StyleMEnu.css">
-    <link rel="stylesheet" href="../css/css/Home.css">
+    <link rel="stylesheet" href="../CSS/CSS/styleMEnu.css">
+    <link rel="stylesheet" href="../CSS/CSS/home.css">
 </head>
 <body>
     <div id="sidemenu" class="menu-collapsed">
@@ -89,7 +89,7 @@ if(!isset($usuario)){
                 </a>
             </div>
             <div class="item">
-                <a href="../PHP/cerrarS.php">
+                <a href="../php/cerrarS.php">
                     <div class="icon"><img src="../../iconos/admin/cerrar_sesion.png" alt=""></div>
                     <div class="title"><span>Cerrar sesión</span></div>
                 </a>

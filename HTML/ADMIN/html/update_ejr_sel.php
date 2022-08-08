@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../PHP/connection.php");
+include("../php/connection.php");
 $usuario = $_SESSION['user'];
 if(!isset($usuario)){
     header("location:../../index.php");
@@ -22,11 +22,11 @@ $id_user =$_GET['id_user'];
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Actualizar Ejercicio</title>
-	<link rel="stylesheet" type="text/css" href="../css/css/menu.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
-	<link rel="stylesheet" type="text/css" href="../Css/css/banner.css">
-	<link rel="stylesheet" type="text/css" href="../Css/css/body.css">
-	<link rel="stylesheet" type="text/css" href="../CSs/CSS_ADM_ejer/update_ejr.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/banner.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/body.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ADM_EJER/update_ejr.css">
 
 </head>
 
@@ -71,7 +71,7 @@ $id_user =$_GET['id_user'];
 		</div>
 	</main>
 	<footer>
-	<script src="../css/css_adm_ejer/checkbox.js"></script>
+	<script src="../CSS/CSS_ADM_EJER/checkbox.js"></script>
 		<div class="sociales">
 			<a class="fab fa-facebook" href="https://www.facebook.com/BfreeGym"></a>
 			<a class="fab fa-instagram" href="https://www.instagram.com/bfreegym/"></a>
