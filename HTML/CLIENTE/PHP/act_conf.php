@@ -14,13 +14,6 @@ $consulta_pass= $conexion->query($pass);
 while ($row = $consulta_pass->fetch_assoc()) { 
   $act_pass = $row['contrasena'];
 }
-echo $act_pass;
-echo " old ";
-echo $old_pass;
-echo " nueva c ";
-echo $new_pass;
-echo " verific ";
-echo $ver_pass;
 $actualizar = "UPDATE personas SET `email`='$email',`celular`=$cel WHERE id_persona='$id_persona'";
 $validar = mysqli_query($conexion, $actualizar);
 if ($old_pass != null) {

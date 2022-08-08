@@ -2,7 +2,6 @@
     include ("connection.php");
     $ejercicio =$_POST['ejercicio'];
     $imagen =$_FILES['imagen']['name'];
-    echo "hoilaaaaaaa".$_FILES['imagen']['name'];
     $move_imagen = "../../img_ejer/";
     move_uploaded_file($_FILES['imagen']['tmp_name'],$move_imagen.$imagen);
     $descripcion=$_POST['descripcion'];

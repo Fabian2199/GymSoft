@@ -48,7 +48,7 @@ $id_user =$_GET['id_user'];
 							<img src="<?php echo "../../img_per\\" . $row['foto']; ?>" alt="">
 							<?php if ($row['estado'] == 0) { $estado = "Plan Vigente";} else {$estado = "Plan Vencido"; }?>
 							<h1 class="h1_datos">Estado: <?php echo $estado; ?></h1>
-							<form action="../php/act_per.php?id_user=<?php echo $id_user; ?>" method="POST">
+							<form action="../php/act_per_clt.php?id_user=<?php echo $id_user; ?>" method="POST">
 								<div class="inputs_update">
 									<input type="text" value=<?php echo $id;?> name= 'id_persona' style='display: none;'>
 									<input type='text' value="<?php echo $row['nombres'];?>" name='nombres' pattern='[A-Za-z ]+' required>

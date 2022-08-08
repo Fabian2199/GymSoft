@@ -8,7 +8,7 @@ if (!isset($usuario)) {
 ?>
 <?php
 $id = $_GET['id_user'];
-include("../PHP/dato_login.php");
+include("../php/dato_login.php");
 $foto = "";
 $nombres = "";
 $datos = get_datos($id);

@@ -57,7 +57,7 @@ while ($row = $datos->fetch_assoc()) {
 							<input type="tel" placeholder="Numero Documento" name="documento" pattern="[0-9]+" required>
 							<input type="date" name="cumpleanos" required>
 							<input type="tel" placeholder="Celular" name="celular" pattern="[0-9]{10}" required>
-							<input type="email" placeholder="Correo Electronico" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+							<input type="email" placeholder="Correo Electronico" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
 							<input type="text" value="cliente" name="usuario" style="display: none;">
 							<div class="foto" id="foto">
 								<h1>Selecciona un dispositivo</h1>
