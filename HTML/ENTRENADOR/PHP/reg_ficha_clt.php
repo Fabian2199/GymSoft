@@ -3,8 +3,14 @@
     $id_ficha=1001;
     $id_entrenador='ent'.$_GET['id_ent'];
     $id_cliente='clt'.$_GET['id_clt'];
+    $documento_clt = $_GET['id_clt'];
     $fecha= $_POST['fecha'];
-    $edad = 20;
+    $sql_edad="SELECT * FROM personas WHERE id_persona =$documento_clt";
+    $consulta= mysqli_query($conexion,$sql_edad);
+    $datos_cons= mysqli_fetch_array($consulta);
+    $fecha_nac = $datos_cons['fecha_nac'];
+    $fecha_act = date('Y/m/d', time());
+    $edad = $fecha_act-$fecha_nac;
     $peso = $_POST['peso'];
     $estatura = $_POST['estatura'];
     $cuello = $_POST['cuello'];
@@ -30,7 +36,7 @@
     $adipo_supra = $_POST['adipo_supra'];
     $adipo_sube = $_POST['adipo_sube'];
     $t_cuerpo = $_POST['t_cuerpo'];
-    $imc = 0;
+    $imc = ($peso/(pow($estatura,2)));
     $embarazo = $_POST['embarazo'];
     $cardiaco = $_POST['cardiaco'];
     $hipoglisemia = $_POST['hipoglisemia'];

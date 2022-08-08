@@ -107,54 +107,54 @@ while ($row = $datos->fetch_assoc()) {
 									<label for="fecha">Fecha: </label>
 									<input type="date" placeholder="MM/DD/AAAA" id="fecha" name="fecha" required>
 									<label for="1">Peso:</label>
-									<input type="number" placeholder="Peso" id="1" name="peso" required>
+									<input type="number" step="0.01" min="1" placeholder="Peso" id="1" name="peso" required>
 									<label for="1">Estatura:</label>
-									<input type="number" placeholder="Estatura" id="1" name="estatura" required>
+									<input type="number" step="0.01" min="1" placeholder="Estatura" id="1" name="estatura" required>
 								</div>
 								<table>
 									<tbody>
 										<tr>
 											<th>
 												<label for="1">Cuello:</label>
-												<input type="number" placeholder="Cuello" id="1" name="cuello" required>
+												<input type="number" step="0.01" min="1" placeholder="Cuello" id="1" name="cuello" required>
 											</th>
 											<th>
 												<label for="1">Hombro:</label>
-												<input type="number" placeholder="Hombro" id="1" name="hombro" required>
+												<input type="number" step="0.01" min="1" placeholder="Hombro" id="1" name="hombro" required>
 											</th>
 											<th>
 												<label for="1">Pecho:</label>
-												<input type="number" placeholder="Pecho" id="1" name="pecho" required>
+												<input type="number" step="0.01" min="1" placeholder="Pecho" id="1" name="pecho" required>
 											</th>
 											<th>
 												<label for="1">Espalda:</label>
-												<input type="number" placeholder="Espalda" id="1" name="espalda" required>
+												<input type="number" step="0.01" min="1" placeholder="Espalda" id="1" name="espalda" required>
 											</th>
 											<th>
 												<label for="1">Cintura:</label>
-												<input type="number" placeholder="Cintura" id="1" name="cintura" required>
+												<input type="number" step="0.01" min="1" placeholder="Cintura" id="1" name="cintura" required>
 											</th>
 										</tr>
 										<tr>
 											<th>
 												<label for="1">Abdomen:</label>
-												<input type="number" placeholder="Abdomen" id="1" name="abdomen" required>
+												<input type="number" step="0.01" min="1" placeholder="Abdomen" id="1" name="abdomen" required>
 											</th>
 											<th>
 												<label for="1">Cadera:</label>
-												<input type="number" placeholder="Cadera" id="1" name="cadera" required>
+												<input type="number" step="0.01" min="1" placeholder="Cadera" id="1" name="cadera" required>
 											</th>
 											<th>
 												<label for="1">% de grasa:</label>
-												<input type="number" placeholder="% de grasa" id="1" name="por_grasa" required>
+												<input type="number" step="0.01" min="1" placeholder="% de grasa" id="1" name="por_grasa" required>
 											</th>
 											<th>
 												<label for="1">Tension arterial:</label>
-												<input type="number" placeholder="Tension arterial" id="1" name="valor_tension'" required>
+												<input type="number" step="0.01" min="1" placeholder="Tension arterial" id="1" name="valor_tension'" required>
 											</th>
 											<th>
 												<label for="1">Pulso:</label>
-												<input type="number" placeholder="Pulso" id="1" name="pulso" required>
+												<input type="number" step="0.01" min="1" placeholder="Pulso" id="1" name="pulso" required>
 											</th>
 										</tr>
 									</tbody>
@@ -173,10 +173,10 @@ while ($row = $datos->fetch_assoc()) {
 												<label for="1">Brazos</label>
 											</th>
 											<th>
-												<input type="number" placeholder="Izquierdo" id="1" name="br_izq" required>
+												<input type="number" step="0.01" min="1" placeholder="Izquierdo" id="1" name="br_izq" required>
 											</th>
 											<th>
-												<input type="number" placeholder="Derecho" id="1" name="br_der" required>
+												<input type="number" step="0.01" min="1" placeholder="Derecho" id="1" name="br_der" required>
 											</th>
 										</tr>
 										<tr>
@@ -184,10 +184,10 @@ while ($row = $datos->fetch_assoc()) {
 												<label for="1">Ante-brazos:</label>
 											</th>
 											<th>
-												<input type="number" placeholder="Izquierdo" id="1" name="ant_izq" required>
+												<input type="number" step="0.01" min="1" placeholder="Izquierdo" id="1" name="ant_izq" required>
 											</th>
 											<th>
-												<input type="number" placeholder="Derecho" id="1" name="ant_der" required>
+												<input type="number" step="0.01" min="1" placeholder="Derecho" id="1" name="ant_der" required>
 											</th>
 										</tr>
 										<tr>
@@ -195,10 +195,10 @@ while ($row = $datos->fetch_assoc()) {
 												<label for="1">Piernas:</label>
 											</th>
 											<th>
-												<input type="number" placeholder="Izquierdo" id="1" name="pr_izq" required>
+												<input type="number" step="0.01" min="1" placeholder="Izquierdo" id="1" name="pr_izq" required>
 											</th>
 											<th>
-												<input type="number" placeholder="Derecho" id="1" name="pr_der" required>
+												<input type="number" step="0.01" min="1" placeholder="Derecho" id="1" name="pr_der" required>
 											</th>
 										</tr>
 										<tr>
@@ -206,10 +206,10 @@ while ($row = $datos->fetch_assoc()) {
 												<label for="1">Pantorrillas:</label>
 											</th>
 											<th>
-												<input type="number" placeholder="Izquierdo" id="1" name="pnt_izq" required>
+												<input type="number" step="0.01" min="1" placeholder="Izquierdo" id="1" name="pnt_izq" required>
 											</th>
 											<th>
-												<input type="number" placeholder="Derecho" id="1" name="pnt_der" required>
+												<input type="number" step="0.01" min="1" placeholder="Derecho" id="1" name="pnt_der" required>
 											</th>
 										</tr>
 									</tbody>
@@ -222,19 +222,19 @@ while ($row = $datos->fetch_assoc()) {
 										<tr>
 											<th>
 												<label for="1">Tricipital:</label>
-												<input type="number" placeholder="Tricipital" id="1" name="adipo_tri" required>
+												<input type="number" step="0.01" min="1" placeholder="Tricipital" id="1" name="adipo_tri" required>
 											</th>
 											<th>
 												<label for="1">Abdominal:</label>
-												<input type="number" placeholder="Abdominal" id="1" name="adipo_apdo" required>
+												<input type="number" step="0.01" min="1" placeholder="Abdominal" id="1" name="adipo_apdo" required>
 											</th>
 											<th>
 												<label for="1">Suprailiaco:</label>
-												<input type="number" placeholder="Suprailiaco" id="1" name="adipo_supra" required>
+												<input type="number" step="0.01" min="1" placeholder="Suprailiaco" id="1" name="adipo_supra" required>
 											</th>
 											<th>
 												<label for="1">Subescapular:</label>
-												<input type="number" placeholder="Subescapular" id="1" name="adipo_sube" required>
+												<input type="number" step="0.01" min="1" placeholder="Subescapular" id="1" name="adipo_sube" required>
 											</th>
 											<th>
 												<label for="1">Tipo de cuerpo:</label>

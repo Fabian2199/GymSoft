@@ -30,7 +30,7 @@ while ($row = $datos->fetch_assoc()) {
 	<link rel="stylesheet" type="text/css" href="../CSS/CSS/banner.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/CSS/body.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/CSS/tablas.css">
-	<link rel="stylesheet" type="text/css" href="../CCS/CSS_ENT_INDEX/principal_Ent_clt_taR.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ENT_INDEX/principal_ent_clt_tar.css">
 	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
