@@ -8,8 +8,8 @@
     $sql_edad="SELECT * FROM personas WHERE id_persona =$documento_clt";
     $consulta= mysqli_query($conexion,$sql_edad);
     $datos_cons= mysqli_fetch_array($consulta);
-    $fecha_nac = $datos_cons['fecha_nac'];
-    $fecha_act = date('Y/m/d', time());
+    $fecha_nac = date('Y',strtotime($datos_cons['fecha_nac'])) ;
+    $fecha_act = date('Y', time()) ;
     $edad = $fecha_act-$fecha_nac;
     $peso = $_POST['peso'];
     $estatura = $_POST['estatura'];
@@ -29,7 +29,7 @@
     $pnt_izq = $_POST['pnt_izq'];
     $pnt_der = $_POST['pnt_der'];
     $por_grasa = $_POST['por_grasa'];
-    $valor_tension = $_POST['valor_tension'];
+    $valor_tension = $_POST['val_tension'];
     $pulso = $_POST['pulso'];
     $adipo_tri = $_POST['adipo_tri'];
     $adipo_abdo = $_POST['adipo_apdo'];
