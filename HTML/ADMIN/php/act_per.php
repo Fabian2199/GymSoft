@@ -19,5 +19,5 @@
     $validar2 =mysqli_query($conexion,$actualizar_contrato);
   };
 
-  header('Location: ..\html\homeMenu.php?id_user=adm'.$id_userH);
+  header('Location: ../html/homeMenu.php?id_user=adm'.$id_userH);
 ?>

@@ -64,5 +64,5 @@
     '$alergias', '$migrana', '$asma', '$les_osea','$les_musc', '$tens_arterial', '$colesterol', '$trigliceridos', '$observaciones')";
     $validar = mysqli_query($conexion,$registro);
 
-    header('Location: ..\html\ent_clt_sel.php?id_persona='.$_GET['id_clt'].'&id_ent='.$_GET['id_ent']);
+    header('Location: ../html/ent_clt_sel.php?id_persona='.$_GET['id_clt'].'&id_ent='.$_GET['id_ent']);
 ?>

@@ -7,8 +7,8 @@ if(!isset($usuario)){
 }
 ?>
 <?php 
-include("..\php\connection.php"); 
-include ("../PHP/dato_login.php");
+include("../php/connection.php"); 
+include ("../php/dato_login.php");
 $id = $_GET['id_user'];
 $datosL = get_datos($id);
 $foto = "";
@@ -18,7 +18,7 @@ while ($row = $datosL->fetch_assoc()) {
 	$nombres = $row['nombres'] . " " . $row['apellidos'];
 }
 ?>
-<?php include("..\php\datos_clt.php") ?>
+<?php include("../php/datos_clt.php") ?>
 
 <?php
 $rutina = get_rutina($id);
@@ -35,7 +35,7 @@ $ficha = get_ficha($id);
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Cliente</title>
 	<link rel="stylesheet" href="../CSS/styleMenu.css">
-	<link rel="stylesheet" href="../CSS/menU.css">
+	<link rel="stylesheet" href="../CSS/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/principal_clt.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/principal_clt_tar.css">
@@ -97,7 +97,7 @@ $ficha = get_ficha($id);
 					<div class="adelante">
 						<h1>Datos</h1>
 						<?php while ($row = $datos->fetch_assoc()) { ?>
-							<img src="<?php echo "..\..\img_per\\" . $row['foto']; ?>" alt="">
+							<img src="<?php echo "../../img_per\\" . $row['foto']; ?>" alt="">
 							<h1 class="h1_datos"><?php echo $row['nombres']." ".$row['apellidos']; ?></h1>
 							<h1 class="h1_datos"><?php echo $row['celular']; ?></h1>
 							<h1 class="h1_datos">Inicio Plan: <?php echo $row['fecha_ini']; ?></h1>
@@ -145,7 +145,7 @@ $ficha = get_ficha($id);
 									<tr>
 										<th><?php echo $row['dia']; ?></th>
 										<th><?php echo $row['nombre_ejercicio']; ?></th>
-										<th><img src="<?php echo "..\..\img_ejer\\" . $row['imagen']; ?>" alt="" class="imagen_ejr"></th>
+										<th><img src="<?php echo "../../img_ejer\\" . $row['imagen']; ?>" alt="" class="imagen_ejr"></th>
 										<th><?php echo $row['n_series']; ?></th>
 										<th><?php echo $row['n_rep']; ?></th>
 									</tr>

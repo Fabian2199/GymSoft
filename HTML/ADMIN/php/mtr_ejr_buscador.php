@@ -1,5 +1,5 @@
 <?php
-    include ("..\php\connection.php");
+    include ("../php/connection.php");
     $id_user=$_GET['id_user'];
     $sql = "SELECT *FROM ejercicios ";
     $consulta = $conexion->query($sql);

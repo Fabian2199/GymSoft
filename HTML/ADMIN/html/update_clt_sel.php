@@ -6,8 +6,8 @@ if(!isset($usuario)){
     header("location:../../index.php");
 }
 ?>
-<?php include("..\php\connection.php") ?>
-<?php include("..\php\dato_clt.php") ?>
+<?php include("../php/connection.php") ?>
+<?php include("../php/dato_clt.php") ?>
 
 <?php
 $id = $_GET['id_persona'];

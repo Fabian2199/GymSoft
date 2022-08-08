@@ -6,7 +6,7 @@ if(!isset($usuario)){
     header("location:../../index.php");
 }
 ?>
-<?php include("..\php\connection.php");
+<?php include("../php/connection.php");
 $id_ent = $_GET['id_ent'];
 include("../php/dato_login.php");
 $foto = "";
@@ -16,7 +16,7 @@ while ($row = $datos->fetch_assoc()) {
     $foto = $row['foto'];
     $nombres = $row['nombres'] . " " . $row['apellidos'];
 } ?>
-<?php include("..\php\dato_ejr.php") ?>
+<?php include("../php/dato_ejr.php") ?>
 
 <?php
 $id = $_GET['id_persona'];

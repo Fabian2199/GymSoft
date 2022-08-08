@@ -34,7 +34,7 @@ while ($row = $datos->fetch_assoc()) {
 	<script language="javascript" src="..\..\js\jquery-3.6.0.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-	<link rel="stylesheet" href="../CSS/CSS/styleMEnu.css">
+	<link rel="stylesheet" href="../CSS/CSS/styleMenu.css">
 </head>
 
 <body>

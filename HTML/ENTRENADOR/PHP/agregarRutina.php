@@ -17,7 +17,7 @@
     $consulta = mysqli_query($conexion, $query);
     
     if($consulta){
-        header('Location: ..\html\ent_clt_sel.php?id_persona='.$_POST['clientes'].'&id_ent='.$_GET['id_ent']);
+        header('Location: ../html/ent_clt_sel.php?id_persona='.$_POST['clientes'].'&id_ent='.$_GET['id_ent']);
     }
     //*/
 ?>

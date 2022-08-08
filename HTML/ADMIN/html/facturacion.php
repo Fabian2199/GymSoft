@@ -7,7 +7,7 @@ if(!isset($usuario)){
 }
 ?>
 <?php 
-include ("..\php\mtr_ejr.php");
+include ("../php/mtr_ejr.php");
 $id = $_GET['id_user'];
 include("../php/dato_login.php");
 $foto = "";
@@ -35,7 +35,7 @@ while ($row = $datos->fetch_assoc()) {
 
 	<link rel="stylesheet" type="text/css" href="../CSS/CSS/style.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ADM_FAC/Popup.css">
-    <link rel="stylesheet" href="../CSS/CSS/styleMEnu.css">
+    <link rel="stylesheet" href="../CSS/CSS/styleMenu.css">
 
 	<script language="javascript" src="../../js/jquery-3.6.0.min.js"></script>
 </head>

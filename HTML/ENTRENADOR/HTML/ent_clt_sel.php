@@ -6,10 +6,10 @@ if(!isset($usuario)){
     header("location:../../index.php");
 }
 ?>
-<?php include ("..\php\mtr_clt.php")?>
-<?php include("..\php\mtr_ejr.php") ?>
+<?php include ("../php/mtr_clt.php")?>
+<?php include("../php/mtr_ejr.php") ?>
 <?php 
-include ("..\php\connection.php");
+include ("../php/connection.php");
 $id_ent = $_GET['id_ent'];
 include("../php/dato_login.php");
 $foto = "";
@@ -20,7 +20,7 @@ while ($row = $datos->fetch_assoc()) {
     $nombres = $row['nombres'] . " " . $row['apellidos'];
 }
 ?>
-<?php include("..\php\dato_ent_clt.php") ?>
+<?php include("../php/dato_ent_clt.php") ?>
 
 <?php
 $id = $_GET['id_persona'];
@@ -36,7 +36,7 @@ $ficha = get_ficha($id);
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Cliente</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/CSS/Menu.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/CSS/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ENT_CLT_SEL/principal_ent_clt.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ENT_CLT_SEL/principal_ent_clt_tar.css">
@@ -220,6 +220,6 @@ $ficha = get_ficha($id);
         });
     </script>
 </body>
-<script src="../CSS/CSS_ENT_CLT_SEL\combobox.js"></script>
+<script src="../CSS/CSS_ENT_CLT_SEL/combobox.js"></script>
 <script src="../CSS/CSS_ENT_RUT/popup.js"></script>
 </html>

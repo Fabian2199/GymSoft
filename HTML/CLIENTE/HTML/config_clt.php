@@ -6,8 +6,8 @@ if(!isset($usuario)){
     header("location:../../index.php");
 }
 ?>
-<?php include("..\php\connection.php") ?>
-<?php include("..\php\dato_login.php") ?>
+<?php include("../php/connection.php") ?>
+<?php include("../php/dato_login.php") ?>
 
 <?php
 $id = $_GET['id_user'];
@@ -21,9 +21,9 @@ $datos = get_datos($id);
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Actualizar cliente</title>
-	<link rel="stylesheet" type="text/css" href="../CSS/Menu.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../iconos/web-fonts-with-css/css/fontawesome-all.css">
-	<link rel="stylesheet" type="text/css" href="../CSS/Config.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/config.css">
 
 
 </head>

@@ -6,10 +6,10 @@ if(!isset($usuario)){
     header("location:../../index.php");
 }
 ?>
-<?php include("..\php\mtr_clt.php") ?>
-<?php include("..\php\mtr_ejr.php") ?>
-<?php include("..\php\connection.php") ?>
-<?php include("..\php\dato_ent_clt.php") ?>
+<?php include("../php/mtr_clt.php") ?>
+<?php include("../php/mtr_ejr.php") ?>
+<?php include("../php/connection.php") ?>
+<?php include("../php/dato_ent_clt.php") ?>
 
 <?php
 $id_clt = $_GET['id_clt'];

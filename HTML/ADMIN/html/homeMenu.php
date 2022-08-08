@@ -28,7 +28,7 @@ if(!isset($usuario)){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio admin</title>
-    <link rel="stylesheet" href="../CSS/CSS/styleMEnu.css">
+    <link rel="stylesheet" href="../CSS/CSS/styleMenu.css">
     <link rel="stylesheet" href="../CSS/CSS/home.css">
 </head>
 <body>

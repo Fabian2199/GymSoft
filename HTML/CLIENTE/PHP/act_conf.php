@@ -28,14 +28,14 @@ if ($old_pass != null) {
   if (($new_pass != null) and ($new_pass == $ver_pass)and ($old_pass==$act_pass)) {
     $actualizar_pass = "UPDATE `usuarios` SET `contrasena` = '$new_pass' WHERE `usuarios`.`id_user` = '$id_user'";
     $validar2 = mysqli_query($conexion, $actualizar_pass);
-    header('Location: ..\html\homeMenu.php?id_user=ent' . $id_persona);
+    header('Location: ../html/homeMenu.php?id_user=ent' . $id_persona);
   } else {
     echo "<script>";
     echo "alert ('Error al actualizar la contraseña,  por favor verifique la contraseña')";
     echo "</script>";
   }
 }else{
-  header('Location: ..\html\homeMenu.php?id_user=clt'. $id_persona);
+  header('Location: ../html/homeMenu.php?id_user=clt'. $id_persona);
 };
 
 ?>

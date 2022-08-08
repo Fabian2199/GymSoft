@@ -37,7 +37,7 @@ while ($row = $datos->fetch_assoc()) {
 	<link rel="stylesheet" type="text/css" href="../CSS/CSS_ADM_ENT/Popup.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-	<link rel="stylesheet" href="../CSS/CSS/styleMEnu.css">
+	<link rel="stylesheet" href="../CSS/CSS/styleMenu.css">
 
 <body>
 	<div id="sidemenu" class="menu-collapsed">

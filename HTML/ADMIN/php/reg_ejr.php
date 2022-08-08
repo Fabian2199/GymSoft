@@ -23,6 +23,6 @@
         //header('Location: ..\adm_ejer.php');
     }else{
         $validar = mysqli_query($conexion,$registro);
-        header('Location: ..\html\adm_ejer.php?id_user='.$id_user);
+        header('Location: ../html/adm_ejer.php?id_user='.$id_user);
     };
 ?>
