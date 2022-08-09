@@ -21,10 +21,15 @@
         $ultimaFactura = $resul['ultima'];
     }
 
+    if($ultimaFactura == ''){
+        $ultimaFactura = date('Y-m-d', strtotime("-1 days"));
+    }
+
     //echo $ultimaFactura." - ".$fecha_inicio;
 
     $consulta = $conexion->query("SELECT us.tipo_user rol FROM usuarios us WHERE us.id_persona = $documento");
     while ($row = $consulta->fetch_array()) {
+        echo "pasa por el rol";
         $rol = $row['rol'];
     }
 
@@ -34,6 +39,7 @@
         $consulta = mysqli_query($conexion, $query);
     
         while($row = $consulta->fetch_array()) {
+            echo "pasa por contador";
             $contador = $row['max'] + 1;
         }
     
@@ -42,6 +48,7 @@
         $consulta = mysqli_query($conexion, $query);
         
         while($row = $consulta->fetch_array()) {
+            echo "pasa por documento";
             $documento = $row['id_user'];
         }
         
@@ -50,18 +57,25 @@
         $consulta = mysqli_query($conexion, $query);
     
         while($row = $consulta->fetch_array()) {
+            echo "pasa por meses";
             $meses = $row['Duracion'];
         }
     
         $meses = explode(" ", $meses)[0];
+        echo "\nFecha inicio: ". $fecha_inicio . " meses: " . $meses;
         
         // Obtener la fecha fin del plan
-        $query = "SELECT DATE_ADD('$fecha_inicio', INTERVAL '$meses' MONTH) fin FROM facturas";
+        /*
+        $query = "SELECT DATE_ADD('$fecha_inicio', INTERVAL $meses MONTH) fin FROM facturas";
         $consulta = mysqli_query($conexion, $query);
         
         while($row = $consulta->fetch_array()) {
+            echo "pasa por fecha fin";
             $fecha_fin = $row['fin'];
         }
+        */
+
+        $fecha_fin = date('Y-m-d', strtotime($fecha_inicio."+".$meses." month"));
         
         //echo "Fecha fin: ".$fecha_fin
         
@@ -87,8 +101,8 @@
         echo '<script type="text/JavaScript"> alertify.alert("Fallo al entrar :("); </script>';
     }
 
-    Header("Location: ../html/facturacion.php?id_user=".$_GET['id_user']);
     /*
+    Header("Location: ../html/facturacion.php?id_user=".$_GET['id_user']);
     if($consulta){
         Header("Location: ../html/facturacion.php");
     }
