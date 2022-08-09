@@ -23,7 +23,12 @@
 
     //echo $ultimaFactura." - ".$fecha_inicio;
 
-    if($ultimaFactura < $fecha_inicio){
+    $consulta = $conexion->query("SELECT us.tipo_user rol FROM usuarios us WHERE us.id_persona = $documento");
+    while ($row = $consulta->fetch_array()) {
+        $rol = $row['rol'];
+    }
+
+    if($rol == 'cliente' && $ultimaFactura < $fecha_inicio){
         // Obtener el ultimo ID para crear uno nuevo
         $query = "SELECT MAX(id_factura) max FROM facturas";
         $consulta = mysqli_query($conexion, $query);
