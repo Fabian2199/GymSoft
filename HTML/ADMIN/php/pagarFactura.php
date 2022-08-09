@@ -1,5 +1,3 @@
-<script src="../../js/alertifyjs/alertify.js"></script>
-
 <?php
     //$pru_1 = '<script src="../../js/alertifyjs/alertify.js"></script>';
     //include '../../scripts.php';
@@ -29,7 +27,6 @@
 
     $consulta = $conexion->query("SELECT us.tipo_user rol FROM usuarios us WHERE us.id_persona = $documento");
     while ($row = $consulta->fetch_array()) {
-        echo "pasa por el rol";
         $rol = $row['rol'];
     }
 
@@ -39,7 +36,6 @@
         $consulta = mysqli_query($conexion, $query);
     
         while($row = $consulta->fetch_array()) {
-            echo "pasa por contador";
             $contador = $row['max'] + 1;
         }
     
@@ -48,7 +44,6 @@
         $consulta = mysqli_query($conexion, $query);
         
         while($row = $consulta->fetch_array()) {
-            echo "pasa por documento";
             $documento = $row['id_user'];
         }
         
@@ -57,12 +52,10 @@
         $consulta = mysqli_query($conexion, $query);
     
         while($row = $consulta->fetch_array()) {
-            echo "pasa por meses";
             $meses = $row['Duracion'];
         }
     
         $meses = explode(" ", $meses)[0];
-        echo "\nFecha inicio: ". $fecha_inicio . " meses: " . $meses;
         
         // Obtener la fecha fin del plan
         /*
@@ -98,11 +91,11 @@
         $query = "INSERT INTO detalles_fac VALUES('$nombre_plan', '$contador', '$id_servicio', '$estado_plan', '$fecha_inicio', '$fecha_fin');";
         $consulta = mysqli_query($conexion, $query);
     } else {
-        echo '<script type="text/JavaScript"> alertify.alert("Fallo al entrar :("); </script>';
+        //echo '<script type="text/JavaScript"> alertify.alert("Fallo al entrar :("); </script>';
     }
 
-    /*
     Header("Location: ../html/facturacion.php?id_user=".$_GET['id_user']);
+    /*
     if($consulta){
         Header("Location: ../html/facturacion.php");
     }
