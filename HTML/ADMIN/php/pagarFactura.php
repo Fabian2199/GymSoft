@@ -20,7 +20,7 @@
     }
 
     if($ultimaFactura == ''){
-        $ultimaFactura = date('Y-m-d', strtotime("-1 days"));
+        $ultimaFactura = date('Y-m-d', strtotime("-2 days"));
     }
 
     //echo $ultimaFactura." - ".$fecha_inicio;
@@ -91,7 +91,7 @@
         $query = "INSERT INTO detalles_fac VALUES('$nombre_plan', '$contador', '$id_servicio', '$estado_plan', '$fecha_inicio', '$fecha_fin');";
         $consulta = mysqli_query($conexion, $query);
     } else {
-        //echo '<script type="text/JavaScript"> alertify.alert("Fallo al entrar :("); </script>';
+        echo '<script type="text/JavaScript"> alertify.alert("Fallo al entrar :("); </script>';
     }
 
     Header("Location: ../html/facturacion.php?id_user=".$_GET['id_user']);
