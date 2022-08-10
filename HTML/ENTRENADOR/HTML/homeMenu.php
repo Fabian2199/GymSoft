@@ -81,14 +81,11 @@ while ($row = $datos->fetch_assoc()) {
     </div>
 
     <div id="inicial">
-        <h1>Logo, contacto, redes</h1>
+        <br><br><br><br>
         <div class="icon"><img src="../../img/BF.png" alt="Logo gimnasio" style="width: 400px; height: 300px;"></div>
-        <div class="icon">
-            <h2>Sistema de entrenador</h2>
-        </div>
-        <div class="icon">
-            <h3><?php echo $id_usuario; ?> - GymSoft</h3>
-        </div>
+        <br><br><br><br><br>
+        <h2>Sistema de entrenador</h2>
+        <h3><?php echo $id_usuario; ?> - GymSoft</h3>
         <br><br>
         <div class="redesSociales">
             <a title="Facebook" href="https://www.facebook.com/BfreeGym"><img id="imgFacebook" src="../../img/logoFacebook.png" alt="Logo facebook" /></a>

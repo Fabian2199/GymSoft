@@ -98,8 +98,9 @@ if(!isset($usuario)){
     </div>
 
     <div id="inicial">
-        <h1>Logo, contacto, redes</h1>
+        <br><br><br><br>
         <div class="icon"><img src="../../img/BF.png" alt="Logo gimnasio" style="width: 400px; height: 300px;"></div>
+        <br><br><br><br><br>
         <div class="icon"><h2>Sistema de administrador</h2></div>
         <div class="icon"><h3><?php echo $id_user;?> - GymSoft</h3></div>
         <br><br>
